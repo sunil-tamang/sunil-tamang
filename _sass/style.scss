@@ -951,7 +951,7 @@ transform:translate(-50%,-50%);
 
     text-transform:uppercase;
 
-    color:#7b7b7b;
+    // color:#7b7b7b;
 
 }
 
@@ -1527,7 +1527,7 @@ transform:translate(-50%,-50%);
 
     text-transform:uppercase;
 
-    color:#777;
+    // color:#777;
 
     margin-bottom:22px;
 
@@ -2226,7 +2226,7 @@ Responsive
 
     text-transform:uppercase;
 
-    color:#7d7d7d;
+    // color:#7d7d7d;
 
 }
 
@@ -2790,9 +2790,10 @@ Responsive
 
     text-transform:uppercase;
 
-    color:#777;
+    // color:#777;
 
-    margin-bottom:clamp(16px, 2vw, 22px);
+    // margin-bottom:clamp(16px, 2vw, 22px);
+    margin-bottom:22px;
 
 }
 
