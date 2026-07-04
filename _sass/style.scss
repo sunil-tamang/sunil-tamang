@@ -84,171 +84,418 @@ transform:translate(-50%,-50%);
 ========================================== */
 
 .studio-nav{
+
     position:absolute;
-    top:50px;
+
+    top:42px;
     left:50%;
+
     transform:translateX(-50%);
-    width:80%;
-    max-width:1500px;
+
+    width:min(92%,1600px);
+
     display:grid;
-    grid-template-columns:80px 1fr 180px;
+    grid-template-columns:70px 1fr 160px;
+
     align-items:center;
-    z-index:100000;
-}
 
-.studio-nav-toggle{
-    width:42px;
-    height:42px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    gap:8px;
-    padding:0;
-    border:none;
-    background:none;
-    cursor:pointer;
-}
+     z-index:10001;
 
-.studio-nav-toggle span{
-    width:30px;
-    height:2px;
-    background:#fff;
-    transition:.45s ease;
 }
 
 .studio-brand{
-    // justify-self:center;
-    color:#fff;
+
+    justify-self:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
     text-decoration:none;
-    font-size:14px;
-    font-weight:800;
-    // letter-spacing:7px;
-    transition:.3s;
+
 }
 
-.studio-brand:hover{
-    opacity:.6;
+.studio-brand img{
+
+    display:block;
+
+    width:clamp(170px,15vw,240px);
+
+    height:auto;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        filter .35s ease;
+
 }
 
-.studio-contact-link{
-    justify-self:end;
-    color:#fff;
-    text-decoration:none;
-    font-size:13px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    transition:.3s;
-}
+.studio-brand:hover img{
 
-.studio-contact-link:hover{
-    opacity:.6;
+    opacity:.85;
+
+    transform:translateY(-3px);
+
+    filter:drop-shadow(0 0 12px rgba(255,255,255,.15));
+
 }
 
 
 /* ==========================================
-   MENU PANEL
+   CONTACT LINK
+========================================== */
+
+.studio-contact-link{
+
+    justify-self:end;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    transition:.35s ease;
+
+    opacity:.9;
+
+}
+
+.studio-contact-link:hover{
+
+    opacity:1;
+
+    letter-spacing:4px;
+
+}
+
+
+/* ==========================================
+   HAMBURGER
+========================================== */
+
+.studio-nav-toggle{
+
+    width:46px;
+    height:46px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:0;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    position:relative;
+
+    z-index:10001;
+
+}
+
+.studio-nav-toggle span{
+
+    display:block;
+
+    width:30px;
+    height:2px;
+
+    background:#fff;
+
+    border-radius:5px;
+
+    transition:
+        transform .45s ease,
+        width .35s ease,
+        opacity .35s ease;
+
+}
+
+/* Hover */
+
+.studio-nav-toggle:hover span:first-child{
+
+    width:22px;
+
+}
+
+.studio-nav-toggle:hover span:last-child{
+
+    width:38px;
+
+}
+
+
+/* Active */
+
+.studio-nav-toggle.active span:first-child{
+
+    width:30px;
+
+    transform:
+        translateY(10px)
+        rotate(45deg);
+
+}
+
+.studio-nav-toggle.active span:last-child{
+
+    width:30px;
+
+    transform:
+        translateY(-10px)
+        rotate(-45deg);
+
+}
+
+
+
+/* ==========================================
+   FULLSCREEN MENU
 ========================================== */
 
 .studio-menu{
+
     position:fixed;
-    inset:0 0 auto 0;
+
+    inset:0;
+
     width:100%;
-    height:50vh;
-    background:#fff;
-    color:#111;
+    height:100vh;
+
+    background:#060606;
+
     transform:translateY(-100%);
-    transition:transform .55s cubic-bezier(.77,0,.175,1);
+
+    transition:transform .7s cubic-bezier(.77,0,.175,1);
+
+    z-index:9999;
+
     overflow:hidden;
-    box-shadow:0 20px 60px rgba(0,0,0,.15);
-    z-index:99999;
+
 }
 
 .studio-menu.active{
+
     transform:translateY(0);
+
 }
 
+
+
+/* ==========================================
+   MENU INNER
+========================================== */
+
 .studio-menu-inner{
-    width:92%;
-    max-width:1600px;
+
+    width:min(92%,1600px);
+
     height:100%;
+
     margin:auto;
+
     display:flex;
+
     flex-direction:column;
+
 }
+
 
 
 /* ==========================================
    MENU HEADER
 ========================================== */
 
-.studio-menu-top{
-    display:grid;
-    grid-template-columns:80px 1fr 80px;
+.studio-menu-header{
+
+    padding:42px 0 0;
+
+    display:flex;
+
+    justify-content:center;
+
     align-items:center;
-    padding:35px 0;
+
 }
 
-.studio-close{
-    width:42px;
-    height:42px;
-    border:none;
-    background:none;
-    cursor:pointer;
-    color:#111;
-    font-size:28px;
-    transition:.3s;
+.studio-menu-brand{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
 }
 
-.studio-close:hover{
-    transform:rotate(90deg);
+.studio-menu-brand img{
+
+    width:220px;
+
+    height:auto;
+
+    transition:.35s ease;
+
 }
 
-.studio-logo{
-    text-align:center;
-    font-size:14px;
+.studio-menu-brand:hover img{
+
+    opacity:.8;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* ==========================================
+   MENU BODY
+========================================== */
+
+.studio-navigation{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+/* ==========================================
+   MENU LINKS
+========================================== */
+
+.studio-navigation a{
+
+    position:relative;
+
+    display:inline-block;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-size:clamp(44px,6vw,86px);
+
     font-weight:600;
-    letter-spacing:8px;
+
+    letter-spacing:-2px;
+
+    line-height:1;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+        color .35s ease,
+        opacity .6s ease,
+        transform .6s ease;
+
+}
+
+/* Stagger Animation */
+
+.studio-menu.active .studio-navigation a{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.studio-menu.active .studio-navigation a:nth-child(1){
+
+    transition-delay:.15s;
+
+}
+
+.studio-menu.active .studio-navigation a:nth-child(2){
+
+    transition-delay:.25s;
+
+}
+
+.studio-menu.active .studio-navigation a:nth-child(3){
+
+    transition-delay:.35s;
+
+}
+
+
+/* Hover */
+
+.studio-navigation a::after{
+
+    content:"↗";
+
+    position:absolute;
+
+    top:8px;
+
+    margin-left:14px;
+
+    font-size:.35em;
+
+    opacity:0;
+
+    transform:translateX(-12px);
+
+    transition:.35s ease;
+
+}
+
+.studio-navigation a:hover{
+
+    color:#bdbdbd;
+
+}
+
+.studio-navigation a:hover::after{
+
+    opacity:1;
+
+    transform:translateX(0);
+
 }
 
 
 /* ==========================================
-   NAVIGATION LINKS
+   MENU FOOTER
 ========================================== */
 
-.studio-navigation{
-    flex:1;
+.studio-menu-footer{
+
+    padding:0 0 55px;
+
     display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:90px;
-}
 
-.studio-navigation a{
-    position:relative;
-    color:#111;
-    text-decoration:none;
-    font-size:32px;
-    font-weight:500;
-    transition:.3s;
-}
+    justify-content:space-between;
 
-.studio-navigation a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-10px;
-    width:0;
-    height:2px;
-    background:#111;
-    transition:.35s;
-}
+    align-items:flex-end;
 
-.studio-navigation a:hover{
-    opacity:.65;
-}
+    gap:60px;
 
-.studio-navigation a:hover::after{
-    width:100%;
 }
 
 
@@ -256,38 +503,57 @@ transform:translate(-50%,-50%);
    SOCIAL
 ========================================== */
 
-.studio-social{
+.studio-social-links{
+
     display:flex;
-    justify-content:center;
-    gap:45px;
-    padding:30px 0 40px;
+
+    flex-direction:column;
+
+    gap:14px;
+
 }
 
-.studio-social a{
-    color:#555;
+.studio-social-links a{
+
+    color:#6f6f6f;
+
     text-decoration:none;
+
     font-size:14px;
-    letter-spacing:1px;
-    transition:.3s;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    transition:.35s ease;
+
 }
 
-.studio-social a:hover{
-    color:#000;
+.studio-social-links a:hover{
+
+    color:#ffffff;
+
+    transform:translateX(8px);
+
 }
 
 
 /* ==========================================
-   HAMBURGER ANIMATION
+   FOOTER TEXT
 ========================================== */
 
-.studio-nav-toggle.active span:first-child{
-    transform:rotate(45deg) translate(7px,7px);
-    background:#111;
-}
+.studio-footer-text{
 
-.studio-nav-toggle.active span:last-child{
-    transform:rotate(-45deg) translate(7px,-7px);
-    background:#111;
+    text-align:right;
+
+    color:#7d7d7d;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    letter-spacing:1px;
+
 }
 
 
@@ -295,84 +561,135 @@ transform:translate(-50%,-50%);
    RESPONSIVE
 ========================================== */
 
-@media (max-width:1200px){
+@media(max-width:992px){
 
     .studio-nav{
-        width:88%;
+
+        width:90%;
+
+        grid-template-columns:60px 1fr 130px;
+
     }
 
-}
+    .studio-brand img{
 
-@media (max-width:900px){
+        width:180px;
 
-    .studio-menu{
-        height:100vh;
-    }
-
-    .studio-menu-top{
-        grid-template-columns:60px 1fr 60px;
-    }
-
-    .studio-logo{
-        font-size:12px;
-        letter-spacing:4px;
-    }
-
-    .studio-navigation{
-        flex-direction:column;
-        gap:35px;
     }
 
     .studio-navigation a{
-        font-size:30px;
+
+        font-size:clamp(42px,8vw,64px);
+
     }
 
-    .studio-social{
-        flex-wrap:wrap;
-        gap:22px;
-        padding-bottom:35px;
+    .studio-menu-footer{
+
+        gap:40px;
+
     }
 
 }
 
-@media (max-width:768px){
+
+
+@media(max-width:768px){
 
     .studio-nav{
+
+        top:28px;
+
         width:92%;
-        top:25px;
-        grid-template-columns:150px 1fr;
+
+        grid-template-columns:55px 1fr;
+
     }
 
     .studio-contact-link{
+
         display:none;
+
     }
 
-    .studio-brand{
-        font-size:12px;
-        letter-spacing:4px;
+    .studio-brand img{
+
+        width:150px;
+
     }
 
-}
+    .studio-menu-header{
 
-@media (max-width:600px){
+        padding-top:28px;
+
+    }
+
+    .studio-menu-brand img{
+
+        width:150px;
+
+    }
+
+    .studio-navigation{
+
+        align-items:flex-start;
+
+        padding-left:8px;
+
+        gap:22px;
+
+    }
 
     .studio-navigation a{
-        font-size:24px;
+
+        font-size:42px;
+
+        letter-spacing:-1px;
+
     }
 
-    .studio-social{
+    .studio-menu-footer{
+
         flex-direction:column;
-        align-items:center;
-        gap:12px;
+
+        align-items:flex-start;
+
+        gap:30px;
+
+        padding-bottom:40px;
+
     }
 
-    .studio-logo{
-        letter-spacing:3px;
+    .studio-footer-text{
+
+        text-align:left;
+
     }
 
 }
 
 
+
+@media(max-width:480px){
+
+    .studio-navigation a{
+
+        font-size:34px;
+
+    }
+
+    .studio-social-links a{
+
+        font-size:12px;
+
+    }
+
+    .studio-footer-text{
+
+        font-size:12px;
+
+    }
+
+}
 
 /* =======================================================
    VIDEO BANNER

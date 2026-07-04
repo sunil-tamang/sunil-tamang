@@ -124,22 +124,30 @@ layout: compress
 
 <header class="studio-nav">
 
+    <!-- Hamburger -->
+
     <button
         class="studio-nav-toggle"
         id="studioNavToggle"
-        aria-label="Open Menu">
+        aria-label="Toggle Menu">
 
         <span></span>
         <span></span>
 
     </button>
 
+    <!-- Logo -->
+
     <a href="{{ '/' | relative_url }}"
        class="studio-brand">
 
-        SUNIL TAMANG
+        <img
+            src="{{ '/assets/css/images/clients/logo.png' | relative_url }}"
+            alt="Sunil Tamang">
 
     </a>
+
+    <!-- Contact -->
 
     <a href="{{ '/contact/' | relative_url }}"
        class="studio-contact-link">
@@ -153,7 +161,7 @@ layout: compress
 
 
 <!-- =========================================
-     FULL MENU
+     FULLSCREEN MENU
 ========================================= -->
 
 <div class="studio-menu" id="studioMenu">
@@ -161,81 +169,88 @@ layout: compress
     <div class="studio-menu-inner">
 
 
-        <!-- Top Bar -->
+        <!-- ===================================
+             MENU HEADER
+        ==================================== -->
 
-        <div class="studio-menu-top">
+        <div class="studio-menu-header">
 
-            <button class="studio-close" id="studioClose">
+            <a href="{{ '/' | relative_url }}"
+               class="studio-menu-brand">
 
-                <!-- ✕ -->
+                <img
+                    src="{{ '/assets/css/images/clients/logo.png' | relative_url }}"
+                    alt="Sunil Tamang">
 
-            </button>
-
-            <div class="studio-logo">
-
-                <a href="{{ site.baseurl }}/" class="">
-                    SUNIL TAMANG
-                </a>
-
-            </div>
-
-            <div></div>
+            </a>
 
         </div>
 
 
 
-        <!-- Navigation -->
+        <!-- ===================================
+             NAVIGATION
+        ==================================== -->
 
         <nav class="studio-navigation">
 
             <a href="{{ '/films/' | relative_url }}">
-                Work
+
+                WORK
+
             </a>
 
             <a href="{{ '/about/' | relative_url }}">
-                About
+
+                ABOUT
+
             </a>
 
-            <a href="{{ '/stills' | relative_url }}">
-                Stills
-            </a>
+            <a href="{{ '/stills/' | relative_url }}">
 
-            <!-- <a href="{{ '/contact/' | relative_url }}">
-                Get In Touch
-            </a> -->
+                STILLS
+
+            </a>
 
         </nav>
 
 
 
-        <!-- Social -->
+        <!-- ===================================
+             FOOTER
+        ==================================== -->
 
-        <div class="studio-social">
+        <div class="studio-menu-footer">
 
-            <a href="https://instagram.com/" target="_blank">
+            <div class="studio-social-links">
 
-                Instagram
+                <a href="https://instagram.com/" target="_blank">
 
-            </a>
+                    Instagram
 
-            <a href="https://youtube.com/" target="_blank">
+                </a>
 
-                YouTube
+                <a href="https://youtube.com/" target="_blank">
 
-            </a>
+                    YouTube
 
-            
+                </a>
+
+            </div>
+
+            <div class="studio-footer-text">
+
+                Based in Nepal<br>
+
+                Expedition Filmmaker
+
+            </div>
 
         </div>
-
 
     </div>
 
 </div>
-
-
-
 
 
     {{ content }}
@@ -295,49 +310,77 @@ layout: compress
 
  <script src="{{ site.baseurl }}/assets/js/main.js"></script>
 
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
 
     const menu = document.getElementById("studioMenu");
-    const openBtn = document.getElementById("studioNavToggle");
-    const closeBtn = document.getElementById("studioClose");
+    const toggleBtn = document.getElementById("studioNavToggle");
 
-    if (!menu || !openBtn || !closeBtn) return;
+    const brand = document.querySelector(".studio-brand");
+    const contact = document.querySelector(".studio-contact-link");
+
+    if (!menu || !toggleBtn) return;
 
     function openMenu() {
 
+        brand.style.opacity = "0";
+        contact.style.opacity = "0";
+
         menu.classList.add("active");
+        toggleBtn.classList.add("active");
+
         document.body.style.overflow = "hidden";
-        openBtn.classList.add("active");
+
+        toggleBtn.setAttribute("aria-label", "Close Menu");
 
     }
 
     function closeMenu() {
 
         menu.classList.remove("active");
+        toggleBtn.classList.remove("active");
+
         document.body.style.overflow = "";
-        openBtn.classList.remove("active");
+
+        toggleBtn.setAttribute("aria-label", "Open Menu");
+
+        menu.addEventListener("transitionend", function handler(e) {
+
+            if (e.propertyName === "transform") {
+
+                brand.style.opacity = "";
+                contact.style.opacity = "";
+
+                menu.removeEventListener("transitionend", handler);
+
+            }
+
+        });
 
     }
 
     function toggleMenu() {
 
         if (menu.classList.contains("active")) {
+
             closeMenu();
+
         } else {
+
             openMenu();
+
         }
 
     }
 
-    openBtn.addEventListener("click", toggleMenu);
-
-    closeBtn.addEventListener("click", closeMenu);
+    toggleBtn.addEventListener("click", toggleMenu);
 
     document.addEventListener("keydown", (e) => {
 
         if (e.key === "Escape") {
+
             closeMenu();
+
         }
 
     });
@@ -348,8 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-});   <!-- THIS WAS MISSING -->
-
+});
 </script>
  
 </body>
