@@ -2772,7 +2772,7 @@ Responsive
 
     color:#777;
 
-    margin-bottom:22px;
+    margin-bottom:clamp(16px, 2vw, 22px);
 
 }
 
@@ -2786,7 +2786,7 @@ Responsive
 
     letter-spacing:-2px;
 
-    margin-bottom:30px;
+     margin-bottom:clamp(20px, 3vw, 30px);
 
 }
 
@@ -2800,7 +2800,7 @@ Responsive
 
     color:#a5a5a5;
 
-    margin-bottom:120px;
+        margin-bottom:clamp(60px, 8vw, 120px);
 
 }
 
@@ -3006,23 +3006,19 @@ Responsive
 
 @media(max-width:600px){
 
-.collaboration-cloud{
+    .collaboration-cloud{
 
-    grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
 
-}
+        gap:30px 20px;
 
-.collaboration-heading{
+    }
 
-    font-size:36px;
+    .collaboration-logo img{
 
-}
+        max-width:120px !important;
 
-.collaboration-description{
-
-    font-size:16px;
-
-}
+    }
 
 }
 
