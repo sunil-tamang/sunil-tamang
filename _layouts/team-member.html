@@ -1,0 +1,120 @@
+---
+layout: default
+---
+
+<section class="team-page">
+
+    <div class="team-header">
+
+        <img class="profile-photo"
+             src="{{ site.baseurl }}{{ page.photo }}"
+             alt="{{ page.name }}">
+
+        <div class="team-info">
+            <h1>{{ page.name }}</h1>
+            <p class="role">{{ page.role }}</p>
+        </div>
+
+    </div>
+
+    <div class="team-bio">
+        {{ content }}
+    </div>
+
+</section>
+
+<style>
+.team-page {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: auto;
+    color: #fff;
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.profile-photo {
+    width: 240px;
+    height: auto;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.team-info h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.role {
+    opacity: .7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.team-bio {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    .team-page {
+        padding: 60px 20px;
+    }
+
+    .team-header {
+        gap: 25px;
+    }
+
+    .profile-photo {
+        width: 180px;
+    }
+
+    .team-info h1 {
+        font-size: 2.2rem;
+    }
+
+    .team-bio {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .team-header {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .profile-photo {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .team-info h1 {
+        font-size: 2rem;
+    }
+
+    .role {
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+    }
+
+    .team-bio {
+        font-size: 0.98rem;
+        line-height: 1.7;
+    }
+}
+</style>

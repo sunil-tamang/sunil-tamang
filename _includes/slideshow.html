@@ -1,0 +1,29 @@
+
+
+<div class="slideshow">
+    {% for slide in include.slides %}
+        <div class="slide">
+            <img src="{{ site.baseurl }}{{ slide.image }}" alt="Slide Image">
+            <div class="caption">{{ slide.caption }}</div>
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('.slideshow').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            variableWidth: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            appendDots: $('.slideshow'),
+            customPaging : function(slider, i) {
+                var slideNumber = (i + 1),
+                    totalSlides = slider.slideCount;
+                return '<div class="progress-bar"><span class="slide-number">' + slideNumber + '</span></div>';
+            }
+        });
+    });
+</script>

@@ -1,0 +1,60 @@
+---
+layout: default
+permalink: /stills/
+---
+
+
+<section class="stills-page">
+
+    <div class="stills-header">
+
+        <h1>STILLS</h1>
+
+        <p>
+            A selection of photographs captured during expeditions,
+            climbs and documentary projects across the Himalaya.
+        </p>
+
+    </div>
+
+    <div class="stills-grid">
+
+        {% for photo in site.data.photos %}
+
+        <figure class="still">
+
+            <img
+                src="{{ photo.image_url | relative_url }}"
+                alt="{{ photo.title }}">
+
+            <figcaption>
+
+                <h3>{{ photo.title }}</h3>
+
+                {% if photo.location %}
+                <span>{{ photo.location }}</span>
+                {% endif %}
+
+            </figcaption>
+
+        </figure>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<script>
+    $(document).ready(function () {
+        $('.slider').slick({
+            autoplay: true,
+            dots: true,
+            arrows: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+    });
+</script>

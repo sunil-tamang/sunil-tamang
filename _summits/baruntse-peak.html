@@ -1,0 +1,43 @@
+---
+layout: default
+title: Baruntse Peak
+name: Baruntse Peak
+elevation: 8848
+country: Nepal
+year: 2018
+image: "/assets/css/images/everest/banner.jpg"
+
+---
+
+
+
+
+<div class="about-me-row container-wide row--padding-medium">
+
+    <div class="intro-section">
+
+        <h1 class="content__title" style="font-size: .9em;">{{ page.name }}</h1>
+       
+        <p> Welcome to my world of adventure! I am Sunil Ghalan, an ardent
+            mountaineer and filmmaker, anchored in the very heart of the thrill-seeking
+            spirit. My life's narrative revolves around scaling new heights and capturing
+            awe-inspiring moments that unfold amidst the world's most formidable peaks.
+        </p>
+       
+    </div>
+
+    <ul class="photo-list">
+        {% for photo in site.data.baruntse %}
+            <li class="photo-item">
+               
+                <!-- <p>Location:   {{ photo.location }}</p> -->
+                <img src="{{ site.baseurl }}/{{ photo.image_url }}" alt="{{ photo.title }}" class="photo-img">
+                <!-- <h2>{{ photo.title }}</h2> -->
+            </li>
+        {% endfor %}
+    </ul>
+
+
+</div>
+
+

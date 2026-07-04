@@ -1,0 +1,135 @@
+---
+layout: default
+title: Films
+permalink: /films/
+---
+
+<!-- <link rel="stylesheet" href="{{ '/assets/css/films.css' | relative_url }}"> -->
+
+<!-- <section class="films-page">
+
+  <h1 class="films-title">Films</h1>
+
+  <div class="films-grid">
+
+    {% for pair in site.data.films %}
+      {% assign slug = pair[0] %}
+      {% assign film = pair[1] %}
+
+      <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}" class="film-card">
+
+       
+        <img class="film-thumb" src="{{ film.thumbnail | relative_url }}" alt="{{ film.title }}">
+
+
+        {% if film.hover_video %}
+        <video class="film-video" muted preload="metadata" loop>
+          <source src="{{ film.hover_video | relative_url }}" type="video/mp4">
+        </video>
+        {% endif %}
+
+        <div class="film-info">
+          <h2 class="film-title">{{ film.title }}</h2>
+          <p class="film-meta">{{ film.year }} • {{ film.category }}</p>
+        </div>
+
+      </a>
+
+    {% endfor %}
+
+  </div>
+
+</section> -->
+
+
+
+<section class="films-page">
+
+    <div class="films-header">
+
+        <h1>WORK</h1>
+
+        <div class="view-switch">
+
+            <button class="active" id="gridBtn">Grid</button>
+
+            <span>/</span>
+
+            <button id="listBtn">List</button>
+
+        </div>
+
+    </div>
+
+    <div class="films-grid" id="filmsGrid">
+
+        {% for pair in site.data.films %}
+        {% assign slug = pair[0] %}
+        {% assign film = pair[1] %}
+
+        <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}"
+        class="film-card">
+
+            <img
+                class="film-thumb"
+                src="{{ film.thumbnail | relative_url }}"
+                alt="{{ film.title }}">
+
+            {% if film.hover_video %}
+            <video
+                class="film-video"
+                muted
+                loop
+                playsinline
+                preload="auto">
+
+                <source
+                    src="{{ film.hover_video | relative_url }}"
+                    type="video/mp4">
+
+            </video>
+            {% endif %}
+            <div class="film-overlay">
+
+                <h2>{{ film.title }}</h2>
+                <p>{{ film.category }}</p>
+
+            </div>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+
+
+    <div class="films-list" id="filmsList">
+
+        {% for pair in site.data.films %}
+        {% assign slug = pair[0] %}
+        {% assign film = pair[1] %}
+
+        <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}"
+           class="film-row">
+
+            <span class="film-name">
+                {{ film.title }}
+            </span>
+
+            <span class="film-category">
+                {{ film.category }}
+            </span>
+
+            <span class="film-year">
+                {{ film.year }}
+            </span>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+

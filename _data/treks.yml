@@ -1,0 +1,8 @@
+
+- name: Langtang
+  elevation: 8848
+  country: Nepal
+  year: 2018
+  image: "/css/images/langtang.jpg" # Adjust the path accordingly
+  slug: langtang
+  

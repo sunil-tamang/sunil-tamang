@@ -1,0 +1,17 @@
+- id: sunil
+  name: SUNIL TAMANG
+  role: CO-FOUNDER / DIRECTOR
+  hover_image: /assets/css/images/team/renan.jpg
+  photo: /assets/css/images/team/renan.jpg
+
+- id: sonam
+  name: Sonam Tshering Lama
+  role: CO-FOUNDER / DIRECTOR
+  hover_image: /assets/css/images/team/taylor.jpg
+  # photo: /assets/css/images/team/taylor-profile.jpg
+
+# - id: eric
+#   name: MINGMA SHERPA
+#   role: DIRECTOR
+#   hover_image: /assets/css/images/team/eric.jpg
+#   photo: /assets/css/images/team/eric.jpg

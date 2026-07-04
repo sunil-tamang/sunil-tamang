@@ -1,0 +1,133 @@
+xander:
+  title: "32 Days In The Himalayas"
+  year: 2025
+  category: "Documentary"
+  client: "Xander Budnick"
+  duration: "24:53"
+  thumbnail: "/assets/css/images/films/xander.jpg"
+  poster: "/assets/css/images/films/xander.jpg"
+  youtube: "https://www.youtube.com/embed/5uAld7-FhCY?si=WUkqyFnf5ZFD7HEm"
+  hover_video: "/assets/css/video/banner4.mp4"  
+
+  description: >
+    Xander Budnick sets out on a high-altitude expedition to reach Everest Base Camp
+    and attempt to summit Ama Dablam with his brother.
+
+  gallery:
+    - "/assets/css/images/films/xander/gallery-1.jpg"
+    - "/assets/css/images/films/xander/gallery-2.jpg"
+    - "/assets/css/images/films/xander/gallery-3.jpg"
+    - "/assets/css/images/films/xander/gallery-4.jpg"
+    - "/assets/css/images/films/xander/gallery-5.jpg"
+    - "/assets/css/images/films/xander/gallery-6.jpg"
+    - "/assets/css/images/films/xander/gallery-7.jpg"
+
+  director: "Xander Budnick"
+  cinematography: "Sunil Tamang"
+  editor: "Kyle Poole"
+  producer: "Elevation Lab"
+  location: "Nepal"
+
+
+ebc-night:
+  title: "Expedição ao Everest - V8.Tech"
+  year: 2025
+  category: "Documentary"
+  client: "Rodrigo Xavier"
+  duration: "7:55 min"
+  thumbnail: "/assets/css/images/films/everest.jpg"
+  poster: "/assets/css/images/films/everest.jpg"
+  youtube: "https://www.youtube.com/embed/RcA4YabQgxU?si=SZ89xV4mmoAIjPqD"
+  hover_video: "/assets/css/video/banner2.mp4"  
+  description: "Expedition to Everest (May/2025), led by Rodrigo Xavier, CEO of V8.Tech, with the bold objective of reaching the top of the world in under 30 days, challenging physical and mental limits in one of the most intense journeys ever undertaken by a Brazilian. After a month of pre-acclimatization in a hypoxic chamber and meticulously planned logistics, Rodrigo faced extreme temperatures, death zones, aerial rescues, and his own human vulnerability at over 8,000 meters of altitude. His journey took place on the greatest symbol of world mountaineering, set against a backdrop of fear, overcoming, and love for life and family."
+  gallery:
+    - "/assets/css/images/films/dacio/gallery-1.jpg"
+    - "/assets/css/images/films/dacio/gallery-2.jpg"
+    - "/assets/css/images/films/dacio/gallery-3.jpg"
+    - "/assets/css/images/films/dacio/gallery-4.jpg"
+    - "/assets/css/images/films/dacio/gallery-5.jpg"
+    - "/assets/css/images/films/dacio/gallery-6.jpg"
+    - "/assets/css/images/films/dacio/gallery-7.jpg"
+  
+
+  director: "Murilo Vargas"
+  cinematography: "Sunil Tamang"
+  editor: "Nunes"
+  producer: "Elevation Lab"
+  location: "Nepal"
+  
+  tags:
+    - drone
+    - documentary
+    - himalayas
+    
+everest:
+  title: "Life In Death Zone"
+  year: 2026
+  category: "Documentary"
+  client: "Xander Budnick"
+  duration: "24:53"
+  thumbnail: "/assets/css/images/films/everest-xander.jpg"
+  poster: "/assets/css/images/films/everest-xander.jpg"
+  youtube: "https://www.youtube.com/embed/5uAld7-FhCY?si=WUkqyFnf5ZFD7HEm"
+  hover_video: "/assets/css/video/banner.mp4"  
+  description: >
+    Xander Budnick sets out on a high-altitude expedition to reach Everest Base Camp
+    and attempt to summit Ama Dablam with his brother.
+
+  gallery:
+    - "/assets/css/images/films/xander/gallery-1.jpg"
+    - "/assets/css/images/films/xander/gallery-2.jpg"
+    - "/assets/css/images/films/xander/gallery-3.jpg"
+    - "/assets/css/images/films/xander/gallery-4.jpg"
+    - "/assets/css/images/films/xander/gallery-5.jpg"
+    - "/assets/css/images/films/xander/gallery-6.jpg"
+    - "/assets/css/images/films/xander/gallery-7.jpg"
+
+  director: "Xander Budnick"
+  cinematography: "Sunil Tamang"
+  editor: "Kyle Poole" 
+  producer: "Elevation Lab"
+  location: "Nepal"
+
+
+decio-gomes:
+  title: "A jornada continua e o cume nos espera!"
+  year: 2025
+  category: "Documentary"
+  client: "Décio Gomes"
+  duration: "24:53 min"
+  thumbnail: "/assets/css/images/films/everest-dacio.jpg"
+  poster: "/assets/css/images/films/everest-dacio.jpg"
+  youtube: "https://www.youtube.com/embed/fFi2UAhg8lM?si=fbouIdLA2hjGa0yl"
+  # hover_video: "/assets/css/video/dacio-teaser.mp4" 
+  hover_video: "/assets/css/video/banner5.mp4"   
+  description: "Follow Decio Gomes, President of the DVG Group, on his audacious journey to the top of Mount Everest. This is more than a climbing film—it is a raw, intimate portrait of a leader applying the core principles of business—strategy, resilience, and mental fortitude—in the most extreme environment on Earth."
+  
+  gallery:
+  - "/assets/css/images/films/dacio/gallery-1.jpg"
+  - "/assets/css/images/films/dacio/gallery-2.jpg"
+  - "/assets/css/images/films/dacio/gallery-3.jpg"
+  - "/assets/css/images/films/dacio/gallery-4.jpg"
+  - "/assets/css/images/films/dacio/gallery-5.jpg"
+  - "/assets/css/images/films/dacio/gallery-6.jpg"
+  - "/assets/css/images/films/dacio/gallery-7.jpg"
+ 
+  director: "Murilo Vargas"
+  cinematography: "Sunil Tamang"
+  editor: "Nunes"
+  producer: "Elevation Lab"
+  location: "Nepal"
+    
+  tags:
+    - cinematic
+    - drone 
+    - fpv
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+
+<div class="about-me-row container-wide row--padding-medium">
+
+
+    <h1 class="content__title" style="font-size: 2.5em;">Mount Everest</h1>
+
+
+    
+
+    <div class="intro-section">
+
+        <h1 class="content__title" style="font-size: .9em;">{{ page.name }}</h1>
+       
+        <p> Welcome to my world of adventure! I am Sunil Ghalan, an ardent
+            mountaineer and filmmaker, anchored in the very heart of the thrill-seeking
+            spirit. My life's narrative revolves around scaling new heights and capturing
+            awe-inspiring moments that unfold amidst the world's most formidable peaks.
+        </p>
+       
+    </div>
+
+    <ul class="photo-list">
+        {% for photo in site.data.photos %}
+            <li class="photo-item">
+               
+                <!-- <p>Location:   {{ photo.location }}</p> -->
+                <img src="{{ site.baseurl }}{{ photo.image_url }}" alt="{{ photo.title }}" class="photo-img">
+                <!-- <h2>{{ photo.title }}</h2> -->
+            </li>
+        {% endfor %}
+    </ul>
+
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.slider').slick({
+            autoplay: true,
+            dots: true,
+            arrows: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+    });
+</script>

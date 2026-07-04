@@ -1,0 +1,955 @@
+---
+layout: 'default'
+slick_css: 'Yes'
+slick_js: 'Yes'
+author_name : "  "
+custom_bg: "bg/banner.jpg"
+tags : "Everest Base Camp Trek, Annapurna Circuit Trek, Annapurna Base Camp Trek, Langtang Valley Trek, Upper Mustang Trek, Manaslu Circuit Trek, Makalu Base Camp Trek "
+description : ""
+---
+
+
+
+
+
+
+
+<!--- B-A-N-N-E-R -->
+
+
+
+
+
+<!-- <div class="banner ">
+    <img src="/assets/css/images/banner.jpg" alt="Banner Image">
+    <div class="overlay"></div>
+    <div class="banner-content">
+        <h1>SUNIL TAMANG</h1>
+        <p>Your Subtitle or Tagline</p>
+    </div>
+</div> -->
+
+
+
+<!-- {% for summit in site.data.summit %}
+  <div class="card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
+    <div class="overlay">
+      <h2><a href="{{ summit.slug | prepend: '/summits/' | relative_url }}">{{ summit.name }}</a></h2>
+      <p>Elevation: {{ summit.elevation }} meters</p>
+      <p>Country: {{ summit.country }}</p>
+      <p>Year: {{ summit.year }}</p>
+    </div>
+  </div>
+{% endfor %} -->
+
+
+{% assign video_slide = site.data.slideshow.slides | where: "type", "video" | first %}
+
+{% if video_slide %}
+<div class="banner video-banner">
+
+    <video class="banner-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        controlsList="nodownload nofullscreen noremoteplayback"
+        oncontextmenu="return false">
+
+        <source src="{{ site.baseurl }}{{ video_slide.src }}" type="video/mp4">
+
+    </video>
+
+        <!-- Dark overlay -->
+        <div class="video-overlay"></div>
+
+        <!-- Hero Content -->
+
+        <div class="banner-story">
+
+            <div class="banner-story-content">
+
+                <h1 class="banner-story-title">
+
+                    Stories<br>
+                    from the<br>
+                    Himalayas.
+
+                </h1>
+
+                <p class="banner-story-text">
+
+                    Expedition documentaries from the
+                    highest mountains on Earth.
+
+                </p>
+
+            </div>
+
+            <a href="#" class="banner-scroll" id="heroScroll">
+
+                <span>Scroll</span>
+
+                <span class="banner-scroll-arrow">
+                    ↓
+                </span>
+
+            </a>
+        </div>
+
+</div>
+<!-- <div class="banner video-banner">
+    <video class="banner-video"
+       autoplay muted loop playsinline preload="auto"
+       controlsList="nodownload nofullscreen noremoteplayback"
+       oncontextmenu="return false;">
+      <source src="{{ site.baseurl }}{{ video_slide.src }}" type="video/mp4">
+    </video>  
+    
+<div class="overlay">
+    <span>Filmmaker</span>
+    <span class="dot">•</span>
+    <span>Cinematographer</span>
+    <span class="dot">•</span>
+    <span>Explorer</span>
+</div>
+    
+    <div class="overlay">
+     
+        <div class="container-wide row--padding-medium">
+            <div class="menu-block-container">
+                 <a href="{{ site.baseurl }}/team" class="menu-block">
+                    <div class="menu-block-overlay">
+                        <h2 class="menu-block-title">TEAM</h2>
+                    </div>
+                </a>
+                <a href="{{ site.baseurl }}/films" class="menu-block">
+                    <div class="menu-block-overlay">
+                        <h2 class="menu-block-title">FILMS</h2>
+                    </div>
+                </a>
+                <a href="{{ site.baseurl }}/about" class="menu-block">
+                    <div class="menu-block-overlay">
+                        <h2 class="menu-block-title">ABOUT</h2>
+                    </div>
+                </a>
+            </div>
+        </div> 
+    </div>
+</div> -->
+{% endif %}
+
+
+
+<!-- <section class="intro-profile-section">
+
+    <div class="intro-profile-wrapper">
+
+
+        <div class="intro-profile-image">
+
+            <img
+                src="{{ site.baseurl }}{{ '/assets/css/images/team/taylor.jpg' | relative_url }}"
+                alt="Sunil Tamang">
+
+        </div>
+
+
+        <div class="intro-profile-content">
+
+            <div class="intro-profile-line"></div>
+
+            <h2 class="intro-profile-title">
+
+                Hey,<br>
+                I'm <span>Sunil</span>
+
+            </h2>
+
+            <p class="intro-profile-text">
+
+                I'm an <strong>Expedition Filmmaker</strong>,
+                <strong>Mountaineer</strong>, and aspiring
+                <strong>NNMGA Mountain Guide</strong> based in Nepal.
+
+                I create cinematic documentaries that capture
+                exploration, high-altitude expeditions, and life
+                in some of the world's most remote mountain
+                landscapes.
+
+            </p>
+
+            <a
+                href="{{ '/about/' | relative_url }}"
+                class="intro-profile-button">
+
+                READ MY STORY →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section> -->
+
+<section class="cinematic-intro-section" id="cinematic-intro">
+
+    <div class="cinematic-intro-wrapper">
+
+        <div class="cinematic-intro-image">
+
+            <img
+                src="{{ site.baseurl }}{{ '/assets/css/images/team/taylor.jpg' | relative_url }}"
+                alt="Sunil Tamang">
+
+        </div>
+
+        <div class="cinematic-intro-content">
+
+            <span class="cinematic-intro-label">
+
+                EXPEDITION FILMMAKER
+
+            </span>
+
+            <h2 class="cinematic-intro-name">
+
+                Sunil Tamang
+
+            </h2>
+
+            <p class="cinematic-intro-description">
+
+                Documenting the world's highest mountains through cinematic
+                storytelling while pursuing the path to becoming an
+                internationally certified mountain guide.
+
+            </p>
+
+            <a href="{{ '/about/' | relative_url }}"
+               class="cinematic-intro-link">
+
+                READ STORY →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- <section class="hero-intro-section">
+
+    <div class="hero-intro-wrapper">
+
+
+        <div class="hero-intro-left">
+
+            <span class="hero-intro-label">
+                INTRODUCTION
+            </span>
+
+            <h2 class="hero-intro-title">
+
+                HEY,<br>
+                I'M<br>
+                SUNIL
+
+            </h2>
+
+        </div>
+
+
+        <div class="hero-intro-photo">
+
+            <img src="{{ stie.baseurl }}{{ '/assets/css/images/team/taylor.jpg' | relative_url }}"
+                 alt="Sunil Tamang">
+
+        </div>
+
+
+        <div class="hero-intro-right">
+
+            <p>
+
+                Expedition filmmaker, mountaineer, and aspiring NNMGA / IFMGA
+                Mountain Guide based in Nepal. I create cinematic documentaries
+                that capture the beauty, struggle, and human stories found in
+                the world's highest mountains.
+
+            </p>
+
+            <a href="{{ '/about/' | relative_url }}" class="">
+
+                READ STORY →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section> -->
+
+<!-- <section class="about-section">
+
+    <div class="about-container">
+
+        <div class="about-line"></div>
+
+        <h2 class="about-title reveal-up">
+            Hey, I'm Sunil
+        </h2>
+
+        <p class="about-text reveal-up">
+             I'm  an <strong>Expedition Filmmaker</strong>, <strong>Mountaineer</strong>, and aspiring <strong>NNMGA/IFMGA Mountain Guide</strong> based in Nepal. I create cinematic documentaries that capture the spirit of exploration, high-altitude expeditions, and life in some of the world's most remote mountain landscapes.
+        </p>
+
+        <a href="{{ site.baseurl }}/about" class="about-button">
+            READ MY STORY
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section> -->
+
+
+<!-- <section class="memberships">
+
+    <div class="memberships-header">
+
+        <p class="memberships-subtitle">
+            PROFESSIONAL MEMBERSHIPS
+        </p>
+
+        <h2>
+            Certified & Affiliated
+        </h2>
+
+    </div>
+
+    <div class="memberships-grid">
+
+        <a href="https://www.nnmga.org/" target="_blank" class="membership-card">
+
+            <img
+                src="{{ site.baseurl }}{{ '/assets/css/images/logos/nnmga.png' | relative_url }}"
+                alt="NNMGA">
+
+            <span>
+                Nepal National Mountain Guide Association
+            </span>
+
+        </a>
+
+        <a href="https://ifmga.info/" target="_blank" class="membership-card">
+
+            <img
+                src="{{ site.baseurl }}{{ '/assets/css/images/logos/ifmga.png' | relative_url }}"
+                alt="IFMGA">
+
+            <span>
+                International Federation of Mountain Guides Associations
+            </span>
+
+        </a>
+
+    </div>
+
+</section> -->
+
+
+
+
+
+<section class="guide-path-section">
+
+    <div class="guide-path-container">
+
+        <div class="guide-path-heading">
+
+            <div class="guide-path-title-block">
+
+                <span class="guide-path-word">
+                    THE
+                </span>
+
+                <span class="guide-path-word guide-path-word-light">
+                    NEXT
+                </span>
+
+                <span class="guide-path-word">
+                    ASCENT
+                </span>
+
+            </div>
+
+            <div class="guide-path-text">
+
+                <span class="guide-path-label">
+
+                    PROFESSIONAL JOURNEY
+
+                </span>
+
+                <p>
+
+                    Beyond filmmaking, I'm building the skills to safely lead
+                    people in the mountains through Nepal's highest level of
+                    mountain guide education.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="guide-path-roadmap">
+
+            <!-- Current -->
+
+            <div class="guide-path-card guide-current">
+
+                <span class="guide-status">
+
+                    CURRENT
+
+                </span>
+
+                <img
+                    src="{{ '/assets/css/images/logos/nnmga.png' | relative_url }}"
+                    alt="NNMGA">
+
+                <h3>
+
+                    NNMGA
+
+                </h3>
+
+                <p>
+
+                    Mountain Guide Candidate
+
+                </p>
+
+            </div>
+
+            <!-- Arrow -->
+
+            <div class="guide-path-middle">
+
+                <div class="guide-line"></div>
+
+                <div class="guide-arrow">
+
+                    →
+
+                </div>
+
+                <div class="guide-line"></div>
+
+            </div>
+
+            <!-- Future -->
+
+            <div class="guide-path-card guide-future">
+
+                <span class="guide-status">
+
+                    FUTURE GOAL
+
+                </span>
+
+                <a href="https://ifmga.info/" target="_blank">
+
+                    <img
+                        src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}"
+                        alt="IFMGA">
+
+                </a>
+
+                <h3>
+
+                    IFMGA
+
+                </h3>
+
+                <p>
+
+                    International Mountain Guide
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- <section class="professional-journey">
+
+    <div class="journey-container">
+
+        <h2 class="journey-title">
+            Professional Journey
+        </h2>
+
+        <p class="journey-text">
+            Developing as an expedition filmmaker while progressing through Nepal's highest standard of mountain guide education.
+        </p>
+
+        <div class="journey-logos">
+
+
+            <div class="journey-item">
+
+                <a href="https://nnmga.org.np/" target="_blank" class="journey-logo-link">
+
+                    <img
+                        src="{{ '/assets/css/images/logos/nnmga.png' | relative_url }}"
+                        alt="Nepal National Mountain Guide Association">
+
+                </a>
+
+                <h3>NNMGA</h3>
+
+                <p>Mountain Guide Candidate</p>
+
+            </div>
+
+
+            <div class="journey-divider"></div>
+
+
+
+            <div class="journey-item journey-future">
+
+                <a href="https://ifmga.info/" target="_blank" class="journey-logo-link">
+
+                    <img
+                        src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}"
+                        alt="International Federation of Mountain Guides Associations">
+
+                </a>
+
+                <h3>IFMGA</h3>
+
+                <p>Future Goal</p>
+
+                <small>
+                    Aspiring International Mountain Guide
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section> -->
+
+<section class="collaboration-showcase">
+
+    <div class="collaboration-wrapper">
+
+        <span class="collaboration-label">
+            SELECTED COLLABORATIONS
+        </span>
+
+        <h2 class="collaboration-heading">
+
+            Stories created together.
+
+        </h2>
+
+        <p class="collaboration-description">
+
+            I've collaborated with production companies, expedition teams,
+            and outdoor brands to document stories across the Himalayas—
+            from commercial campaigns to high-altitude documentaries.
+
+        </p>
+
+        <div class="collaboration-cloud">
+
+            <div class="collaboration-logo collaboration-netflix">
+                <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/netflix.jpg' | relative_url }}" alt="Netflix">
+            </div>
+
+            <div class="collaboration-logo collaboration-discovery">
+                <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/discovery.png' | relative_url }}" alt="Discovery">
+            </div>
+
+            <div class="collaboration-logo collaboration-dvg">
+                <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/DVG.png' | relative_url }}" alt="DVG">
+            </div>
+
+            <div class="collaboration-logo collaboration-v8">
+                <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/V8.png' | relative_url }}" alt="V8">
+            </div>
+
+            <div class="collaboration-logo collaboration-natgeo">
+                <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/natgeo.jpg' | relative_url }}" alt="National Geographic">
+            </div>
+
+            <div class="collaboration-logo collaboration-tnf">
+                <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/thenorthface.jpg' | relative_url }}" alt="The North Face">
+            </div>
+
+            <div class="collaboration-logo collaboration-scarpa">
+                <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/scarpa.jpeg' | relative_url }}" alt="Scarpa">
+            </div>
+
+            <div class="collaboration-logo collaboration-osprey">
+                <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/redbull.png' | relative_url }}" alt="RedBull">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- <section class="trusted-by">
+
+    <div class="trusted-container">
+
+        <div class="trusted-divider"></div>
+
+        <h2 class="trusted-title">
+            Trusted By
+        </h2>
+
+        <p class="trusted-text">
+            Organizations and brands I've collaborated with while documenting
+            expeditions throughout the Himalayas.
+        </p>
+
+        <div class="trusted-divider"></div>
+
+        <div class="trusted-logos">
+
+            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/netflix.jpg' | relative_url }}" alt="Netflix">
+
+            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/discovery.svg' | relative_url }}" alt="Discovery">
+
+            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/DVG.png' | relative_url }}" alt="DVG">
+
+            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/V8.png' | relative_url }}" alt="V8">
+
+            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/natgeo.jpg' | relative_url }}" alt="National Geographic">
+
+            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/thenorthface.jpg' | relative_url }}" alt="The North Face">
+
+            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/scarpa.jpeg' | relative_url }}" alt="Scarpa">
+
+            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/osprey.svg' | relative_url }}" alt="Osprey">
+
+        </div>
+
+    </div>
+
+</section> -->
+
+
+<!-- <section class="clients">
+
+    <div class="clients-container">
+
+        <p class="clients-title">
+            CLIENTS
+        </p>
+
+        <div class="clients-logos">
+
+            <img src="{{ site.baseurl }}/assets/css/images/clients/netflix.jpg" alt="Netflix">
+
+            <img src="{{ site.baseurl }}/assets/css/images/clients/discovery.svg" alt="Discovery">
+
+            <img src="{{ site.baseurl }}/assets/css/images/clients/DVG.png" alt="Red Bull">
+
+            <img src="{{ site.baseurl }}/assets/css/images/clients/V8.png" alt="BBC">
+            
+            <img src="{{ site.baseurl }}/assets/css/images/clients/natgeo.jpg" alt="National Geographic">
+
+            <img src="{{ site.baseurl }}/assets/css/images/clients/thenorthface.jpg" alt="The North Face">
+
+            <img src="{{ site.baseurl }}/assets/css/images/clients/scarpa.jpeg" alt="Scarpa">
+
+            <img src="{{ site.baseurl }}/assets/css/images/clients/osprey.svg" alt="Osprey">
+
+        </div>
+
+    </div>
+
+</section> -->
+
+
+
+<section class="featured-work">
+
+    <div class="film-catalogue-header">
+
+    <div class="film-catalogue-left">
+
+        <span class="film-catalogue-label">
+
+            FEATURED WORK
+
+        </span>
+
+        <div class="film-catalogue-number">
+
+            {{ site.data.films.size }}
+
+        </div>
+
+        <div class="film-catalogue-word">
+
+            FILMS
+
+        </div>
+
+    </div>
+
+    <div class="film-catalogue-right">
+
+        <p>
+
+            A curated collection of expedition documentaries,
+            commercial productions, and mountain stories filmed
+            across the Himalayas.
+
+        </p>
+
+        <div class="film-catalogue-navigation">
+
+            <button class="featured-prev">
+
+                ←
+
+            </button>
+
+            <button class="featured-next">
+
+                →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="featured-slider">
+
+    {% for pair in site.data.films %}
+
+    {% assign slug = pair[0] %}
+    {% assign film = pair[1] %}
+
+    <a href="{{ '/films/' | append: slug | append:'/' | relative_url }}"
+       class="featured-card">
+
+        <!-- VIDEO -->
+        <video
+            class="featured-video"
+            muted
+            autoplay
+            loop
+            playsinline
+            preload="metadata">
+
+            <source src="{{ film.hover_video | relative_url }}" type="video/mp4">
+
+        </video>
+
+        <!-- DARK OVERLAY -->
+        <div class="featured-overlay"></div>
+
+        <!-- TEXT OVERLAY -->
+        <div class="featured-overlay-text">
+
+            <h3>{{ film.title }}</h3>
+
+            <span>{{ film.category }}</span>
+
+        </div>
+
+    </a>
+
+    {% endfor %}
+
+</div>
+
+    <div class="featured-button">
+
+        <a href="{{ site.baseurl }}/films/">
+
+            VIEW ALL PROJECTS →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="banner-slider">
+    {% for slide in site.data.slideshow.slides %}
+      <div class="slide">
+        {% if slide.type == "image" %}
+          <img src="{{ slide.src }}" alt="{{ slide.alt }}">
+        {% elsif slide.type == "video" %}
+          <video autoplay muted class="slide-video" preload="metadata">
+            <source src="{{ slide.src }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        {% endif %}
+        <div class="overlay">
+          <div class="overlay-text">
+            {{ slide.overlay_text }}
+            {% if slide.additional_info %}
+              <div class="additional-info">{{ slide.additional_info }}</div>
+            {% endif %}
+          </div>
+          {% if slide.type == "video" %}
+            <button class="play-button">Play</button>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+   -->
+  
+<!-- <div class="container-wide row--padding-medium " >
+
+
+
+  <h1 class="content__title">EXPEDITIONS</h1> <br/>
+  
+  <div class="mountain-cards-container">
+    {% for summit in site.data.summit %}
+    <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="mountain-card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
+        <div class="mountain-overlays">
+            <h2 class="content__title"> {{ summit.name }}</h2>
+            <p class="summit-details">Elevation: {{ summit.elevation }} meters</p>
+            <p class="summit-details">Country: {{ summit.country }}</p>
+            <p class="summit-details">Year: {{ summit.year }}</p>
+        </div>
+    </a>
+
+    {% endfor %}
+
+
+
+</div>
+
+
+</div> -->
+
+<!-- <div class="container-wide row--padding-wide" >
+
+  <h1 class="content__title">HIKING </h1> <br/>
+
+
+<div class="card-container">
+  {% for summit in site.data.treks %}
+  <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
+    <div class="overlays">
+      <h2 class="content__sub-title_child">Project - {{ summit.name }}</h2>
+      <video class="video" loop muted playsinline preload="none" data-src="{{ summit.video | prepend: '/assets' | relative_url }}">
+        <source src="{{ summit.video | prepend: '/assets' | relative_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+ 
+  
+
+</div> -->
+
+<!-- <div class="container-wide row--padding-wide" >
+
+  <h1 class="content__title">THe Alpine Films -  My Works</h1> <br/>
+
+
+<div class="card-container">
+  {% for summit in site.data.films %}
+  <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
+    <div class="overlays">
+      <h2 class="content__sub-title_child">Project - {{ summit.name }}</h2>
+      <video class="video" loop muted playsinline preload="none" data-src="{{ summit.video | prepend: '/assets' | relative_url }}">
+        <source src="{{ summit.video | prepend: '/assets' | relative_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+ 
+  
+
+</div> -->
+
+
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "WebSite",
+	"name": "{{ site.url }}{{ page.url }}",
+	"url": "{{ site.url }}{{ page.url }}"
+	}
+</script>
+	
+	
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    const video = document.querySelector(".banner-video");
+    const banner = document.querySelector(".video-banner");
+
+    if (!video || !banner) return;
+
+    /* Fade-in when video loads */
+    video.addEventListener("loadeddata", () => {
+        banner.style.opacity = "1";
+    });
+
+    /* Fallback if video fails */
+    video.addEventListener("error", () => {
+        banner.style.background = "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)";
+    });
+
+    /* Disable right-click on video */
+    video.addEventListener("contextmenu", (e) => e.preventDefault());
+
+    /* Disable right-click on the entire banner */
+    banner.addEventListener("contextmenu", (e) => e.preventDefault());
+
+    /* Disable ALL mouse interactions on video */
+    video.style.pointerEvents = "none";
+});
+
+</script>

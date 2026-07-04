@@ -1,0 +1,29 @@
+slides:
+  - type: image
+    src: "/assets/css/images/banner.jpg"
+    alt: "Image 1"
+    overlay_text: " <p>I'm Sensai Pema Waiba, a passionate mountaineer and filmmaker driven by the adrenaline of exploration.   My world revolves around conquering towering peaks and immortalizing breathtaking moments on film. Join me on my quest for adventure!</p> "
+
+  - type: video
+    src: "/assets/css/video/banner.mp4"
+    # overlay_text: "Overlay text for image 1"
+
+  - type: video
+    src: "/assets/css/video/banner.mp4"
+    # overlay_text: "Overlay text for image 1"
+ 
+ 
+  - type: image
+    src: "/assets/css/images/everest.jpg"
+    # overlay_text: "Overlay text for image 1"
+    alt: "Image 2"
+
+  - type: image
+    src: "/assets/css/images/manaslu.jpg"
+    # overlay_text: "Overlay text for image 1"
+    alt: "Image 3"  
+  
+
+  
+
+

@@ -1,0 +1,53 @@
+---
+layout: default
+title: 404 | Page Not Found
+no-index: "yes"
+---
+
+<style type="text/css" media="screen">
+	.header
+	{    
+		background: rgba(0, 0, 0, 0.9) !important;
+	}
+    .container-errorFoF {
+        padding: 8em 1em;
+        max-width: 600px;
+        text-align: center;
+        margin: auto;
+    }
+    h1.errorFoF {
+        margin: 30px 0;
+        font-size: 4em;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+    .fa.FoFsearch::before{
+        content: '0';
+    }
+    body{
+        background-color: #fff;
+        color: #000;
+    }
+    .overlay-blur{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/assets/css/images/static.gif');
+        background-repeat: repeat;
+        background-position: top left;
+        z-index: -1;
+        opacity: .15;
+    }
+</style>
+
+<div style="position: relative;">
+    <span class="overlay-blur"></span>
+    <div class="container-errorFoF">
+        <h1 class="errorFoF" style="font-variant: normal;">4<i class="fa fa-search FoFsearch"></i>4</h1>
+
+        <p><strong>Page not found :(</strong></p>
+        <p>Let's go <a href="/">Home</a>. Maybe you'll find there what you are looking for.</p>
+    </div>
+</div>

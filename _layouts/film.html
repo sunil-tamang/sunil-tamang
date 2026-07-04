@@ -1,0 +1,205 @@
+---
+layout: default
+---
+
+{% assign film = site.data.films[page.slug] %}
+
+<section class="film-project">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <div class="film-header">
+
+        <h1 class="film-title">
+            {{ film.title }}
+        </h1>
+
+        <div class="film-meta">
+
+            <div class="meta-item">
+                <span>Category</span>
+                <strong>{{ film.category }}</strong>
+            </div>
+
+            <div class="meta-item">
+                <span>Client</span>
+                <strong>{{ film.client }}</strong>
+            </div>
+
+            <div class="meta-item">
+                <span>Year</span>
+                <strong>{{ film.year }}</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         VIDEO HERO
+    ========================== -->
+
+<!-- =====================================
+     VIDEO HERO
+====================================== -->
+
+<div
+    class="film-video-banner"
+    id="openVideo"
+    data-video="{{ film.youtube }}">
+
+    <img
+        src="{{ film.poster | relative_url }}"
+        alt="{{ film.title }}">
+
+    <div class="film-video-overlay"></div>
+
+    <div class="play-button">
+
+        <svg viewBox="0 0 24 24">
+
+            <path d="M8 5v14l11-7z"/>
+
+        </svg>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO POPUP
+====================================== -->
+
+<div class="video-modal" id="videoModal">
+
+    <div class="video-modal-box">
+
+        <button
+            class="video-close"
+            id="closeVideo">
+
+            ×
+
+        </button>
+
+        <iframe
+            id="youtubePlayer"
+            src=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+
+        </iframe>
+
+    </div>
+
+</div>
+
+    <!-- =========================
+         ABOUT + CREDITS
+    ========================== -->
+
+    <section class="film-details">
+
+        <div class="film-description">
+
+            <h2>About This Project</h2>
+
+            <p>
+
+                {{ film.description }}
+
+            </p>
+
+        </div>
+
+        <div class="film-credits">
+
+            <h2>Project Credits</h2>
+
+            <div class="credit">
+
+                <span>Director</span>
+
+                <strong>{{ film.director }}</strong>
+
+            </div>
+
+            <div class="credit">
+
+                <span>Cinematography</span>
+
+                <strong>{{ film.cinematography }}</strong>
+
+            </div>
+
+            <div class="credit">
+
+                <span>Editor</span>
+
+                <strong>{{ film.editor }}</strong>
+
+            </div>
+
+            <div class="credit">
+
+                <span>Producer</span>
+
+                <strong>{{ film.producer }}</strong>
+
+            </div>
+
+            <div class="credit">
+
+                <span>Location</span>
+
+                <strong>{{ film.location }}</strong>
+
+            </div>
+
+            <div class="credit">
+
+                <span>Duration</span>
+
+                <strong>{{ film.duration }}</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+{% if film.gallery %}
+
+<section class="film-gallery">
+
+    <div class="gallery-grid">
+
+        {% for image in film.gallery %}
+
+        <img
+            src="{{ image | relative_url }}"
+            alt="{{ film.title }}">
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
+</section>
+
+<script>
+
+</script>

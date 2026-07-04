@@ -1,0 +1,14 @@
+/*=====================BASE========================*/
+html{overflow-x: hidden;}
+html, body{ font-family: Montserrat, 'Montserrat', 'Lato', sans-serif; height: 100%; letter-spacing: 0.05em; font-variant: small-caps;}
+h1{ font-size: 2em; font-family: 'Montserrat',sans-serif; font-weight: 200;}
+p{line-height: 1.8em; font-family: 'Montserrat', sans-serif; font-weight: lighter; font-size: 1.2em;}
+a{ color: inherit; text-decoration: none;}
+a:hover{ text-decoration: none;}
+a:focus{ outline: 0;}
+*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+a,.no-select{ -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+*::selection {
+    background-color: #fb4a4a;
+    color:#fff;
+}

@@ -1,0 +1,54 @@
+---
+layout: default
+title: Our Story
+permalink: /team/
+---
+
+<section class="team-banner">
+
+    <!-- Background Video -->
+    <video id="teamVideo" autoplay muted loop playsinline oncontextmenu="return false;">
+        <source src="{{ site.baseurl }}/assets/css/video/banner.mp4" type="video/mp4">
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="video-overlay"></div>
+
+    <!-- Changing Image Overlay -->
+    <div class="photo-overlay"></div>
+
+    <!-- Dynamic Team Members -->
+    <div class="team-names">
+
+        {% for member in site.data.team %}
+        <a href="{{ site.baseurl }}/team/{{ member.id }}/"
+           class="team-member"
+           data-photo="{{ site.baseurl }}{{ member.hover_image }}">
+            <div class="role">{{ member.role }}</div>
+            <div class="name"><h2 class="menu-block-title">{{ member.name }}</h2></div>
+        </a>
+        
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<script>
+const overlay = document.querySelector(".photo-overlay");
+const video = document.getElementById("teamVideo");
+
+document.querySelectorAll(".team-member").forEach(member => {
+    member.addEventListener("mouseenter", () => {
+        overlay.style.backgroundImage = `url(${member.dataset.photo})`;
+        overlay.style.opacity = 1;
+        video.pause();
+    });
+
+    member.addEventListener("mouseleave", () => {
+        overlay.style.opacity = 0;
+        video.play();
+    });
+});
+</script>

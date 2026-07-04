@@ -1,0 +1,37 @@
+- name: Everest
+  elevation: 8,848 
+  country: Nepal
+  year: 2018
+  image: "/css/images/k2.jpg" # Adjust the path accordingly
+  slug: everest
+
+- name: Baruntse Peak
+  elevation: 7,119 
+  country: Nepal
+  year: 2018
+  image: "/css/images/lobuche.jpg" # Adjust the path accordingly
+  slug: baruntse-peak
+
+- name: Ama Dablam
+  elevation: 6,812 
+  country: Nepal
+  year: 2019
+  image: "/css/images/ama.jpg" # Adjust the path accordingly
+  slug: ama-dablam
+
+
+- name: Mera Peak
+  elevation: 6,476
+  country: Nepal
+  year: 2019
+  image: "/css/images/mera-peak.jpg" # Adjust the path accordingly
+  slug: mera-peak
+
+
+
+- name: Island Peak
+  elevation:  6,165 
+  country: Nepal
+  year: 2019
+  image: "/css/images/island.jpg" # Adjust the path accordingly
+  slug: pisang-peak
