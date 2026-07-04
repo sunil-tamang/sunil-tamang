@@ -2,7 +2,7 @@ title: Sunil Tamang
 name: Sunil Tamang
 email: ''
 description: >- # this means to ignore newlines until "baseurl:"
-  Outdoor Adventure Activities in the Himalayas full of fun, thrill and a rush of adrenaline | 
+  Outdoor Adventure
 
 
 
@@ -47,7 +47,6 @@ exclude:
   - Gemfile.lock
   - readme.md
   - license
-  - CNAME
   - packages.html
   - "_treks/assets/css/*.scss"
 plugins:
