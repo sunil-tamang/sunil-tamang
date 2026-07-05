@@ -775,6 +775,7 @@ transform:translate(-50%,-50%);
 
 }
 
+
 /* ======================================= */
 
 .banner-story-text{
@@ -1419,6 +1420,68 @@ transform:translate(-50%,-50%);
 
 }
 
+
+/* ==========================================
+   CINEMATIC QUOTE
+========================================== */
+
+.cinema-quote{
+
+    width:min(90%,900px);
+
+    margin:160px auto;
+
+    text-align:center;
+
+}
+
+.cinema-quote-text{
+
+    font-size:clamp(28px,3vw,52px);
+
+    line-height:1.25;
+
+    font-weight:300;
+
+    letter-spacing:-1px;
+
+    color:#ffffff;
+
+    margin-bottom:28px;
+
+}
+
+.cinema-quote-author{
+
+    display:block;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:#777;
+
+}
+
+@media(max-width:768px){
+
+    .cinema-quote{
+
+        margin:90px auto;
+
+    }
+
+    .cinema-quote-text{
+
+        font-size:28px;
+
+    }
+
+}
+
+
 /* ===================================================
    INTRO HERO
 =================================================== */
@@ -1645,6 +1708,8 @@ transform:translate(-50%,-50%);
     }
 
 }
+
+
 /* =========================================
    ABOUT SECTION
 ========================================= */
@@ -1855,13 +1920,23 @@ transform:translate(-50%,-50%);
 
 }
 
-.film-catalogue-number{
+.featured-number{
 
-    font-size:clamp(80px,12vw,160px);
+    display:flex;
 
-    font-weight:700;
+    align-items:flex-end;
+
+    gap:24px;
+
+}
+
+.featured-number-value{
+
+    font-size:clamp(90px,12vw,180px);
 
     line-height:.8;
+
+    font-weight:700;
 
     letter-spacing:-8px;
 
@@ -1869,17 +1944,25 @@ transform:translate(-50%,-50%);
 
 }
 
-.film-catalogue-word{
+.featured-number-text{
 
-    margin-top:10px;
+    display:flex;
 
-    font-size:20px;
+    flex-direction:column;
 
-    letter-spacing:10px;
+    margin-bottom:10px;
+
+}
+
+.featured-number-text span{
+
+    font-size:18px;
 
     text-transform:uppercase;
 
-    color:#9d9d9d;
+    letter-spacing:4px;
+
+    color:#777;
 
 }
 
@@ -2148,7 +2231,7 @@ transform:translate(-50%,-50%);
     font-size:15px;
     font-weight:600;
 
-    letter-spacing:-1px;
+    letter-spacing:1px;
 
     margin:0 0 6px 0;
 
@@ -2198,7 +2281,7 @@ transform:translate(-50%,-50%);
 
 .featured-overlay-text h3{
 
-    font-size:20px;
+    font-size:12px;
 
 }
 
