@@ -1610,7 +1610,7 @@ transform:translate(-50%,-50%);
 
 .hero-intro-right p{
 
-    font-size:20px;
+    font-size:14px;
 
     line-height:2;
 
@@ -1702,6 +1702,12 @@ transform:translate(-50%,-50%);
 }
 
 @media (max-width:768px){
+    .hero-intro-section{
+
+    margin:120px auto;
+
+}
+
 
     .hero-intro-photo{
 

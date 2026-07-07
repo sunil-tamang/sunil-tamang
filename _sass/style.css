@@ -924,7 +924,7 @@ body {
 }
 
 .hero-intro-right p {
-  font-size: 20px;
+  font-size: 14px;
   line-height: 2;
   color: #c7c7c7;
   margin-bottom: 45px;
@@ -975,6 +975,9 @@ body {
   }
 }
 @media (max-width: 768px) {
+  .hero-intro-section {
+    margin: 120px auto;
+  }
   .hero-intro-photo {
     max-width: 300px;
     height: 420px;
