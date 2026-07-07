@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   scroll-behavior: smooth;
 }
@@ -59,87 +60,127 @@ body {
 ========================================== */
 .studio-nav {
   position: absolute;
-  top: 50px;
+  top: 42px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
-  max-width: 1500px;
+  width: min(92%, 1600px);
   display: grid;
-  grid-template-columns: 80px 1fr 180px;
+  grid-template-columns: 70px 1fr 160px;
   align-items: center;
-  z-index: 100000;
+  z-index: 10001;
 }
 
+.studio-brand {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.studio-brand img {
+  display: block;
+  width: clamp(170px, 15vw, 240px);
+  height: auto;
+  transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+}
+
+.studio-brand:hover img {
+  opacity: 0.85;
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.15));
+}
+
+/* ==========================================
+   CONTACT LINK
+========================================== */
+.studio-contact-link {
+  justify-self: end;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: 0.35s ease;
+  opacity: 0.9;
+}
+
+.studio-contact-link:hover {
+  opacity: 1;
+  letter-spacing: 4px;
+}
+
+/* ==========================================
+   HAMBURGER
+========================================== */
 .studio-nav-toggle {
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 8px;
   padding: 0;
-  border: none;
   background: none;
+  border: none;
   cursor: pointer;
+  position: relative;
+  z-index: 10001;
 }
 
 .studio-nav-toggle span {
+  display: block;
   width: 30px;
   height: 2px;
   background: #fff;
-  transition: 0.45s ease;
+  border-radius: 5px;
+  transition: transform 0.45s ease, width 0.35s ease, opacity 0.35s ease;
 }
 
-.studio-brand {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 800;
-  transition: 0.3s;
+/* Hover */
+.studio-nav-toggle:hover span:first-child {
+  width: 22px;
 }
 
-.studio-brand:hover {
-  opacity: 0.6;
+.studio-nav-toggle:hover span:last-child {
+  width: 38px;
 }
 
-.studio-contact-link {
-  justify-self: end;
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: 0.3s;
+/* Active */
+.studio-nav-toggle.active span:first-child {
+  width: 30px;
+  transform: translateY(10px) rotate(45deg);
 }
 
-.studio-contact-link:hover {
-  opacity: 0.6;
+.studio-nav-toggle.active span:last-child {
+  width: 30px;
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 /* ==========================================
-   MENU PANEL
+   FULLSCREEN MENU
 ========================================== */
 .studio-menu {
   position: fixed;
-  inset: 0 0 auto 0;
+  inset: 0;
   width: 100%;
-  height: 50vh;
-  background: #fff;
-  color: #111;
+  height: 100vh;
+  background: #060606;
   transform: translateY(-100%);
-  transition: transform 0.55s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 9999;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  z-index: 99999;
 }
 
 .studio-menu.active {
   transform: translateY(0);
 }
 
+/* ==========================================
+   MENU INNER
+========================================== */
 .studio-menu-inner {
-  width: 92%;
-  max-width: 1600px;
+  width: min(92%, 1600px);
   height: 100%;
   margin: auto;
   display: flex;
@@ -149,166 +190,207 @@ body {
 /* ==========================================
    MENU HEADER
 ========================================== */
-.studio-menu-top {
-  display: grid;
-  grid-template-columns: 80px 1fr 80px;
+.studio-menu-header {
+  padding: 42px 0 0;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 35px 0;
 }
 
-.studio-close {
-  width: 42px;
-  height: 42px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: #111;
-  font-size: 28px;
-  transition: 0.3s;
+.studio-menu-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.studio-close:hover {
-  transform: rotate(90deg);
+.studio-menu-brand img {
+  width: 220px;
+  height: auto;
+  transition: 0.35s ease;
 }
 
-.studio-logo {
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 8px;
+.studio-menu-brand:hover img {
+  opacity: 0.8;
+  transform: translateY(-2px);
 }
 
 /* ==========================================
-   NAVIGATION LINKS
+   MENU BODY
 ========================================== */
 .studio-navigation {
   flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 90px;
+  gap: 28px;
 }
 
+/* ==========================================
+   MENU LINKS
+========================================== */
 .studio-navigation a {
   position: relative;
-  color: #111;
+  display: inline-block;
+  color: #ffffff;
   text-decoration: none;
-  font-size: 32px;
-  font-weight: 500;
-  transition: 0.3s;
+  font-size: clamp(44px, 6vw, 86px);
+  font-weight: 600;
+  letter-spacing: -2px;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: color 0.35s ease, opacity 0.6s ease, transform 0.6s ease;
 }
 
+/* Stagger Animation */
+.studio-menu.active .studio-navigation a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.studio-menu.active .studio-navigation a:nth-child(1) {
+  transition-delay: 0.15s;
+}
+
+.studio-menu.active .studio-navigation a:nth-child(2) {
+  transition-delay: 0.25s;
+}
+
+.studio-menu.active .studio-navigation a:nth-child(3) {
+  transition-delay: 0.35s;
+}
+
+/* Hover */
 .studio-navigation a::after {
-  content: "";
+  content: "↗";
   position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 0;
-  height: 2px;
-  background: #111;
-  transition: 0.35s;
+  top: 8px;
+  margin-left: 14px;
+  font-size: 0.35em;
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: 0.35s ease;
 }
 
 .studio-navigation a:hover {
-  opacity: 0.65;
+  color: #bdbdbd;
 }
 
 .studio-navigation a:hover::after {
-  width: 100%;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================
+   MENU FOOTER
+========================================== */
+.studio-menu-footer {
+  padding: 0 0 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
 }
 
 /* ==========================================
    SOCIAL
 ========================================== */
-.studio-social {
+.studio-social-links {
   display: flex;
-  justify-content: center;
-  gap: 45px;
-  padding: 30px 0 40px;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.studio-social a {
-  color: #555;
+.studio-social-links a {
+  color: #6f6f6f;
   text-decoration: none;
   font-size: 14px;
-  letter-spacing: 1px;
-  transition: 0.3s;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.35s ease;
 }
 
-.studio-social a:hover {
-  color: #000;
+.studio-social-links a:hover {
+  color: #ffffff;
+  transform: translateX(8px);
 }
 
 /* ==========================================
-   HAMBURGER ANIMATION
+   FOOTER TEXT
 ========================================== */
-.studio-nav-toggle.active span:first-child {
-  transform: rotate(45deg) translate(7px, 7px);
-  background: #111;
-}
-
-.studio-nav-toggle.active span:last-child {
-  transform: rotate(-45deg) translate(7px, -7px);
-  background: #111;
+.studio-footer-text {
+  text-align: right;
+  color: #7d7d7d;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 1px;
 }
 
 /* ==========================================
    RESPONSIVE
 ========================================== */
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .studio-nav {
-    width: 88%;
+    width: 90%;
+    grid-template-columns: 60px 1fr 130px;
   }
-}
-@media (max-width: 900px) {
-  .studio-menu {
-    height: 100vh;
-  }
-  .studio-menu-top {
-    grid-template-columns: 60px 1fr 60px;
-  }
-  .studio-logo {
-    font-size: 12px;
-    letter-spacing: 4px;
-  }
-  .studio-navigation {
-    flex-direction: column;
-    gap: 35px;
+  .studio-brand img {
+    width: 180px;
   }
   .studio-navigation a {
-    font-size: 30px;
+    font-size: clamp(42px, 8vw, 64px);
   }
-  .studio-social {
-    flex-wrap: wrap;
-    gap: 22px;
-    padding-bottom: 35px;
+  .studio-menu-footer {
+    gap: 40px;
   }
 }
 @media (max-width: 768px) {
   .studio-nav {
+    top: 28px;
     width: 92%;
-    top: 25px;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 55px 1fr;
   }
   .studio-contact-link {
     display: none;
   }
-  .studio-brand {
-    font-size: 12px;
-    letter-spacing: 4px;
+  .studio-brand img {
+    width: 150px;
+  }
+  .studio-menu-header {
+    padding-top: 28px;
+  }
+  .studio-menu-brand img {
+    width: 150px;
+  }
+  .studio-navigation {
+    align-items: flex-start;
+    padding-left: 8px;
+    gap: 22px;
+  }
+  .studio-navigation a {
+    font-size: 42px;
+    letter-spacing: -1px;
+  }
+  .studio-menu-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    padding-bottom: 40px;
+  }
+  .studio-footer-text {
+    text-align: left;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .studio-navigation a {
-    font-size: 24px;
+    font-size: 34px;
   }
-  .studio-social {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+  .studio-social-links a {
+    font-size: 12px;
   }
-  .studio-logo {
-    letter-spacing: 3px;
+  .studio-footer-text {
+    font-size: 12px;
   }
 }
 /* =======================================================
@@ -647,7 +729,7 @@ body {
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #7b7b7b;
+  color: #ffffff;
 }
 
 /* ====================================================== */
@@ -657,6 +739,7 @@ body {
   letter-spacing: -3px;
   line-height: 0.95;
   margin-bottom: 35px;
+  color: #fff;
 }
 
 /* ====================================================== */
@@ -703,18 +786,62 @@ body {
   .cinematic-intro-image {
     margin-bottom: 45px;
   }
+  .cinematic-intro-image img {
+    min-height: 380px;
+  }
   .cinematic-intro-content {
     max-width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+  .cinematic-intro-label {
+    text-align: left;
   }
   .cinematic-intro-name {
     font-size: 42px;
+    text-align: left;
   }
   .cinematic-intro-description {
     font-size: 16px;
     line-height: 1.9;
+    text-align: left;
   }
-  .cinematic-intro-image img {
-    min-height: 380px;
+  .cinematic-intro-link {
+    justify-content: flex-start;
+  }
+}
+/* ==========================================
+   CINEMATIC QUOTE
+========================================== */
+.cinema-quote {
+  width: min(90%, 900px);
+  margin: 160px auto;
+  text-align: center;
+}
+
+.cinema-quote-text {
+  font-size: clamp(28px, 3vw, 52px);
+  line-height: 1.25;
+  font-weight: 300;
+  letter-spacing: -1px;
+  color: #ffffff;
+  margin-bottom: 28px;
+}
+
+.cinema-quote-author {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .cinema-quote {
+    margin: 90px auto;
+  }
+  .cinema-quote-text {
+    font-size: 28px;
   }
 }
 /* ===================================================
@@ -742,7 +869,7 @@ body {
 }
 
 .hero-intro-label {
-  color: #7f7f7f;
+  color: #fff5f5;
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -977,24 +1104,35 @@ body {
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #777;
+  color: #ffffff;
   margin-bottom: 22px;
 }
 
-.film-catalogue-number {
-  font-size: clamp(80px, 12vw, 160px);
-  font-weight: 700;
+.featured-number {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.featured-number-value {
+  font-size: clamp(90px, 12vw, 180px);
   line-height: 0.8;
+  font-weight: 700;
   letter-spacing: -8px;
   color: #fff;
 }
 
-.film-catalogue-word {
-  margin-top: 10px;
-  font-size: 20px;
-  letter-spacing: 10px;
+.featured-number-text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.featured-number-text span {
+  font-size: 18px;
   text-transform: uppercase;
-  color: #9d9d9d;
+  letter-spacing: 4px;
+  color: #777;
 }
 
 /* RIGHT */
@@ -1153,9 +1291,9 @@ body {
 
 /* TITLE */
 .featured-overlay-text h3 {
-  font-size: 28px;
+  font-size: 15px;
   font-weight: 600;
-  letter-spacing: -1px;
+  letter-spacing: 1px;
   margin: 0 0 6px 0;
   line-height: 1.2;
 }
@@ -1184,7 +1322,7 @@ body {
 ================================ */
 @media (max-width: 768px) {
   .featured-overlay-text h3 {
-    font-size: 20px;
+    font-size: 12px;
   }
   .featured-overlay-text {
     left: 18px;
@@ -1258,104 +1396,12 @@ body {
   background: #000;
 }
 
-/*==========================================
-MEMBERSHIPS
-==========================================*/
-.memberships {
-  width: 92%;
-  max-width: 1400px;
-  margin: 140px auto;
-  text-align: center;
-}
-
-.memberships-header {
-  margin-bottom: 70px;
-}
-
-.memberships-subtitle {
-  font-size: 12px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #777;
-  margin-bottom: 15px;
-}
-
-.memberships-header h2 {
-  font-size: 44px;
-  font-weight: 500;
-  color: #fff;
-}
-
-.memberships-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-.membership-card {
-  background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  padding: 55px 40px;
-  text-decoration: none;
-  color: white;
-  transition: 0.4s ease;
-}
-
-.membership-card:hover {
-  transform: translateY(-8px);
-  border-color: white;
-}
-
-.membership-card img {
-  height: 90px;
-  width: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin-bottom: 35px;
-  filter: grayscale(100%);
-  opacity: 0.9;
-  transition: 0.35s;
-}
-
-.membership-card:hover img {
-  filter: none;
-  opacity: 1;
-}
-
-.membership-card span {
-  display: block;
-  font-size: 15px;
-  line-height: 1.8;
-  letter-spacing: 1px;
-}
-
-/*=========================
-Responsive
-=========================*/
-@media (max-width: 768px) {
-  .memberships {
-    margin: 90px auto;
-  }
-  .memberships-header h2 {
-    font-size: 34px;
-  }
-  .memberships-grid {
-    grid-template-columns: 1fr;
-  }
-  .membership-card {
-    padding: 45px 30px;
-  }
-  .membership-card img {
-    height: 75px;
-  }
-}
 /* ==========================================================
    GUIDE PATH
 ========================================================== */
 .guide-path-section {
   width: 92%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 220px auto;
 }
 
@@ -1399,7 +1445,7 @@ Responsive
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #7d7d7d;
+  color: #ffffff;
 }
 
 .guide-path-text p {
@@ -1520,197 +1566,407 @@ Responsive
     width: 120px;
   }
 }
-/* ==========================================
-   PROFESSIONAL JOURNEY
-========================================== */
-.professional-journey {
+/* ==================================================
+   EXPEDITION LIFE
+================================================== */
+.expedition-life {
   width: 92%;
-  max-width: 1200px;
-  margin: 180px auto;
+  max-width: 1400px;
+  margin: clamp(140px, 16vw, 320px) auto;
+  z-index: 9999999 !important;
 }
 
-.journey-container {
-  text-align: center;
+/* ==================================================
+   HEADING
+================================================== */
+.expedition-life-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 700px) 1fr;
+  gap: 120px;
+  align-items: end;
+  margin-bottom: 90px;
 }
 
-.journey-title {
-  font-size: clamp(34px, 4vw, 52px);
-  font-weight: 500;
-  letter-spacing: -1px;
-  line-height: 1.1;
+.expedition-life-label {
+  display: block;
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
   margin-bottom: 22px;
 }
 
-.journey-text {
-  max-width: 760px;
-  margin: 0 auto 80px;
-  font-size: 19px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.75);
-  letter-spacing: 0.15px;
+.expedition-life-title {
+  margin: 0;
+  font-size: clamp(62px, 7vw, 130px);
+  line-height: 0.88;
+  font-weight: 700;
+  letter-spacing: -4px;
+  color: #fff;
 }
 
-/* ==========================================
-   LOGO ROW
-========================================== */
-.journey-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 70px;
+.expedition-life-description {
+  max-width: 500px;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #9d9d9d;
 }
 
-.journey-item {
+/* ==================================================
+   GRID
+================================================== */
+.expedition-life-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  align-items: end;
+}
+
+/* ==================================================
+   CARD
+================================================== */
+.expedition-life-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  border-radius: 20px;
+  background: #111;
+}
+
+/* ==================================================
+   DIFFERENT HEIGHTS
+================================================== */
+.expedition-life-everest {
+  margin-top: -70px;
+}
+
+.expedition-life-card:nth-child(1) {
+  height: 760px;
+}
+
+.expedition-life-card:nth-child(2) {
+  height: 620px;
+}
+
+.expedition-life-card:nth-child(3) {
+  height: 690px;
+}
+
+.expedition-life-card:nth-child(4) {
+  height: 560px;
+}
+
+/* ==================================================
+   IMAGE
+================================================== */
+.expedition-life-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
+}
+
+/* ==================================================
+   OVERLAY
+================================================== */
+.expedition-life-overlay {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  justify-content: flex-end;
+  padding: 34px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.28), transparent);
+  transition: background 0.45s ease, padding 0.45s ease;
 }
 
-/* ==========================================
-   LOGO LINK
-========================================== */
-.journey-logo-link {
-  display: block;
-  margin-bottom: 28px;
-}
-
-/* ==========================================
-   LOGO SIZES
-========================================== */
-/* NNMGA (Current) */
-.journey-item:first-child .journey-logo-link img {
-  width: 240px;
-  height: auto;
-}
-
-/* IFMGA (Future Goal) */
-.journey-future .journey-logo-link img {
-  width: 145px;
-  height: auto;
-}
-
-/* ==========================================
-   COMMON LOGO STYLE
-========================================== */
-.journey-logo-link img {
-  display: block;
-  filter: grayscale(100%);
-  opacity: 0.75;
-  transition: transform 0.45s ease, filter 0.45s ease, opacity 0.45s ease;
-}
-
-.journey-item:hover .journey-logo-link img {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: translateY(-8px) scale(1.04);
-}
-
-/* ==========================================
-   TEXT
-========================================== */
-.journey-item h3 {
-  font-size: 24px;
+/* ==================================================
+   CARD TITLE
+================================================== */
+.expedition-life-title-card {
+  color: #ffffff;
+  font-size: 30px;
   font-weight: 600;
-  margin-bottom: 10px;
+  line-height: 1.05;
+  letter-spacing: 0.5px;
+  transform: translateY(18px);
+  opacity: 0.92;
+  transition: transform 0.45s ease, opacity 0.45s ease;
 }
 
-.journey-item p {
-  font-size: 15px;
-  color: #d6d6d6;
-  margin-bottom: 8px;
-}
-
-.journey-item small {
-  display: block;
-  max-width: 240px;
-  color: #777;
-  font-size: 13px;
+/* ==================================================
+   SUBTITLE
+================================================== */
+.expedition-life-subtitle {
+  margin-top: 12px;
+  color: #c2c2c2;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   line-height: 1.7;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
 /* ==========================================
    DIVIDER
 ========================================== */
-.journey-divider {
-  width: 1px;
-  height: 170px;
-  background: rgba(255, 255, 255, 0.12);
+.expedition-life-divider {
+  width: 0;
+  height: 1px;
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  transition: 0.45s ease;
 }
 
 /* ==========================================
-   FUTURE GOAL
+   LINK
 ========================================== */
-.journey-future {
-  opacity: 0.55;
-  transition: opacity 0.35s ease;
+.expedition-life-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
-.journey-future:hover {
+.expedition-life-card:hover .expedition-life-divider {
+  width: 100px;
+}
+
+.expedition-life-card:hover .expedition-life-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================================================
+   CARD SHADOW
+================================================== */
+.expedition-life-card {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+  transition: transform 0.45s ease, box-shadow 0.45s ease, opacity 0.45s ease;
+}
+
+/* ==================================================
+   GALLERY DIM EFFECT
+================================================== */
+.expedition-life-grid:hover .expedition-life-card {
+  opacity: 0.45;
+}
+
+.expedition-life-grid:hover .expedition-life-card:hover {
   opacity: 1;
 }
 
-/* ==========================================
-   RESPONSIVE
-========================================== */
-@media (max-width: 900px) {
-  .journey-logos {
-    gap: 45px;
+/* ==================================================
+   CARD HOVER
+================================================== */
+.expedition-life-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.45);
+}
+
+/* ==================================================
+   IMAGE HOVER
+================================================== */
+.expedition-life-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ==================================================
+   OVERLAY HOVER
+================================================== */
+.expedition-life-card:hover .expedition-life-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.05));
+}
+
+/* ==================================================
+   TITLE ANIMATION
+================================================== */
+.expedition-life-card:hover .expedition-life-title-card {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ==================================================
+   SUBTITLE ANIMATION
+================================================== */
+.expedition-life-card:hover .expedition-life-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================================================
+   PREMIUM TOUCH
+================================================== */
+.expedition-life-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 40%);
+  opacity: 0;
+  transition: 0.45s ease;
+  pointer-events: none;
+}
+
+.expedition-life-card:hover::after {
+  opacity: 1;
+}
+
+/* ==================================================
+   CURSOR
+================================================== */
+.expedition-life-card {
+  cursor: pointer;
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+@media (max-width: 1200px) {
+  .expedition-life {
+    margin: clamp(120px, 14vw, 220px) auto;
   }
-  .journey-item:first-child .journey-logo-link img {
-    width: 170px;
+  .expedition-life-heading {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-bottom: 65px;
   }
-  .journey-future .journey-logo-link img {
-    width: 130px;
+  .expedition-life-description {
+    max-width: 650px;
+  }
+  .expedition-life-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    align-items: stretch;
+  }
+  .expedition-life-everest {
+    margin-top: 0;
+  }
+  .expedition-life-card {
+    height: 480px !important;
+  }
+}
+/* ==================================================
+   MOBILE
+================================================== */
+@media (max-width: 768px) {
+  .expedition-life {
+    width: 92%;
+    margin: 110px auto;
+  }
+  .expedition-life-heading {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .expedition-life-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+  .expedition-life-title {
+    font-size: clamp(42px, 10vw, 58px);
+    letter-spacing: -2px;
+    line-height: 0.95;
+  }
+  .expedition-life-description {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .expedition-life-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .expedition-life-card {
+    height: 300px !important;
+    border-radius: 16px;
+  }
+  .expedition-life-card img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+  .expedition-life-overlay {
+    padding: 18px;
+  }
+  .expedition-life-title-card {
+    font-size: 18px;
+    line-height: 1.2;
+    transform: none;
+    opacity: 1;
+  }
+  .expedition-life-subtitle {
+    margin-top: 8px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    opacity: 1;
+    transform: none;
+  }
+  /* Mobile doesn't have hover */
+  .expedition-life-grid:hover .expedition-life-card {
+    opacity: 1;
+  }
+  .expedition-life-card:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  }
+  .expedition-life-card:hover img {
+    transform: none;
   }
 }
 @media (max-width: 768px) {
-  .professional-journey {
-    margin: 120px auto;
+  .expedition-life-divider {
+    width: 70px;
+    margin-top: 12px;
   }
-  .journey-title {
-    font-size: 32px;
-  }
-  .journey-text {
-    font-size: 16px;
-    margin-bottom: 50px;
-  }
-  .journey-logos {
-    flex-direction: column;
-    gap: 45px;
-  }
-  .journey-divider {
-    width: 120px;
-    height: 1px;
-  }
-  .journey-item:first-child .journey-logo-link img {
-    width: 150px;
-  }
-  .journey-future .journey-logo-link img {
-    width: 115px;
-  }
-  .journey-item h3 {
-    font-size: 21px;
+  .expedition-life-link {
+    opacity: 1;
+    transform: none;
+    margin-top: 12px;
+    font-size: 10px;
   }
 }
+/* ==================================================
+   SMALL PHONES
+================================================== */
 @media (max-width: 480px) {
-  .professional-journey {
+  .expedition-life {
     width: 94%;
+    margin: 90px auto;
   }
-  .journey-title {
-    font-size: 28px;
+  .expedition-life-grid {
+    gap: 10px;
   }
-  .journey-text {
+  .expedition-life-card {
+    height: 330px !important;
+    border-radius: 14px;
+  }
+  .expedition-life-overlay {
+    padding: 14px;
+  }
+  .expedition-life-title {
+    font-size: 40px;
+  }
+  .expedition-life-description {
     font-size: 15px;
   }
-  .journey-item:first-child .journey-logo-link img {
-    width: 135px;
+  .expedition-life-title-card {
+    font-size: 15px;
   }
-  .journey-future .journey-logo-link img {
-    width: 105px;
-  }
-  .journey-item h3 {
-    font-size: 20px;
+  .expedition-life-subtitle {
+    font-size: 9px;
+    line-height: 1.4;
   }
 }
 /* ==================================================
@@ -1718,12 +1974,11 @@ Responsive
 ================================================== */
 .collaboration-showcase {
   width: 92%;
-  max-width: 1700px;
-  margin: 420px auto;
+  max-width: 1400px;
+  margin: clamp(140px, 16vw, 320px) auto;
 }
 
 .collaboration-wrapper {
-  max-width: 1200px;
   margin: auto;
 }
 
@@ -1732,7 +1987,7 @@ Responsive
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #777;
+  color: #ffffff;
   margin-bottom: 22px;
 }
 
@@ -1741,7 +1996,8 @@ Responsive
   line-height: 0.95;
   font-weight: 600;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin-bottom: clamp(20px, 3vw, 30px);
+  color: #fff;
 }
 
 .collaboration-description {
@@ -1749,7 +2005,7 @@ Responsive
   font-size: 18px;
   line-height: 1.9;
   color: #a5a5a5;
-  margin-bottom: 120px;
+  margin-bottom: clamp(60px, 8vw, 120px);
 }
 
 /* ==================================================
@@ -1880,13 +2136,11 @@ Responsive
 }
 @media (max-width: 600px) {
   .collaboration-cloud {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
   }
-  .collaboration-heading {
-    font-size: 36px;
-  }
-  .collaboration-description {
-    font-size: 16px;
+  .collaboration-logo img {
+    max-width: 120px !important;
   }
 }
 /* ==========================================
@@ -2661,108 +2915,6 @@ p {
      object-fit: cover; /* Maintain aspect ratio and cover container */
 }
 
-.banner-slider {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.banner-slider .slide {
-  position: relative;
-}
-
-.banner-slider img,
-.banner-slider video {
-  width: 100%;
-  height: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transition: transform 0.5s ease-in-out;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  pointer-events: none;
-  text-align: center;
-  padding: 20px;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.overlay-text {
-  font-size: 1.5em;
-}
-
-.additional-info {
-  margin-top: 10px;
-  font-size: 1em;
-  color: #ccc;
-}
-
-.play-button {
-  background-color: rgba(0, 0, 0, 0.7);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1.5em;
-  cursor: pointer;
-  margin-top: 10px;
-  pointer-events: auto; /* Ensure button is clickable */
-  transition: transform 0.3s ease-in-out;
-}
-
-.play-button:hover {
-  transform: scale(1.1);
-}
-
-.slick-next, .slick-prev {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.slick-next {
-  right: 10px;
-}
-
-.slick-prev {
-  left: 10px;
-}
-
-.fullscreen-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background: black;
-  animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .selected {
   background-color: #fb4a4a;
   padding: 0 0.3rem;
@@ -3662,8 +3814,8 @@ CONTACT
 .films-page {
   background: #000000;
   color: #fff;
-  width: 90%;
-  max-width: 1500px;
+  width: 92%;
+  max-width: 1400px;
   margin: 200px auto;
 }
 

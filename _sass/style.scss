@@ -1421,6 +1421,9 @@ transform:translate(-50%,-50%);
 }
 
 
+
+
+
 /* ==========================================
    CINEMATIC QUOTE
 ========================================== */
@@ -2392,162 +2395,6 @@ transform:translate(-50%,-50%);
 
 
 
-/*==========================================
-MEMBERSHIPS
-==========================================*/
-
-.memberships{
-
-    width:92%;
-    max-width:1400px;
-
-    margin:140px auto;
-
-    text-align:center;
-
-}
-
-.memberships-header{
-
-    margin-bottom:70px;
-
-}
-
-.memberships-subtitle{
-
-    font-size:12px;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    color:#777;
-
-    margin-bottom:15px;
-
-}
-
-.memberships-header h2{
-
-    font-size:44px;
-
-    font-weight:500;
-
-    color:#fff;
-
-}
-
-.memberships-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:40px;
-
-}
-
-.membership-card{
-
-    background:#111;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:18px;
-
-    padding:55px 40px;
-
-    text-decoration:none;
-
-    color:white;
-
-    transition:.4s ease;
-
-}
-
-.membership-card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:white;
-
-}
-
-.membership-card img{
-
-    height:90px;
-
-    width:auto;
-
-    object-fit:contain;
-
-    margin-bottom:35px;
-
-    filter:grayscale(100%);
-
-    opacity:.9;
-
-    transition:.35s;
-
-}
-
-.membership-card:hover img{
-
-    filter:none;
-
-    opacity:1;
-
-}
-
-.membership-card span{
-
-    display:block;
-
-    font-size:15px;
-
-    line-height:1.8;
-
-    letter-spacing:1px;
-
-}
-
-/*=========================
-Responsive
-=========================*/
-
-@media(max-width:768px){
-
-    .memberships{
-
-        margin:90px auto;
-
-    }
-
-    .memberships-header h2{
-
-        font-size:34px;
-
-    }
-
-    .memberships-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .membership-card{
-
-        padding:45px 30px;
-
-    }
-
-    .membership-card img{
-
-        height:75px;
-
-    }
-
-}
 
 
 
@@ -2558,7 +2405,7 @@ Responsive
 .guide-path-section{
 
     width:92%;
-    max-width:1200px;
+    max-width:1400px;
     margin:220px auto;
 
 }
@@ -2842,170 +2689,281 @@ Responsive
 
 }
 
-/* ==========================================
-   PROFESSIONAL JOURNEY
-========================================== */
 
-.professional-journey{
+
+
+
+
+
+/* ==================================================
+   EXPEDITION LIFE
+================================================== */
+
+
+.expedition-life{
 
     width:92%;
-    max-width:1200px;
-    margin:180px auto;
+    max-width:1400px;
+
+    margin:clamp(140px,16vw,320px) auto;
+    z-index:9999999 !important;
+
 
 }
 
-.journey-container{
 
-    text-align:center;
+/* ==================================================
+   HEADING
+================================================== */
+
+.expedition-life-heading{
+
+    display:grid;
+
+    grid-template-columns:minmax(0,700px) 1fr;
+
+    gap:120px;
+
+    align-items:end;
+
+    margin-bottom:90px;
 
 }
 
-.journey-title{
 
-    font-size:clamp(34px, 4vw, 52px);
-    font-weight:500;
-    letter-spacing:-1px;
-    line-height:1.1;
+.expedition-life-label{
+
+    display:block;
+
+    color:#777;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
     margin-bottom:22px;
 
 }
 
-.journey-text{
 
-    max-width:760px;
+.expedition-life-title{
 
-    margin:0 auto 80px;
+    margin:0;
 
-    font-size:19px;
-    line-height:1.8;
+    font-size:clamp(62px,7vw,130px);
 
-    color:rgba(255,255,255,.75);
+    line-height:.88;
 
-    letter-spacing:.15px;
+    font-weight:700;
+
+    letter-spacing:-4px;
+
+    color:#fff;
+
+}
+
+
+.expedition-life-description{
+
+    max-width:500px;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#9d9d9d;
 
 }
 
 
-/* ==========================================
-   LOGO ROW
-========================================== */
 
-.journey-logos{
+/* ==================================================
+   GRID
+================================================== */
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:70px;
+.expedition-life-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+    align-items:end;
 
 }
 
-.journey-item{
+
+
+/* ==================================================
+   CARD
+================================================== */
+
+.expedition-life-card{
+
+    position:relative;
+
+    display:block;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    border-radius:20px;
+
+    background:#111;
+
+}
+
+
+
+/* ==================================================
+   DIFFERENT HEIGHTS
+================================================== */
+
+.expedition-life-everest{
+
+    margin-top:-70px;
+
+}
+
+.expedition-life-card:nth-child(1){
+
+    height:760px;
+
+}
+
+.expedition-life-card:nth-child(2){
+
+    height:620px;
+
+}
+
+.expedition-life-card:nth-child(3){
+
+    height:690px;
+
+}
+
+.expedition-life-card:nth-child(4){
+
+    height:560px;
+
+}
+
+
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.expedition-life-card img{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:
+
+        transform 1.2s cubic-bezier(.2,.8,.2,1),
+
+        filter .5s ease;
+
+}
+
+/* ==================================================
+   OVERLAY
+================================================== */
+
+.expedition-life-overlay{
+
+    position:absolute;
+
+    inset:0;
 
     display:flex;
+
     flex-direction:column;
-    align-items:center;
-    text-align:center;
+
+    justify-content:flex-end;
+
+    padding:34px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.28),
+            transparent
+        );
+
+    transition:
+        background .45s ease,
+        padding .45s ease;
 
 }
 
 
-/* ==========================================
-   LOGO LINK
-========================================== */
 
-.journey-logo-link{
+/* ==================================================
+   CARD TITLE
+================================================== */
 
-    display:block;
-    margin-bottom:28px;
+.expedition-life-title-card{
 
-}
+    color:#ffffff;
 
+    font-size:30px;
 
-/* ==========================================
-   LOGO SIZES
-========================================== */
+    font-weight:600;
 
-/* NNMGA (Current) */
+    line-height:1.05;
 
-.journey-item:first-child .journey-logo-link img{
+    letter-spacing:.5px;
 
-    width:240px;
-    height:auto;
+    transform:translateY(18px);
 
-}
-
-/* IFMGA (Future Goal) */
-
-.journey-future .journey-logo-link img{
-
-    width:145px;
-    height:auto;
-
-}
-
-
-/* ==========================================
-   COMMON LOGO STYLE
-========================================== */
-
-.journey-logo-link img{
-
-    display:block;
-
-    filter:grayscale(100%);
-
-    opacity:.75;
+    opacity:.92;
 
     transition:
         transform .45s ease,
-        filter .45s ease,
         opacity .45s ease;
 
 }
 
-.journey-item:hover .journey-logo-link img{
-
-    filter:grayscale(0%);
-
-    opacity:1;
-
-    transform:
-        translateY(-8px)
-        scale(1.04);
-
-}
 
 
-/* ==========================================
-   TEXT
-========================================== */
+/* ==================================================
+   SUBTITLE
+================================================== */
 
-.journey-item h3{
+.expedition-life-subtitle{
 
-    font-size:24px;
-    font-weight:600;
-    margin-bottom:10px;
+    margin-top:12px;
 
-}
+    color:#c2c2c2;
 
-.journey-item p{
+    font-size:12px;
 
-    font-size:15px;
-    color:#d6d6d6;
-    margin-bottom:8px;
+    letter-spacing:2px;
 
-}
+    text-transform:uppercase;
 
-.journey-item small{
-
-    display:block;
-
-    max-width:240px;
-
-    color:#777;
-
-    font-size:13px;
     line-height:1.7;
+
+    opacity:0;
+
+    transform:translateY(16px);
+
+    transition:
+        opacity .45s ease,
+        transform .45s ease;
 
 }
 
@@ -3014,156 +2972,512 @@ Responsive
    DIVIDER
 ========================================== */
 
-.journey-divider{
+.expedition-life-divider{
 
-    width:1px;
-    height:170px;
+    width:0;
 
-    background:rgba(255,255,255,.12);
+    height:1px;
+
+    margin-top:18px;
+
+    background:rgba(255,255,255,.18);
+
+    transition:.45s ease;
 
 }
+
 
 
 /* ==========================================
-   FUTURE GOAL
+   LINK
 ========================================== */
 
-.journey-future{
+.expedition-life-link{
 
-    opacity:.55;
+    display:inline-block;
 
-    transition:opacity .35s ease;
+    margin-top:18px;
+
+    color:#fff;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    opacity:0;
+
+    transform:translateY(14px);
+
+    transition:
+
+        opacity .45s ease,
+
+        transform .45s ease;
 
 }
 
-.journey-future:hover{
+.expedition-life-card:hover .expedition-life-divider{
+
+    width:100px;
+
+}
+
+.expedition-life-card:hover .expedition-life-link{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==================================================
+   CARD SHADOW
+================================================== */
+
+.expedition-life-card{
+
+    box-shadow:
+
+        0 12px 35px rgba(0,0,0,.18);
+
+    transition:
+
+        transform .45s ease,
+
+        box-shadow .45s ease,
+
+        opacity .45s ease;
+
+}
+
+
+
+/* ==================================================
+   GALLERY DIM EFFECT
+================================================== */
+
+.expedition-life-grid:hover
+.expedition-life-card{
+
+    opacity:.45;
+
+}
+
+.expedition-life-grid:hover
+.expedition-life-card:hover{
 
     opacity:1;
 
 }
 
 
-/* ==========================================
-   RESPONSIVE
-========================================== */
 
-@media (max-width:900px){
+/* ==================================================
+   CARD HOVER
+================================================== */
 
-    .journey-logos{
+.expedition-life-card:hover{
 
-        gap:45px;
+    transform:translateY(-8px);
+
+    box-shadow:
+
+        0 35px 70px rgba(0,0,0,.45);
+
+}
+
+
+
+/* ==================================================
+   IMAGE HOVER
+================================================== */
+
+.expedition-life-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/* ==================================================
+   OVERLAY HOVER
+================================================== */
+
+.expedition-life-card:hover
+.expedition-life-overlay{
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.96),
+            rgba(0,0,0,.42),
+            rgba(0,0,0,.05)
+        );
+
+}
+
+
+
+/* ==================================================
+   TITLE ANIMATION
+================================================== */
+
+.expedition-life-card:hover
+.expedition-life-title-card{
+
+    transform:translateY(0);
+
+    opacity:1;
+
+}
+
+
+
+/* ==================================================
+   SUBTITLE ANIMATION
+================================================== */
+
+.expedition-life-card:hover
+.expedition-life-subtitle{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+/* ==================================================
+   PREMIUM TOUCH
+================================================== */
+
+.expedition-life-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255,255,255,.08),
+
+            transparent 40%
+
+        );
+
+    opacity:0;
+
+    transition:.45s ease;
+
+    pointer-events:none;
+
+}
+
+.expedition-life-card:hover::after{
+
+    opacity:1;
+
+}
+
+
+
+/* ==================================================
+   CURSOR
+================================================== */
+
+.expedition-life-card{
+
+    cursor:pointer;
+
+}
+
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width:1200px){
+
+    .expedition-life{
+
+        margin:clamp(120px,14vw,220px) auto;
 
     }
 
-    .journey-item:first-child .journey-logo-link img{
+    .expedition-life-heading{
 
-        width:170px;
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+        margin-bottom:65px;
 
     }
 
-    .journey-future .journey-logo-link img{
+    .expedition-life-description{
 
-        width:130px;
+        max-width:650px;
+
+    }
+
+    .expedition-life-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:22px;
+
+        align-items:stretch;
+
+    }
+
+    .expedition-life-everest{
+
+        margin-top:0;
+
+    }
+
+    .expedition-life-card{
+
+        height:480px !important;
 
     }
 
 }
+
+
+
+/* ==================================================
+   MOBILE
+================================================== */
 
 @media (max-width:768px){
 
-    .professional-journey{
+    .expedition-life{
 
-        margin:120px auto;
+        width:92%;
 
-    }
-
-    .journey-title{
-
-        font-size:32px;
+        margin:110px auto;
 
     }
 
-    .journey-text{
+    .expedition-life-heading{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+        margin-bottom:40px;
+
+    }
+
+    .expedition-life-label{
+
+        font-size:10px;
+
+        letter-spacing:3px;
+
+    }
+
+    .expedition-life-title{
+
+        font-size:clamp(42px,10vw,58px);
+
+        letter-spacing:-2px;
+
+        line-height:.95;
+
+    }
+
+    .expedition-life-description{
+
+        max-width:100%;
 
         font-size:16px;
-        margin-bottom:50px;
+
+        line-height:1.8;
 
     }
 
-    .journey-logos{
+    .expedition-life-grid{
 
-        flex-direction:column;
+        grid-template-columns:repeat(2,1fr);
 
-        gap:45px;
-
-    }
-
-    .journey-divider{
-
-        width:120px;
-        height:1px;
+        gap:14px;
 
     }
 
-    .journey-item:first-child .journey-logo-link img{
+    .expedition-life-card{
 
-        width:150px;
+        height:300px !important;
 
-    }
-
-    .journey-future .journey-logo-link img{
-
-        width:115px;
+        border-radius:16px;
 
     }
 
-    .journey-item h3{
+    .expedition-life-card img{
 
-        font-size:21px;
+        object-fit:cover;
+
+        object-position:center;
+
+    }
+
+    .expedition-life-overlay{
+
+        padding:18px;
+
+    }
+
+    .expedition-life-title-card{
+
+        font-size:18px;
+
+        line-height:1.2;
+
+        transform:none;
+
+        opacity:1;
+
+    }
+
+    .expedition-life-subtitle{
+
+        margin-top:8px;
+
+        font-size:10px;
+
+        letter-spacing:1px;
+
+        line-height:1.5;
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+    /* Mobile doesn't have hover */
+
+    .expedition-life-grid:hover .expedition-life-card{
+
+        opacity:1;
+
+    }
+
+    .expedition-life-card:hover{
+
+        transform:none;
+
+        box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+    }
+
+    .expedition-life-card:hover img{
+
+        transform:none;
 
     }
 
 }
 
+
+@media (max-width:768px){
+
+    .expedition-life-divider{
+
+        width:70px;
+
+        margin-top:12px;
+
+    }
+
+    .expedition-life-link{
+
+        opacity:1;
+
+        transform:none;
+
+        margin-top:12px;
+
+        font-size:10px;
+
+    }
+
+}
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
 @media (max-width:480px){
 
-    .professional-journey{
+    .expedition-life{
 
         width:94%;
 
-    }
-
-    .journey-title{
-
-        font-size:28px;
+        margin:90px auto;
 
     }
 
-    .journey-text{
+    .expedition-life-grid{
+
+        gap:10px;
+
+    }
+
+    .expedition-life-card{
+
+        height:330px !important;
+
+        border-radius:14px;
+
+    }
+
+    .expedition-life-overlay{
+
+        padding:14px;
+
+    }
+
+    .expedition-life-title{
+
+        font-size:40px;
+
+    }
+
+    .expedition-life-description{
 
         font-size:15px;
 
     }
 
-    .journey-item:first-child .journey-logo-link img{
+    .expedition-life-title-card{
 
-        width:135px;
-
-    }
-
-    .journey-future .journey-logo-link img{
-
-        width:105px;
+        font-size:15px;
 
     }
 
-    .journey-item h3{
+    .expedition-life-subtitle{
 
-        font-size:20px;
+        font-size:9px;
+
+        line-height:1.4;
 
     }
 
 }
+
 
 
 /* ==================================================
@@ -3173,15 +3487,14 @@ Responsive
 .collaboration-showcase{
 
     width:92%;
-    max-width:1700px;
-
-    margin:clamp(100px, 18vw, 420px) auto;
+    max-width:1400px;
+    margin:clamp(140px,16vw,320px) auto;
 
 }
 
 .collaboration-wrapper{
 
-    max-width:1200px;
+    // max-width:1200px;
     margin:auto;
 
 }
@@ -4656,119 +4969,6 @@ p {
     object-fit: cover; /* Maintain aspect ratio and cover container */
     // border-radius: 8px; /* Optional: Add rounded corners */
 }
-
-
-
-
-
-
-
-.banner-slider {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.banner-slider .slide {
-  position: relative;
-}
-
-.banner-slider img,
-.banner-slider video {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  // border-radius: 8px !important;
-  transition: transform 0.5s ease-in-out;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  pointer-events: none;
-  // border-radius: 8px;
-  text-align: center;
-  padding: 20px;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.overlay-text {
-  font-size: 1.5em;
-}
-
-.additional-info {
-  margin-top: 10px;
-  font-size: 1em;
-  color: #ccc;
-}
-
-.play-button {
-  background-color: rgba(0, 0, 0, 0.7);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1.5em;
-  cursor: pointer;
-  margin-top: 10px;
-  pointer-events: auto; /* Ensure button is clickable */
-  transition: transform 0.3s ease-in-out;
-}
-
-.play-button:hover {
-  transform: scale(1.1);
-}
-
-.slick-next, .slick-prev {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.slick-next {
-  right: 10px;
-}
-
-.slick-prev {
-  left: 10px;
-}
-
-.fullscreen-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background: black;
-  animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-
-
 
 .selected{
  background-color :#fb4a4a;

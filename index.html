@@ -9,40 +9,6 @@ description : ""
 ---
 
 
-
-
-
-
-
-<!--- B-A-N-N-E-R -->
-
-
-
-
-
-<!-- <div class="banner ">
-    <img src="/assets/css/images/banner.jpg" alt="Banner Image">
-    <div class="overlay"></div>
-    <div class="banner-content">
-        <h1>SUNIL TAMANG</h1>
-        <p>Your Subtitle or Tagline</p>
-    </div>
-</div> -->
-
-
-
-<!-- {% for summit in site.data.summit %}
-  <div class="card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
-    <div class="overlay">
-      <h2><a href="{{ summit.slug | prepend: '/summits/' | relative_url }}">{{ summit.name }}</a></h2>
-      <p>Elevation: {{ summit.elevation }} meters</p>
-      <p>Country: {{ summit.country }}</p>
-      <p>Year: {{ summit.year }}</p>
-    </div>
-  </div>
-{% endfor %} -->
-
-
 {% assign video_slide = site.data.slideshow.slides | where: "type", "video" | first %}
 
 {% if video_slide %}
@@ -99,47 +65,7 @@ description : ""
         </div>
 
 </div>
-<!-- <div class="banner video-banner">
-    <video class="banner-video"
-       autoplay muted loop playsinline preload="auto"
-       controlsList="nodownload nofullscreen noremoteplayback"
-       oncontextmenu="return false;">
-      <source src="{{ site.baseurl }}{{ video_slide.src }}" type="video/mp4">
-    </video>  
-    
-<div class="overlay">
-    <span>Filmmaker</span>
-    <span class="dot">•</span>
-    <span>Cinematographer</span>
-    <span class="dot">•</span>
-    <span>Explorer</span>
-</div>
-    
-    <div class="overlay">
-     
-        <div class="container-wide row--padding-medium">
-            <div class="menu-block-container">
-                 <a href="{{ site.baseurl }}/team" class="menu-block">
-                    <div class="menu-block-overlay">
-                        <h2 class="menu-block-title">TEAM</h2>
-                    </div>
-                </a>
-                <a href="{{ site.baseurl }}/films" class="menu-block">
-                    <div class="menu-block-overlay">
-                        <h2 class="menu-block-title">FILMS</h2>
-                    </div>
-                </a>
-                <a href="{{ site.baseurl }}/about" class="menu-block">
-                    <div class="menu-block-overlay">
-                        <h2 class="menu-block-title">ABOUT</h2>
-                    </div>
-                </a>
-            </div>
-        </div> 
-    </div>
-</div> -->
 {% endif %}
-
 
 
 <!-- <section class="intro-profile-section">
@@ -192,9 +118,9 @@ description : ""
 
     </div>
 
-</section> -->
+</section>  -->
 
-<section class="cinema-quote">
+<!-- <section class="cinema-quote">
 
     <p class="cinema-quote-text">
 
@@ -208,9 +134,10 @@ description : ""
 
     </span>
 
-</section>
+</section> -->
 
-<section class="cinematic-intro-section" id="cinematic-intro">
+
+<!-- <section class="cinematic-intro-section" id="cinematic-intro">
 
     <div class="cinematic-intro-wrapper">
 
@@ -255,11 +182,10 @@ description : ""
 
     </div>
 
-</section>
+</section> -->
 
 
-
-<!-- <section class="hero-intro-section">
+ <section class="hero-intro-section">
 
     <div class="hero-intro-wrapper">
 
@@ -310,7 +236,8 @@ description : ""
 
     </div>
 
-</section> -->
+</section>
+
 
 <!-- <section class="about-section">
 
@@ -334,54 +261,6 @@ description : ""
     </div>
 
 </section> -->
-
-
-<!-- <section class="memberships">
-
-    <div class="memberships-header">
-
-        <p class="memberships-subtitle">
-            PROFESSIONAL MEMBERSHIPS
-        </p>
-
-        <h2>
-            Certified & Affiliated
-        </h2>
-
-    </div>
-
-    <div class="memberships-grid">
-
-        <a href="https://www.nnmga.org/" target="_blank" class="membership-card">
-
-            <img
-                src="{{ site.baseurl }}{{ '/assets/css/images/logos/nnmga.png' | relative_url }}"
-                alt="NNMGA">
-
-            <span>
-                Nepal National Mountain Guide Association
-            </span>
-
-        </a>
-
-        <a href="https://ifmga.info/" target="_blank" class="membership-card">
-
-            <img
-                src="{{ site.baseurl }}{{ '/assets/css/images/logos/ifmga.png' | relative_url }}"
-                alt="IFMGA">
-
-            <span>
-                International Federation of Mountain Guides Associations
-            </span>
-
-        </a>
-
-    </div>
-
-</section> -->
-
-
-
 
 
 <section class="guide-path-section">
@@ -510,71 +389,202 @@ description : ""
 
 </section>
 
+<section class="expedition-life">
 
+    <div class="expedition-life-heading">
 
+        <div>
 
+            <p class="expedition-life-label">
 
-<!-- <section class="professional-journey">
+                BEYOND THE CAMERA
 
-    <div class="journey-container">
+            </p>
 
-        <h2 class="journey-title">
-            Professional Journey
-        </h2>
+            <h2 class="expedition-life-title">
 
-        <p class="journey-text">
-            Developing as an expedition filmmaker while progressing through Nepal's highest standard of mountain guide education.
-        </p>
+                LIFE<br>
+                IN THE<br>
+                MOUNTAINS
 
-        <div class="journey-logos">
-
-
-            <div class="journey-item">
-
-                <a href="https://nnmga.org.np/" target="_blank" class="journey-logo-link">
-
-                    <img
-                        src="{{ '/assets/css/images/logos/nnmga.png' | relative_url }}"
-                        alt="Nepal National Mountain Guide Association">
-
-                </a>
-
-                <h3>NNMGA</h3>
-
-                <p>Mountain Guide Candidate</p>
-
-            </div>
-
-
-            <div class="journey-divider"></div>
-
-
-
-            <div class="journey-item journey-future">
-
-                <a href="https://ifmga.info/" target="_blank" class="journey-logo-link">
-
-                    <img
-                        src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}"
-                        alt="International Federation of Mountain Guides Associations">
-
-                </a>
-
-                <h3>IFMGA</h3>
-
-                <p>Future Goal</p>
-
-                <small>
-                    Aspiring International Mountain Guide
-                </small>
-
-            </div>
+            </h2>
 
         </div>
 
+        <p class="expedition-life-description">
+
+            Every expedition is lived before it is filmed.
+            From 8000-meter peaks to technical alpine routes,
+            these are the disciplines that shape my life in the mountains.
+
+        </p>
+
     </div>
 
-</section> -->
+
+
+    <div class="expedition-life-grid">
+
+        <!-- ================================= -->
+        <!-- 8000M PEAKS -->
+        <!-- ================================= -->
+
+        <a href="{{ '/8000m-peaks/' | relative_url }}"
+           class="expedition-life-card expedition-life-everest">
+
+            <img
+                src="{{ '/assets/css/images/team/8000m.jpg' | relative_url }}"
+                alt="8000m Peaks">
+
+                <div class="expedition-life-overlay">
+
+                    <span class="expedition-life-title-card">
+
+                        8000M PEAKS
+
+                    </span>
+
+                    <span class="expedition-life-subtitle">
+
+                        Everest •
+                        <!-- Everest • Makalu • Lhotse + -->
+
+
+                    </span>
+
+                    <div class="expedition-life-divider"></div>
+
+                    <span class="expedition-life-link">
+
+                        View Collection →
+
+                    </span>
+
+                </div>
+
+        </a>
+
+
+
+        <!-- ================================= -->
+        <!-- ICE CLIMBING -->
+        <!-- ================================= -->
+
+        <a href="{{ '/ice-climbing/' | relative_url }}"
+           class="expedition-life-card">
+
+            <img
+                src="{{ '/assets/css/images/team/ice.jpeg' | relative_url }}"
+                alt="Ice Climbing">
+
+            <div class="expedition-life-overlay">
+
+                <span class="expedition-life-title-card">
+
+                    ICE CLIMBING
+
+                </span>
+
+                <span class="expedition-life-subtitle">
+
+                    Frozen Waterfalls • Alpine Ice
+
+                </span>
+
+                <div class="expedition-life-divider"></div>
+
+                <span class="expedition-life-link">
+
+                    Explore →
+
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- ================================= -->
+        <!-- ROCK CLIMBING -->
+        <!-- ================================= -->
+
+        <a href="{{ '/rock-climbing/' | relative_url }}"
+           class="expedition-life-card">
+
+            <img
+                src="{{ '/assets/css/images/team/trad.jpeg' | relative_url }}"
+                alt="Rock Climbing">
+
+            <div class="expedition-life-overlay">
+
+                <span class="expedition-life-title-card">
+
+                    ROCK CLIMBING
+
+                </span>
+
+                <span class="expedition-life-subtitle">
+
+                    Trad • Sport • Multi-Pitch
+
+                </span>
+
+                <div class="expedition-life-divider"></div>
+
+                <span class="expedition-life-link">
+
+                    Explore →
+
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- ================================= -->
+        <!-- ALPINISM -->
+        <!-- ================================= -->
+
+        <a href="{{ '/alpinism/' | relative_url }}"
+           class="expedition-life-card">
+
+            <img
+                src="{{ '/assets/css/images/team/alpine.jpeg' | relative_url }}"
+                alt="Alpinism">
+
+            <div class="expedition-life-overlay">
+
+                <span class="expedition-life-title-card">
+
+                    ALPINISM
+
+                </span>
+
+                <span class="expedition-life-subtitle">
+
+                    Ama Dablam • Lobuche • Island Peak
+
+                </span>
+
+                <div class="expedition-life-divider"></div>
+
+                <span class="expedition-life-link">
+
+                    View Collection →
+
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
 
 <section class="collaboration-showcase">
 
@@ -713,7 +723,6 @@ description : ""
 </section> -->
 
 
-
 <section class="featured-work">
 
     <div class="film-catalogue-header">
@@ -832,41 +841,6 @@ description : ""
 
 </section>
 
-
-
-
-
-
-
-
-
-
-<!-- <div class="banner-slider">
-    {% for slide in site.data.slideshow.slides %}
-      <div class="slide">
-        {% if slide.type == "image" %}
-          <img src="{{ slide.src }}" alt="{{ slide.alt }}">
-        {% elsif slide.type == "video" %}
-          <video autoplay muted class="slide-video" preload="metadata">
-            <source src="{{ slide.src }}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        {% endif %}
-        <div class="overlay">
-          <div class="overlay-text">
-            {{ slide.overlay_text }}
-            {% if slide.additional_info %}
-              <div class="additional-info">{{ slide.additional_info }}</div>
-            {% endif %}
-          </div>
-          {% if slide.type == "video" %}
-            <button class="play-button">Play</button>
-          {% endif %}
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-   -->
   
 <!-- <div class="container-wide row--padding-medium " >
 
@@ -874,73 +848,26 @@ description : ""
 
   <h1 class="content__title">EXPEDITIONS</h1> <br/>
   
-  <div class="mountain-cards-container">
-    {% for summit in site.data.summit %}
-    <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="mountain-card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
-        <div class="mountain-overlays">
-            <h2 class="content__title"> {{ summit.name }}</h2>
-            <p class="summit-details">Elevation: {{ summit.elevation }} meters</p>
-            <p class="summit-details">Country: {{ summit.country }}</p>
-            <p class="summit-details">Year: {{ summit.year }}</p>
+        <div class="mountain-cards-container">
+            {% for summit in site.data.summit %}
+            <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="mountain-card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
+                <div class="mountain-overlays">
+                    <h2 class="content__title"> {{ summit.name }}</h2>
+                    <p class="summit-details">Elevation: {{ summit.elevation }} meters</p>
+                    <p class="summit-details">Country: {{ summit.country }}</p>
+                    <p class="summit-details">Year: {{ summit.year }}</p>
+                </div>
+            </a>
+
+            {% endfor %}
+
+
+
         </div>
-    </a>
-
-    {% endfor %}
-
-
-
-</div>
 
 
 </div> -->
 
-<!-- <div class="container-wide row--padding-wide" >
-
-  <h1 class="content__title">HIKING </h1> <br/>
-
-
-<div class="card-container">
-  {% for summit in site.data.treks %}
-  <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
-    <div class="overlays">
-      <h2 class="content__sub-title_child">Project - {{ summit.name }}</h2>
-      <video class="video" loop muted playsinline preload="none" data-src="{{ summit.video | prepend: '/assets' | relative_url }}">
-        <source src="{{ summit.video | prepend: '/assets' | relative_url }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </a>
-  {% endfor %}
-</div>
-
- 
-  
-
-</div> -->
-
-<!-- <div class="container-wide row--padding-wide" >
-
-  <h1 class="content__title">THe Alpine Films -  My Works</h1> <br/>
-
-
-<div class="card-container">
-  {% for summit in site.data.films %}
-  <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
-    <div class="overlays">
-      <h2 class="content__sub-title_child">Project - {{ summit.name }}</h2>
-      <video class="video" loop muted playsinline preload="none" data-src="{{ summit.video | prepend: '/assets' | relative_url }}">
-        <source src="{{ summit.video | prepend: '/assets' | relative_url }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </a>
-  {% endfor %}
-</div>
-
- 
-  
-
-</div> -->
 
 
 <script type="application/ld+json">
