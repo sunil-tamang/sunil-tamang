@@ -1,26 +1,27 @@
 title: Sunil Tamang
 name: Sunil Tamang
-email: ''
-description: >- # this means to ignore newlines until "baseurl:"
+email: ""
+description: >-
   Outdoor Adventure
 
-
-
-# baseurl: "/sunil-tamang" # uncomment it when publishing
+# Uncomment when using GitHub Pages
 # url: "https://sunil-tamang.github.io"
-# baseurl: ''
-# url: ""
+# baseurl: "/sunil-tamang"
 
 url: "https://tamangsunil.com"
 baseurl: ""
 
+# Pretty URLs
+permalink: pretty
 
-permalink: slug
+####################################################
+# Collections
+####################################################
 
 collections:
+
   summits:
     output: true
-    image: true
     permalink: /summits/:name/
 
   films:
@@ -30,32 +31,59 @@ collections:
   team:
     output: true
     permalink: /team/:name/
-  
 
+  services:
+    output: true
+    permalink: /services/:name/
+
+####################################################
+# Default Layouts
+####################################################
 
 defaults:
-  - scope:
-      path: ''
-      type: 'activities'
-    values:
-      layout: 'default'
-      image: true
-      type: 'activities'
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - readme.md
-  - license
-  - packages.html
-  - "_treks/assets/css/*.scss"
+  - scope:
+      path: ""
+      type: summits
+    values:
+      layout: summit
+
+  - scope:
+      path: ""
+      type: films
+    values:
+      layout: film
+
+  - scope:
+      path: ""
+      type: team
+    values:
+      layout: team
+
+  - scope:
+      path: ""
+      type: services
+    values:
+      layout: service
+
+####################################################
+# Plugins
+####################################################
+
 plugins:
   - jekyll-sitemap
-strict_front_matter: true
-sass:
-  style: compressed # possible values: nested expanded compact compressed
 
-# Compressing HTML
+####################################################
+# Sass
+####################################################
+
+sass:
+  style: compressed
+
+####################################################
+# HTML Compression
+####################################################
+
 compress_html:
   clippings: all
   comments: all
@@ -65,3 +93,21 @@ compress_html:
   blanklines: false
   profile: false
   startings: []
+
+####################################################
+# Strict Front Matter
+####################################################
+
+strict_front_matter: true
+
+####################################################
+# Excluded Files
+####################################################
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - readme.md
+  - license
+  - packages.html
+  - "_treks/assets/css/*.scss"

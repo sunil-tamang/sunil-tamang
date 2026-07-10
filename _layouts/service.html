@@ -1,0 +1,716 @@
+---
+layout: default
+---
+
+
+<!-- ==================================================
+     ADVENTURE HERO
+================================================== -->
+
+<section class="summit-hero">
+
+    <img
+        class="summit-hero-image"
+        src="{{ page.hero | relative_url }}"
+        alt="{{ page.title }}">
+
+    <div class="summit-hero-overlay"></div>
+
+    <div class="summit-hero-content">
+
+        <span class="summit-hero-label">
+
+            GUIDED MOUNTAIN EXPERIENCE
+
+        </span>
+
+        <h1 class="summit-hero-title">
+
+            {{ page.title }}
+
+        </h1>
+
+        <p class="summit-hero-subtitle">
+
+            {{ page.subtitle }}
+
+        </p>
+
+        <a
+            href="#booking"
+            class="summit-hero-button">
+
+            Book Your Climb
+
+        </a>
+
+    </div>
+
+    <div class="summit-scroll-indicator">
+
+        <span></span>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     THE STORY
+================================================== -->
+
+<section class="summit-story">
+
+    <div class="summit-story-wrapper">
+
+        <div class="summit-story-text">
+
+            <span class="summit-story-label">
+
+                THE EXPERIENCE
+
+            </span>
+
+            <h2 class="summit-story-title">
+
+                {{ page.story_heading }}
+
+            </h2>
+
+            <div class="summit-story-divider"></div>
+
+            <p class="summit-story-intro">
+
+                {{ page.intro }}
+
+            </p>
+
+            <div class="summit-story-content">
+
+                {{ content }}
+
+            </div>
+
+        </div>
+
+
+
+        <div class="summit-story-image">
+
+            <img
+                src="{{ page.story_image | default: page.hero2 | relative_url }}"
+                alt="{{ page.title }}">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     THE EXPERIENCE
+================================================== -->
+
+<section class="summit-experience">
+
+    <div class="summit-experience-wrapper">
+
+        <div class="summit-experience-header">
+
+            <span class="summit-story-label">
+
+                THE EXPERIENCE
+
+            </span>
+
+            <h2 class="summit-experience-title">
+
+                What your day
+                looks like.
+
+            </h2>
+
+            <p class="summit-experience-intro">
+
+                From meeting in the morning to the final descent,
+                every stage of the climb is carefully planned to
+                maximize both safety and enjoyment.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="summit-timeline">
+
+            {% for step in page.experience %}
+
+            <div class="summit-timeline-item">
+
+                <div class="summit-timeline-number">
+
+                    {{ forloop.index | prepend: "0" }}
+
+                </div>
+
+                <div class="summit-timeline-content">
+
+                    <h3>
+
+                        {{ step.title }}
+
+                    </h3>
+
+                    <p>
+
+                        {{ step.description }}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==================================================
+     QUICK FACTS
+================================================== -->
+
+<section class="guide-service-facts" id="details">
+
+    <div class="guide-service-container">
+
+        <div class="guide-service-facts-grid">
+
+            <div class="guide-service-fact">
+
+                <span class="guide-service-fact-label">
+
+                    Location
+
+                </span>
+
+                <h3>
+
+                    {{ page.location }}
+
+                </h3>
+
+            </div>
+
+            <div class="guide-service-fact">
+
+                <span class="guide-service-fact-label">
+
+                    Season
+
+                </span>
+
+                <h3>
+
+                    {{ page.season }}
+
+                </h3>
+
+            </div>
+
+            <div class="guide-service-fact">
+
+                <span class="guide-service-fact-label">
+
+                    Duration
+
+                </span>
+
+                <h3>
+
+                    {{ page.duration }}
+
+                </h3>
+
+            </div>
+
+            <div class="guide-service-fact">
+
+                <span class="guide-service-fact-label">
+
+                    Difficulty
+
+                </span>
+
+                <h3>
+
+                    {{ page.difficulty }}
+
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     WHY CLIMB WITH ME
+================================================== -->
+
+<section class="summit-values">
+
+    <div class="summit-values-wrapper">
+
+        <div class="summit-values-left">
+
+            <span class="summit-story-label">
+
+                WHY CLIMB WITH ME
+
+            </span>
+
+            <h2 class="summit-values-title">
+
+                More than a guide.<br>
+                A mountain partner.
+
+            </h2>
+
+            <p class="summit-values-intro">
+
+                Every climb is built around safety,
+                learning and creating an unforgettable
+                mountain experience.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="summit-values-right">
+
+            {% for item in page.benefits %}
+
+            <div class="summit-value-item">
+
+                <div class="summit-value-number">
+
+                    {{ forloop.index | prepend: '0' }}
+
+                </div>
+
+                <div class="summit-value-content">
+
+                    <h3>
+
+                        {{ item.title }}
+
+                    </h3>
+
+                    <p>
+
+                        {{ item.description }}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     TRIP STATISTICS
+================================================== -->
+
+<section class="guide-service-statistics">
+
+    <div class="guide-service-container">
+
+        <div class="guide-service-statistics-header">
+
+            <span class="guide-service-section-label">
+
+                EXPERIENCE
+
+            </span>
+
+            <h2 class="guide-service-statistics-title">
+
+                Years of climbing.<br>
+                Real mountain experience.
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="guide-service-statistics-grid">
+
+            {% for stat in page.stats %}
+
+            <div class="guide-service-stat">
+
+                <span class="guide-service-stat-value">
+
+                    {{ stat.value }}
+
+                </span>
+
+                <span class="guide-service-stat-label">
+
+                    {{ stat.label }}
+
+                </span>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     WHAT'S INCLUDED
+================================================== -->
+
+<section class="guide-service-included">
+
+    <div class="guide-service-container">
+
+        <div class="guide-service-included-grid">
+
+            <div class="guide-service-included-left">
+
+                <span class="guide-service-section-label">
+
+                    WHAT'S INCLUDED
+
+                </span>
+
+                <h2 class="guide-service-included-title">
+
+                    Everything you need
+                    for a safe and enjoyable
+                    experience.
+
+                </h2>
+
+                <p class="guide-service-included-description">
+
+                    Every trip is planned carefully to ensure
+                    you can focus entirely on climbing while
+                    logistics and safety are handled professionally.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="guide-service-included-right">
+
+                <div class="guide-service-checklist">
+
+                    {% for item in page.included %}
+
+                    <div class="guide-service-check">
+
+                        <div class="guide-service-check-icon">
+
+                            ✓
+
+                        </div>
+
+                        <span>
+
+                            {{ item }}
+
+                        </span>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+
+                <div class="guide-service-note">
+
+                    <p>
+
+                        Personal climbing equipment can be rented
+                        if required. A complete equipment checklist
+                        will be provided after booking.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     TRIP GALLERY
+================================================== -->
+
+<section class="guide-service-gallery">
+
+    <div class="guide-service-container">
+
+        <div class="guide-service-gallery-header">
+
+            <span class="guide-service-section-label">
+
+                GALLERY
+
+            </span>
+
+            <h2>
+
+                Moments from<br>
+                the mountains.
+
+            </h2>
+
+            <p>
+
+                Every expedition leaves behind more than memories.
+                These are moments captured while living the climb.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="guide-service-gallery-grid">
+
+        {% for image in page.gallery %}
+
+        <div class="guide-service-gallery-item">
+
+            <img
+                src="{{ image | relative_url }}"
+                alt="{{ page.title }}">
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     KEEP EXPLORING
+================================================== -->
+
+<section class="summit-next">
+
+    <div class="summit-next-wrapper">
+
+        <span class="summit-story-label">
+
+            KEEP EXPLORING
+
+        </span>
+
+        <h2 class="summit-next-title">
+
+            Discover more
+            mountain experiences.
+
+        </h2>
+
+        <div class="summit-next-buttons">
+
+            {% for slug in page.related %}
+
+            {% assign service = site.services | where: "slug", slug | first %}
+
+            {% if service %}
+
+            <a
+                href="{{ service.url | relative_url }}"
+                class="summit-next-button">
+
+                {{ service.title }}
+
+            </a>
+
+            {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     QUESTIONS BEFORE THE CLIMB
+================================================== -->
+
+<section class="summit-faq">
+
+    <div class="summit-faq-wrapper">
+
+        <div class="summit-faq-left">
+
+            <span class="summit-story-label">
+
+                QUESTIONS
+
+            </span>
+
+            <h2 class="summit-faq-title">
+
+                Before
+                the climb.
+
+            </h2>
+
+            <p class="summit-faq-intro">
+
+                Everything you should know before
+                joining an ice climbing experience.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="summit-faq-right">
+
+            {% for item in page.faq %}
+
+            <div class="summit-faq-item">
+
+                <button class="summit-faq-question">
+
+                    <span>
+
+                        {{ item.question }}
+
+                    </span>
+
+                    <strong>
+
+                        +
+
+                    </strong>
+
+                </button>
+
+                <div class="summit-faq-answer">
+
+                    <p>
+
+                        {{ item.answer }}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==================================================
+     BOOK THIS EXPERIENCE
+================================================== -->
+
+<section
+    class="guide-service-booking"
+    id="booking">
+
+    <div class="guide-service-booking-content">
+
+        <span class="guide-service-booking-label">
+
+            READY TO CLIMB?
+
+        </span>
+
+        <h2>
+
+            Let's plan your
+            next adventure.
+
+        </h2>
+
+        <p>
+
+            Whether you're looking for your first ice climb,
+            a private guiding experience or preparation for
+            bigger alpine objectives, I'd be happy to help.
+
+        </p>
+
+        <div class="guide-service-booking-buttons">
+
+            <a
+                href="/contact/"
+                class="guide-service-book-primary">
+
+                Contact Me
+
+            </a>
+
+            <a
+                href="mailto:your@email.com"
+                class="guide-service-book-secondary">
+
+                Email
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+

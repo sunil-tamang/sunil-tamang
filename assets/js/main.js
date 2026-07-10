@@ -42,7 +42,41 @@ if (heroScroll && nextSection) {
 }
 
 
+/* ==================================================
+   SUMMIT FAQ
+================================================== */
 
+const summitFaqItems = document.querySelectorAll(".summit-faq-item");
+
+summitFaqItems.forEach(item => {
+
+    const button = item.querySelector(".summit-faq-question");
+
+    const answer = item.querySelector(".summit-faq-answer");
+
+    button.addEventListener("click",()=>{
+
+        const active = item.classList.contains("active");
+
+        summitFaqItems.forEach(faq=>{
+
+            faq.classList.remove("active");
+
+            faq.querySelector(".summit-faq-answer").style.maxHeight = null;
+
+        });
+
+        if(!active){
+
+            item.classList.add("active");
+
+            answer.style.maxHeight = answer.scrollHeight + "px";
+
+        }
+
+    });
+
+});
 document.addEventListener("DOMContentLoaded", function () {
   var videos = document.querySelectorAll('.video');
 

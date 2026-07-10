@@ -389,6 +389,7 @@ description : ""
 
 </section>
 
+
 <section class="expedition-life">
 
     <div class="expedition-life-heading">
@@ -425,69 +426,28 @@ description : ""
 
     <div class="expedition-life-grid">
 
-        <!-- ================================= -->
-        <!-- 8000M PEAKS -->
-        <!-- ================================= -->
+        {% assign services = site.services | sort: "order" %}
 
-        <a href="{{ '/8000m-peaks/' | relative_url }}"
-           class="expedition-life-card expedition-life-everest">
+        {% for service in services %}
 
-            <img
-                src="{{ '/assets/css/images/team/8000m.jpg' | relative_url }}"
-                alt="8000m Peaks">
-
-                <div class="expedition-life-overlay">
-
-                    <span class="expedition-life-title-card">
-
-                        8000M PEAKS
-
-                    </span>
-
-                    <span class="expedition-life-subtitle">
-
-                        Everest •
-                        <!-- Everest • Makalu • Lhotse + -->
-
-
-                    </span>
-
-                    <div class="expedition-life-divider"></div>
-
-                    <span class="expedition-life-link">
-
-                        View Collection →
-
-                    </span>
-
-                </div>
-
-        </a>
-
-
-
-        <!-- ================================= -->
-        <!-- ICE CLIMBING -->
-        <!-- ================================= -->
-
-        <a href="{{ '/ice-climbing/' | relative_url }}"
-           class="expedition-life-card">
+        <a href="{{ service.url | relative_url }}"
+           class="expedition-life-card {% if service.slug == '8000m-expeditions' %}expedition-life-everest{% endif %}">
 
             <img
-                src="{{ '/assets/css/images/team/ice.jpeg' | relative_url }}"
-                alt="Ice Climbing">
+                src="{{ service.card_image | relative_url }}"
+                alt="{{ service.title }}">
 
             <div class="expedition-life-overlay">
 
                 <span class="expedition-life-title-card">
 
-                    ICE CLIMBING
+                    {{ service.card_title }}
 
                 </span>
 
                 <span class="expedition-life-subtitle">
 
-                    Frozen Waterfalls • Alpine Ice
+                    {{ service.card_subtitle }}
 
                 </span>
 
@@ -495,7 +455,7 @@ description : ""
 
                 <span class="expedition-life-link">
 
-                    Explore →
+                    {{ service.card_button }}
 
                 </span>
 
@@ -503,83 +463,7 @@ description : ""
 
         </a>
 
-
-
-        <!-- ================================= -->
-        <!-- ROCK CLIMBING -->
-        <!-- ================================= -->
-
-        <a href="{{ '/rock-climbing/' | relative_url }}"
-           class="expedition-life-card">
-
-            <img
-                src="{{ '/assets/css/images/team/trad.jpeg' | relative_url }}"
-                alt="Rock Climbing">
-
-            <div class="expedition-life-overlay">
-
-                <span class="expedition-life-title-card">
-
-                    ROCK CLIMBING
-
-                </span>
-
-                <span class="expedition-life-subtitle">
-
-                    Trad • Sport • Multi-Pitch
-
-                </span>
-
-                <div class="expedition-life-divider"></div>
-
-                <span class="expedition-life-link">
-
-                    Explore →
-
-                </span>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- ================================= -->
-        <!-- ALPINISM -->
-        <!-- ================================= -->
-
-        <a href="{{ '/alpinism/' | relative_url }}"
-           class="expedition-life-card">
-
-            <img
-                src="{{ '/assets/css/images/team/alpine.jpeg' | relative_url }}"
-                alt="Alpinism">
-
-            <div class="expedition-life-overlay">
-
-                <span class="expedition-life-title-card">
-
-                    ALPINISM
-
-                </span>
-
-                <span class="expedition-life-subtitle">
-
-                    Ama Dablam • Lobuche • Island Peak
-
-                </span>
-
-                <div class="expedition-life-divider"></div>
-
-                <span class="expedition-life-link">
-
-                    View Collection →
-
-                </span>
-
-            </div>
-
-        </a>
+        {% endfor %}
 
     </div>
 
