@@ -87,19 +87,21 @@ transform:translate(-50%,-50%);
 
     position:absolute;
 
-    top:42px;
+    top:62px;
+
     left:50%;
 
     transform:translateX(-50%);
 
-    width:min(92%,1600px);
+    width:min(92%,1500px);
 
     display:grid;
+
     grid-template-columns:70px 1fr 160px;
 
     align-items:center;
 
-     z-index:10001;
+    z-index:10001;
 
 }
 
@@ -563,13 +565,16 @@ transform:translate(-50%,-50%);
 
 @media(max-width:992px){
 
-    .studio-nav{
 
-        width:90%;
+.studio-nav{
 
-        grid-template-columns:60px 1fr 130px;
+    width:90%;
 
-    }
+    top:40px;
+
+    grid-template-columns:60px 1fr 130px;
+
+}
 
     .studio-brand img{
 
@@ -597,12 +602,13 @@ transform:translate(-50%,-50%);
 
     .studio-nav{
 
-        top:28px;
 
-        width:92%;
+    width:92%;
 
-        grid-template-columns:55px 1fr;
+    top:28px;
+    left:55%;
 
+    grid-template-columns:60px 1fr;
     }
 
     .studio-contact-link{
@@ -692,38 +698,85 @@ transform:translate(-50%,-50%);
 }
 
 /* =======================================================
-   VIDEO BANNER
+   HOMEPAGE HERO
 ======================================================= */
 
-.video-banner{
+.homepage-hero{
+
     position:relative;
-    width:100%;
-    height:100vh;
+
+    width:calc(100% - 150px);
+
+    height:calc(100vh - 150px);
+
+    margin:60px auto;
+
+    border-radius:32px;
+
     overflow:hidden;
+
+    background:#000;
+
+    opacity:0;
+
+    transition:opacity 1.2s ease;
+
 }
 
-.banner-video{
+.homepage-hero.is-loaded{
+
+    opacity:1;
+
+}
+
+
+
+/* ======================================= */
+
+.homepage-hero-video{
 
     position:absolute;
+
     inset:0;
 
     width:100%;
+
     height:100%;
 
     object-fit:cover;
 
+    display:block;
+
     z-index:1;
+
 }
 
-/* =======================================================
-   DARK OVERLAY
-======================================================= */
 
-/* =====================================================
-   HERO STORY
-===================================================== */
 
-.banner-story{
+/* ======================================= */
+
+.homepage-hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.72),
+        rgba(0,0,0,.18),
+        rgba(0,0,0,.32)
+    );
+
+}
+
+
+
+/* ======================================= */
+
+.homepage-hero-content{
 
     position:absolute;
 
@@ -747,17 +800,25 @@ transform:translate(-50%,-50%);
 
 }
 
+
+
 /* ======================================= */
 
-.banner-story-content{
+.homepage-hero-text{
 
     max-width:620px;
 
 }
 
+
+
 /* ======================================= */
 
-.banner-story-title{
+.homepage-hero-title{
+
+    margin:0 0 35px;
+
+    color:#fff;
 
     font-size:clamp(70px,8vw,120px);
 
@@ -767,36 +828,35 @@ transform:translate(-50%,-50%);
 
     letter-spacing:-5px;
 
-    color:#fff;
-
-    margin-bottom:35px;
-
     text-shadow:0 15px 40px rgba(0,0,0,.45);
 
 }
 
 
+
 /* ======================================= */
 
-.banner-story-text{
+.homepage-hero-description{
 
     max-width:430px;
+
+    color:rgba(255,255,255,.82);
 
     font-size:18px;
 
     line-height:1.9;
 
-    color:rgba(255,255,255,.82);
-
     text-shadow:0 8px 20px rgba(0,0,0,.45);
 
 }
+
+
 
 /* =======================================
    SCROLL
 ======================================= */
 
-.banner-scroll{
+.homepage-hero-scroll{
 
     display:flex;
 
@@ -810,31 +870,37 @@ transform:translate(-50%,-50%);
 
     color:#fff;
 
-    opacity:.75;
+    opacity:.8;
 
-    transition:.35s ease;
+    transition:.35s;
 
 }
 
-.banner-scroll span:first-child{
+
+
+.homepage-hero-scroll span:first-child{
 
     font-size:11px;
 
-    letter-spacing:4px;
-
     text-transform:uppercase;
+
+    letter-spacing:4px;
 
 }
 
-.banner-scroll-arrow{
+
+
+.homepage-hero-scroll-arrow{
 
     font-size:28px;
 
-    animation:bannerScroll 2.2s infinite;
+    animation:homepageHeroScroll 2s infinite;
 
 }
 
-.banner-scroll:hover{
+
+
+.homepage-hero-scroll:hover{
 
     opacity:1;
 
@@ -842,9 +908,11 @@ transform:translate(-50%,-50%);
 
 }
 
+
+
 /* ======================================= */
 
-@keyframes bannerScroll{
+@keyframes homepageHeroScroll{
 
     0%{
 
@@ -866,19 +934,33 @@ transform:translate(-50%,-50%);
 
 }
 
+
+
 /* =======================================
    RESPONSIVE
 ======================================= */
 
 @media(max-width:900px){
 
-.banner-story{
+.homepage-hero{
+
+    width:calc(100% - 40px);
+
+    height:calc(100vh - 40px);
+
+    margin:20px auto;
+
+    border-radius:24px;
+
+}
+
+.homepage-hero-content{
 
     padding-bottom:45px;
 
 }
 
-.banner-story-title{
+.homepage-hero-title{
 
     font-size:clamp(56px,11vw,80px);
 
@@ -886,7 +968,7 @@ transform:translate(-50%,-50%);
 
 }
 
-.banner-story-text{
+.homepage-hero-description{
 
     font-size:16px;
 
@@ -896,9 +978,11 @@ transform:translate(-50%,-50%);
 
 }
 
+
+
 @media(max-width:768px){
 
-.banner-story{
+.homepage-hero-content{
 
     flex-direction:column;
 
@@ -912,7 +996,7 @@ transform:translate(-50%,-50%);
 
 }
 
-.banner-story-title{
+.homepage-hero-title{
 
     font-size:52px;
 
@@ -920,7 +1004,7 @@ transform:translate(-50%,-50%);
 
 }
 
-.banner-story-text{
+.homepage-hero-description{
 
     font-size:15px;
 
@@ -928,14 +1012,13 @@ transform:translate(-50%,-50%);
 
 }
 
-.banner-scroll{
+.homepage-hero-scroll{
 
     align-self:center;
 
 }
 
 }
-
 
 /* ==========================================
    INTRO PROFILE

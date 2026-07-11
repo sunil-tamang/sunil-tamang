@@ -12,9 +12,10 @@ description : ""
 {% assign video_slide = site.data.slideshow.slides | where: "type", "video" | first %}
 
 {% if video_slide %}
-<div class="banner video-banner">
+<div class="homepage-hero">
 
-    <video class="banner-video"
+    <video
+        class="homepage-hero-video"
         autoplay
         muted
         loop
@@ -23,46 +24,55 @@ description : ""
         controlsList="nodownload nofullscreen noremoteplayback"
         oncontextmenu="return false">
 
-        <source src="{{ site.baseurl }}{{ video_slide.src }}" type="video/mp4">
+        <source
+            src="{{ site.baseurl }}{{ video_slide.src }}"
+            type="video/mp4">
 
     </video>
 
-        <!-- Dark overlay -->
-        <div class="video-overlay"></div>
+    <div class="homepage-hero-overlay"></div>
 
-        <!-- Hero Content -->
+    <div class="homepage-hero-content">
 
-        <div class="banner-story">
+        <div class="homepage-hero-text">
 
-            <div class="banner-story-content">
+            <h1 class="homepage-hero-title">
 
-                <h1 class="banner-story-title">
+                Stories<br>
+                from the<br>
+                Himalayas.
 
-                    Stories<br>
-                    from the<br>
-                    Himalayas.
+            </h1>
 
-                </h1>
+            <p class="homepage-hero-description">
 
-                <p class="banner-story-text">
+                Expedition documentaries from the
+                highest mountains on Earth.
 
-                    Expedition documentaries from the
-                    highest mountains on Earth.
+            </p>
 
-                </p>
-
-            </div>
-
-            <a href="#" class="banner-scroll" id="heroScroll">
-
-                <span>Scroll</span>
-
-                <span class="banner-scroll-arrow">
-                    ↓
-                </span>
-
-            </a>
         </div>
+
+        <a
+            href="#"
+            class="homepage-hero-scroll"
+            id="heroScroll">
+
+            <span>
+
+                Scroll
+
+            </span>
+
+            <span class="homepage-hero-scroll-arrow">
+
+                ↓
+
+            </span>
+
+        </a>
+
+    </div>
 
 </div>
 {% endif %}
@@ -772,31 +782,51 @@ description : ""
 	
 	
 <script>
-
 document.addEventListener("DOMContentLoaded", () => {
-    const video = document.querySelector(".banner-video");
-    const banner = document.querySelector(".video-banner");
 
-    if (!video || !banner) return;
+    const hero = document.querySelector(".homepage-hero");
+    const video = document.querySelector(".homepage-hero-video");
 
-    /* Fade-in when video loads */
-    video.addEventListener("loadeddata", () => {
-        banner.style.opacity = "1";
-    });
+    if (!hero || !video) return;
+
+    /* Disable interactions */
+
+    video.style.pointerEvents = "none";
+
+    hero.addEventListener("contextmenu", e => e.preventDefault());
+
+    video.addEventListener("contextmenu", e => e.preventDefault());
+
+    /* Fade in when video is ready */
+
+    const showHero = () => {
+
+        hero.classList.add("is-loaded");
+
+    };
+
+    /* If already loaded */
+
+    if (video.readyState >= 2) {
+
+        showHero();
+
+    } else {
+
+        video.addEventListener("loadeddata", showHero);
+
+    }
 
     /* Fallback if video fails */
+
     video.addEventListener("error", () => {
-        banner.style.background = "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)";
+
+        hero.style.background =
+            "linear-gradient(135deg,#111,#222)";
+
+        hero.classList.add("is-loaded");
+
     });
 
-    /* Disable right-click on video */
-    video.addEventListener("contextmenu", (e) => e.preventDefault());
-
-    /* Disable right-click on the entire banner */
-    banner.addEventListener("contextmenu", (e) => e.preventDefault());
-
-    /* Disable ALL mouse interactions on video */
-    video.style.pointerEvents = "none";
 });
-
 </script>
