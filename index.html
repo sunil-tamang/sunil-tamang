@@ -15,14 +15,15 @@ description : ""
 <div class="homepage-hero">
 
     <video
-        class="homepage-hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        controlsList="nodownload nofullscreen noremoteplayback"
-        oncontextmenu="return false">
+    class="homepage-hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="{{ '/assets/css/images/hero-poster.jpg' | relative_url }}"
+    controlsList="nodownload nofullscreen noremoteplayback"
+    oncontextmenu="return false">
 
         <source
             src="{{ site.baseurl }}{{ video_slide.src }}"
@@ -273,41 +274,58 @@ description : ""
 </section> -->
 
 
-<section class="guide-path-section">
 
-    <div class="guide-path-container">
+<!-- ==========================================================
+     MOUNTAIN JOURNEY
+========================================================== -->
 
-        <div class="guide-path-heading">
+<section class="mountain-journey">
 
-            <div class="guide-path-title-block">
+    <div class="mountain-journey-container">
 
-                <span class="guide-path-word">
-                    THE
-                </span>
+        <!-- ========================= -->
+        <!-- HEADER -->
+        <!-- ========================= -->
 
-                <span class="guide-path-word guide-path-word-light">
-                    NEXT
-                </span>
+        <div class="mountain-journey-header">
 
-                <span class="guide-path-word">
-                    ASCENT
+            <div class="mountain-journey-title">
+
+                <span>THE</span>
+
+                <span class="mountain-journey-light">
+
+                    JOURNEY
+
                 </span>
 
             </div>
 
-            <div class="guide-path-text">
+            <div class="mountain-journey-text">
 
-                <span class="guide-path-label">
+                <span class="mountain-journey-label">
 
-                    PROFESSIONAL JOURNEY
+                    PROFESSIONAL DEVELOPMENT
 
                 </span>
 
+                <h2>
+
+                    Becoming a professional
+                    mountain guide
+                    takes years,
+                    not weekends.
+
+                </h2>
+
                 <p>
 
-                    Beyond filmmaking, I'm building the skills to safely lead
-                    people in the mountains through Nepal's highest level of
-                    mountain guide education.
+                    Every expedition teaches something new.
+                    I'm currently progressing through the Nepal
+                    National Mountain Guide Association with the
+                    long-term goal of achieving IFMGA certification,
+                    the world's highest international qualification
+                    for mountain guides.
 
                 </p>
 
@@ -315,13 +333,19 @@ description : ""
 
         </div>
 
-        <div class="guide-path-roadmap">
 
-            <!-- Current -->
 
-            <div class="guide-path-card guide-current">
+        <!-- ========================= -->
+        <!-- TIMELINE -->
+        <!-- ========================= -->
 
-                <span class="guide-status">
+        <div class="mountain-journey-timeline">
+
+            <!-- CURRENT -->
+
+            <div class="mountain-journey-stage">
+
+                <span class="mountain-journey-stage-label">
 
                     CURRENT
 
@@ -345,33 +369,39 @@ description : ""
 
             </div>
 
-            <!-- Arrow -->
 
-            <div class="guide-path-middle">
 
-                <div class="guide-line"></div>
+            <!-- CENTER -->
 
-                <div class="guide-arrow">
+            <div class="mountain-journey-progress">
 
-                    →
+                <div class="mountain-journey-line"></div>
 
-                </div>
+                <div class="mountain-journey-dot mountain-journey-dot-current"></div>
 
-                <div class="guide-line"></div>
+                <div class="mountain-journey-line"></div>
+
+                <div class="mountain-journey-dot"></div>
+
+                <div class="mountain-journey-line"></div>
 
             </div>
 
-            <!-- Future -->
 
-            <div class="guide-path-card guide-future">
 
-                <span class="guide-status">
+            <!-- FUTURE -->
+
+            <div class="mountain-journey-stage">
+
+                <span class="mountain-journey-stage-label">
 
                     FUTURE GOAL
 
                 </span>
 
-                <a href="https://ifmga.info/" target="_blank">
+                <a
+                    href="https://ifmga.info/"
+                    target="_blank">
 
                     <img
                         src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}"
@@ -392,6 +422,23 @@ description : ""
                 </p>
 
             </div>
+
+        </div>
+
+
+
+        <!-- ========================= -->
+        <!-- QUOTE -->
+        <!-- ========================= -->
+
+        <div class="mountain-journey-footer">
+
+            <p>
+
+                "The summit isn't the destination.
+                Becoming a better mountain partner is."
+
+            </p>
 
         </div>
 

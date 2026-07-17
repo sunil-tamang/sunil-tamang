@@ -447,25 +447,25 @@ transform:translate(-50%,-50%);
 
 /* Hover */
 
-.studio-navigation a::after{
+// .studio-navigation a::after{
 
-    content:"↗";
+//     content:"↗";
 
-    position:absolute;
+//     position:absolute;
 
-    top:8px;
+//     top:8px;
 
-    margin-left:14px;
+//     margin-left:14px;
 
-    font-size:.35em;
+//     font-size:.35em;
 
-    opacity:0;
+//     opacity:0;
 
-    transform:translateX(-12px);
+//     transform:translateX(-12px);
 
-    transition:.35s ease;
+//     transition:.35s ease;
 
-}
+// }
 
 .studio-navigation a:hover{
 
@@ -1623,7 +1623,7 @@ transform:translate(-50%,-50%);
 
     line-height:.88;
 
-    font-weight:700;
+    // font-weight:700;
 
     letter-spacing:-5px;
 
@@ -2487,45 +2487,53 @@ transform:translate(-50%,-50%);
 
 
 
+
+
 /* ==========================================================
-   GUIDE PATH
+   MOUNTAIN JOURNEY
 ========================================================== */
 
-.guide-path-section{
+.mountain-journey{
 
     width:92%;
+
     max-width:1400px;
+
     margin:220px auto;
 
 }
 
-.guide-path-container{
+.mountain-journey-container{
 
     width:100%;
 
 }
 
+
 /* ==========================================================
-   TOP
+   HEADER
 ========================================================== */
 
-.guide-path-heading{
+.mountain-journey-header{
 
     display:grid;
 
-    grid-template-columns:1fr 420px;
+    grid-template-columns:1fr 480px;
 
     gap:120px;
 
     align-items:end;
 
-    margin-bottom:110px;
+    margin-bottom:120px;
 
 }
 
-/* BIG TITLE */
 
-.guide-path-title-block{
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.mountain-journey-title{
 
     display:flex;
 
@@ -2533,33 +2541,36 @@ transform:translate(-50%,-50%);
 
 }
 
-.guide-path-word{
+.mountain-journey-title span{
 
     font-size:clamp(72px,9vw,120px);
 
-    font-weight:600;
+    font-weight:500;
 
     line-height:.82;
 
-    letter-spacing:-5px;
+    letter-spacing:-4px;
 
     color:#fff;
 
 }
 
-.guide-path-word-light{
+.mountain-journey-light{
 
-    color:#555;
+    color:#4d4d4d !important;
 
 }
 
-/* RIGHT */
 
-.guide-path-label{
+/* ==========================================================
+   TEXT
+========================================================== */
+
+.mountain-journey-label{
 
     display:block;
 
-    margin-bottom:22px;
+    margin-bottom:24px;
 
     font-size:12px;
 
@@ -2567,30 +2578,46 @@ transform:translate(-50%,-50%);
 
     text-transform:uppercase;
 
-    // color:#7d7d7d;
-    color:#ffffff;
+    color:#888;
 
 }
 
-.guide-path-text p{
+.mountain-journey-text h2{
+
+    font-size:44px;
+
+    font-weight:500;
+
+    line-height:1.05;
+
+    letter-spacing:-2px;
+
+    margin-bottom:28px;
+
+    color:#fff;
+
+}
+
+.mountain-journey-text p{
 
     font-size:18px;
 
     line-height:1.9;
 
-    color:#a3a3a3;
+    color:#a5a5a5;
 
 }
 
+
 /* ==========================================================
-   LOGOS
+   TIMELINE
 ========================================================== */
 
-.guide-path-roadmap{
+.mountain-journey-timeline{
 
     display:grid;
 
-    grid-template-columns:1fr auto 1fr;
+    grid-template-columns:320px 1fr 320px;
 
     align-items:center;
 
@@ -2598,159 +2625,272 @@ transform:translate(-50%,-50%);
 
 }
 
-.guide-path-card{
+
+/* ==========================================================
+   STAGE
+========================================================== */
+
+.mountain-journey-stage{
 
     text-align:center;
 
 }
 
-.guide-status{
+.mountain-journey-stage-label{
 
     display:inline-block;
 
-    margin-bottom:25px;
+    margin-bottom:28px;
 
     font-size:11px;
 
     letter-spacing:3px;
 
-    color:#7f7f7f;
-
     text-transform:uppercase;
+
+    color:#777;
 
 }
 
-.guide-path-card img{
+.mountain-journey-stage img{
 
     width:150px;
 
     display:block;
 
-    margin:0 auto 28px;
+    margin:0 auto 26px;
 
     filter:grayscale(100%);
 
-    opacity:.9;
+    opacity:.85;
 
-    transition:.4s;
-
-}
-
-.guide-current img{
-
-    width:180px;
+    transition:.35s ease;
 
 }
 
-.guide-path-card:hover img{
+.mountain-journey-stage:hover img{
 
     filter:none;
 
     opacity:1;
 
-    transform:translateY(-6px);
+    transform:translateY(-8px);
 
 }
 
-.guide-path-card h3{
+.mountain-journey-stage h3{
 
-    font-size:28px;
+    font-size:32px;
 
     font-weight:600;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
+
+    color:#fff;
 
 }
 
-.guide-path-card p{
-
-    color:#9b9b9b;
+.mountain-journey-stage p{
 
     font-size:16px;
 
+    line-height:1.7;
+
+    color:#999;
+
 }
 
+
 /* ==========================================================
-   ARROW
+   PROGRESS
 ========================================================== */
 
-.guide-path-middle{
+.mountain-journey-progress{
 
     display:flex;
 
     align-items:center;
 
-    gap:18px;
+    justify-content:center;
 
 }
 
-.guide-line{
+.mountain-journey-line{
 
-    width:120px;
+    flex:1;
 
     height:1px;
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.mountain-journey-dot{
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:#444;
+
+    margin:0 22px;
+
+}
+
+.mountain-journey-dot-current{
+
+    background:#fff;
+
+    box-shadow:0 0 0 8px rgba(255,255,255,.05);
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+/* ==========================================================
+   JOURNEY FOOTER
+========================================================== */
+
+.mountain-journey-footer{
+
+    max-width:900px;
+
+    margin:140px auto 0;
+
+    text-align:center;
+
+    position:relative;
+
+}
+
+/* Small label */
+
+.mountain-journey-footer::before{
+
+    content:"PHILOSOPHY";
+
+    display:block;
+
+    margin-bottom:28px;
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    color:#6b6b6b;
+
+}
+
+/* Quote */
+
+.mountain-journey-footer p{
+
+    font-size:clamp(34px,4vw,56px);
+
+    line-height:1.08;
+
+    letter-spacing:-2px;
+
+    font-weight:300;
+
+    color:#f5f5f5;
+
+    margin:0;
+
+}
+
+/* Decorative line */
+
+.mountain-journey-footer::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:1px;
+
+    margin:42px auto 0;
 
     background:rgba(255,255,255,.15);
 
 }
 
-.guide-arrow{
+/* ==========================================================
+   HOVER
+========================================================== */
 
-    font-size:34px;
+.mountain-journey-stage{
 
-    color:#888;
+    transition:.35s ease;
 
 }
+
+.mountain-journey-stage:hover{
+
+    transform:translateY(-6px);
+
+}
+
 
 /* ==========================================================
    RESPONSIVE
 ========================================================== */
 
-@media(max-width:1000px){
+@media(max-width:1100px){
 
-.guide-path-heading{
-
-    grid-template-columns:1fr;
-
-    gap:55px;
-
-    margin-bottom:70px;
-
-}
-
-.guide-path-text{
-
-    max-width:600px;
-
-}
-
-.guide-path-roadmap{
+.mountain-journey-header{
 
     grid-template-columns:1fr;
 
-    gap:45px;
+    gap:70px;
 
 }
 
-.guide-path-middle{
+.mountain-journey-text{
 
-    justify-content:center;
+    max-width:700px;
+
+}
+
+.mountain-journey-timeline{
+
+    grid-template-columns:1fr;
+
+    gap:70px;
+
+}
+
+.mountain-journey-progress{
 
     transform:rotate(90deg);
 
+    width:220px;
+
+    margin:auto;
+
 }
 
 }
+
 
 @media(max-width:768px){
 
-.guide-path-section{
+.mountain-journey{
 
     margin:140px auto;
 
 }
 
-.guide-path-word{
+.mountain-journey-title span{
 
     font-size:64px;
 
@@ -2758,29 +2898,43 @@ transform:translate(-50%,-50%);
 
 }
 
-.guide-path-text p{
+.mountain-journey-text h2{
+
+    font-size:34px;
+
+}
+
+.mountain-journey-text p{
 
     font-size:16px;
 
 }
 
-.guide-current img{
-
-    width:150px;
-
-}
-
-.guide-path-card img{
+.mountain-journey-stage img{
 
     width:120px;
 
 }
 
+.mountain-journey-stage h3{
+
+    font-size:26px;
+
 }
 
+.mountain-journey-footer{
 
+    margin-top:70px;
 
+}
 
+.mountain-journey-footer p{
+
+    font-size:24px;
+
+}
+
+}
 
 
 
@@ -2845,7 +2999,7 @@ transform:translate(-50%,-50%);
 
     line-height:.88;
 
-    font-weight:700;
+    // font-weight:700;
 
     letter-spacing:-5px;
 
@@ -3704,7 +3858,7 @@ transform:translate(-50%,-50%);
 
     line-height:.88;
 
-    font-weight:700;
+    // font-weight:700;
 
     letter-spacing:-5px;
 
@@ -6614,7 +6768,7 @@ CONTACT
 
     margin:0;
 
-    font-size:28px;
+    // font-size:28px;
 
     font-weight:500;
 
@@ -6725,7 +6879,7 @@ CONTACT
 
     .film-overlay p{
 
-        font-size:10px;
+        font-size:8px;
 
         letter-spacing:1.5px;
 
@@ -6735,7 +6889,7 @@ CONTACT
 
     .film-overlay h2{
 
-        font-size:18px;
+        // font-size:18px;
 
         line-height:1.25;
 
@@ -6770,7 +6924,7 @@ CONTACT
 
     .film-overlay h2{
 
-        font-size:16px;
+        // font-size:16px;
 
     }
 
@@ -6837,7 +6991,7 @@ CONTACT
 .film-overlay h2{
     font-weight: 500;
     font-style: normal;
-    font-size: 13px;
+    font-size: 15px;
     color: rgb(255, 255, 255);
     letter-spacing: 0.03em;
     line-height: 1.3;
@@ -6874,7 +7028,7 @@ CONTACT
 
     .film-overlay h2{
 
-        font-size:22px;
+        // font-size:22px;
 
     }
 
