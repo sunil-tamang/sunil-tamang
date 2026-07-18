@@ -3,7 +3,7 @@ title: Alpine Style Climbing
 
 slug: alpine-style
 
-order: 4
+order: 3
 
 card_image: /assets/css/images/team/alpine.jpeg
 card_title: ALPINE STYLE

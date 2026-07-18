@@ -3,7 +3,7 @@ title: Rock Climbing
 
 slug: rock-climbing
 
-order: 3
+order: 2
 
 ####################################################
 # Homepage Card

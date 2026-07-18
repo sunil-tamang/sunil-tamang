@@ -705,13 +705,16 @@ transform:translate(-50%,-50%);
 
     position:relative;
 
-    width:calc(100% - 150px);
+    // width:calc(100% - 150px);
 
-    height:calc(100vh - 150px);
+    // height:calc(100vh - 150px);
 
-    margin:60px auto;
+    width: 100%;
+    height:100vh;
 
-    border-radius:32px;
+    // margin:60px auto;
+
+    // border-radius:32px;
 
     overflow:hidden;
 
@@ -1802,156 +1805,6 @@ transform:translate(-50%,-50%);
 }
 
 
-/* =========================================
-   ABOUT SECTION
-========================================= */
-
-.about-section{
-    background:#000000;
-    color:#fff;
-
-    padding:140px 20px;
-
-    display:flex;
-    justify-content:center;
-}
-
-.about-container{
-
-    width:100%;
-    max-width:900px;
-
-    text-align:center;
-}
-
-/* Small line */
-
-.about-line{
-
-    width:90px;
-    height:1px;
-
-    background:#666;
-
-    margin:0 auto 50px;
-}
-
-/* Title */
-
-.about-title{
-
-    font-family:Tasaorbiterdeck,sans-serif;
-
-    font-size:4rem;
-    font-weight:600;
-
-    margin-bottom:45px;
-
-    letter-spacing:-1px;
-}
-
-/* Paragraph */
-
-.about-text{
-
-    max-width:850px;
-
-    margin:0 auto;
-
-    color:#a5a5a5;
-
-    font-size:1rem;
-
-    line-height:2;
-
-    font-weight:300;
-}
-
-/* Button */
-
-.about-button{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    margin-top:60px;
-
-    padding:18px 42px;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    border-radius:999px;
-
-    color:#fff;
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    letter-spacing:1px;
-
-    text-transform:uppercase;
-
-    transition:.35s;
-}
-
-.about-button:hover{
-
-    background:#fff;
-
-    color:#111;
-}
-
-.about-button span{
-
-    font-size:20px;
-
-    transition:.3s;
-}
-
-.about-button:hover span{
-
-    transform:translateX(5px);
-}
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width:768px){
-
-.about-section{
-
-    padding:90px 25px;
-}
-
-.about-title{
-
-    font-size:2.6rem;
-}
-
-.about-text{
-
-    font-size:1.05rem;
-
-    line-height:1.8;
-}
-
-.about-button{
-
-    padding:16px 30px;
-}
-
-}
-
-
-
-
 
 
 
@@ -2938,115 +2791,378 @@ transform:translate(-50%,-50%);
 
 
 
-/* ==================================================
-   EXPEDITION LIFE
-================================================== */
+/* ==========================================================
+   SUMMIT SHOWCASE
+========================================================== */
 
+.summit-showcase{
 
-.expedition-life{
+    width:min(92%,1500px);
 
-    width:92%;
-    max-width:1400px;
+    margin:220px auto;
 
-    margin:clamp(140px,16vw,320px) auto;
-    z-index:9999999 !important;
+}
 
+.summit-showcase-wrapper{
+
+    position:relative;
 
 }
 
 
-/* ==================================================
-   HEADING
-================================================== */
+/* ==========================================================
+   HEADER
+========================================================== */
 
-.expedition-life-heading{
+.summit-showcase-header{
 
-    display:grid;
+    max-width:760px;
 
-    grid-template-columns:minmax(0,700px) 1fr;
+    margin:0 auto 120px;
 
-    gap:120px;
-
-    align-items:end;
-
-    margin-bottom:90px;
+    text-align:center;
 
 }
 
+.summit-showcase-label{
 
-.expedition-life-label{
+    display:inline-block;
 
-    display:block;
+    margin-bottom:24px;
 
-    color:#777;
+    font-size:12px;
 
-    font-size:11px;
-
-    letter-spacing:4px;
+    letter-spacing:5px;
 
     text-transform:uppercase;
 
-    margin-bottom:22px;
+    color:#8a8a8a;
 
 }
 
+.summit-showcase-title{
 
-.expedition-life-title{
-
-
-
-    font-size:clamp(70px,8vw,150px);
+    font-size:clamp(72px,8vw,120px);
 
     line-height:.88;
 
-    // font-weight:700;
-
     letter-spacing:-5px;
 
-    text-transform:uppercase;
+    font-weight:500;
 
+    color:#fff;
 
+    margin-bottom:35px;
 
 }
 
+.summit-showcase-description{
 
-.expedition-life-description{
+    max-width:650px;
 
-    max-width:500px;
+    margin:auto;
 
     font-size:18px;
 
     line-height:1.9;
 
-    color:#9d9d9d;
+    color:#9c9c9c;
 
 }
 
 
-
-/* ==================================================
+/* ==========================================================
    GRID
-================================================== */
+========================================================== */
 
-.expedition-life-grid{
+.summit-showcase-grid{
 
-    display:grid;
+    display:flex;
 
-    grid-template-columns:repeat(4,1fr);
+    justify-content:center;
+
+    align-items:flex-end;
 
     gap:28px;
 
-    align-items:end;
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.summit-card{
+
+    position:relative;
+
+    display:block;
+
+    width:290px;
+
+    height:540px;
+
+    overflow:visible;
+
+    border-radius:10px;
+
+    text-decoration:none;
 
 }
 
 
+/* ==========================================================
+   DIFFERENT HEIGHTS
+========================================================== */
 
-/* ==================================================
+.summit-card-featured{
+
+    width:360px;
+
+    height:640px;
+
+    margin-top:-60px;
+
+}
+
+.summit-card:nth-child(2){
+
+    transform:translateY(45px);
+
+}
+
+.summit-card:nth-child(3){
+
+    transform:translateY(-20px);
+
+}
+
+.summit-card:nth-child(4){
+
+    transform:translateY(60px);
+
+}
+
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.summit-card-background{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    // border-radius:36px;
+
+}
+
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+.summit-card-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    // border-radius:36px;
+
+    background:
+
+        linear-gradient(
+
+            to top,
+
+            rgba(0,0,0,.92),
+
+            rgba(0,0,0,.55) 45%,
+
+            rgba(0,0,0,.15)
+
+        );
+
+}
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.summit-card-content{
+
+    position:absolute;
+
+    left:32px;
+
+    right:32px;
+
+    bottom:34px;
+
+    z-index:5;
+
+}
+
+
+/* ==========================================================
+   NUMBER
+========================================================== */
+
+.summit-card-number{
+
+    position:absolute;
+
+    top:28px;
+
+    left:30px;
+
+    z-index:5;
+
+    font-size:14px;
+
+    letter-spacing:5px;
+
+    color:rgba(255,255,255,.35);
+
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.summit-card-content h3{
+
+    font-size:42px;
+
+    line-height:.92;
+
+    letter-spacing:-2px;
+
+    text-transform:uppercase;
+
+    color:#fff;
+
+    margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   FEATURED TITLE
+========================================================== */
+
+.summit-card-featured h3{
+
+    font-size:58px;
+
+}
+
+
+/* ==========================================================
+   SUBTITLE
+========================================================== */
+
+.summit-card-content p{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.78);
+
+    margin-bottom:26px;
+
+}
+
+
+/* ==========================================================
+   LINK
+========================================================== */
+
+.summit-card-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   CARD IMAGE
+========================================================== */
+
+.summit-card-background{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    // border-radius:36px;
+
+    transition:
+        transform 1.2s cubic-bezier(.22,1,.36,1),
+        filter .8s ease;
+
+    z-index:1;
+
+}
+
+
+/* ==========================================================
+   CARD OVERLAY
+========================================================== */
+
+.summit-card-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    // border-radius:36px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.55) 45%,
+            rgba(0,0,0,.12)
+        );
+
+    transition:.6s ease;
+
+    z-index:2;
+
+}
+/* ==========================================================
    CARD
-================================================== */
+========================================================== */
 
-.expedition-life-card{
+.summit-card{
 
     position:relative;
 
@@ -3054,359 +3170,30 @@ transform:translate(-50%,-50%);
 
     overflow:hidden;
 
-    text-decoration:none;
-
-    border-radius:20px;
+    border-radius:10px;
 
     background:#111;
 
-}
-
-
-
-/* ==================================================
-   DIFFERENT HEIGHTS
-================================================== */
-
-.expedition-life-everest{
-
-    margin-top:-70px;
-
-}
-
-.expedition-life-card:nth-child(1){
-
-    height:760px;
-
-}
-
-.expedition-life-card:nth-child(2){
-
-    height:620px;
-
-}
-
-.expedition-life-card:nth-child(3){
-
-    height:690px;
-
-}
-
-.expedition-life-card:nth-child(4){
-
-    height:560px;
-
-}
-
-
-
-/* ==================================================
-   IMAGE
-================================================== */
-
-.expedition-life-card img{
-
-    width:100%;
-
-    height:100%;
-
-    display:block;
-
-    object-fit:cover;
+    text-decoration:none;
 
     transition:
-
-        transform 1.2s cubic-bezier(.2,.8,.2,1),
-
-        filter .5s ease;
+        transform .6s cubic-bezier(.22,1,.36,1),
+        box-shadow .6s ease;
 
 }
-
-/* ==================================================
-   OVERLAY
-================================================== */
-
-.expedition-life-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    padding:34px;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(0,0,0,.88),
-            rgba(0,0,0,.28),
-            transparent
-        );
-
-    transition:
-        background .45s ease,
-        padding .45s ease;
-
-}
-
-
-
-/* ==================================================
-   CARD TITLE
-================================================== */
-
-.expedition-life-title-card{
-
-    color:#ffffff;
-
-    font-size:30px;
-
-    font-weight:600;
-
-    line-height:1.05;
-
-    letter-spacing:.5px;
-
-    transform:translateY(18px);
-
-    opacity:.92;
-
-    transition:
-        transform .45s ease,
-        opacity .45s ease;
-
-}
-
-
-
-/* ==================================================
-   SUBTITLE
-================================================== */
-
-.expedition-life-subtitle{
-
-    margin-top:12px;
-
-    color:#c2c2c2;
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    line-height:1.7;
-
-    opacity:0;
-
-    transform:translateY(16px);
-
-    transition:
-        opacity .45s ease,
-        transform .45s ease;
-
-}
-
-
-/* ==========================================
-   DIVIDER
-========================================== */
-
-.expedition-life-divider{
-
-    width:0;
-
-    height:1px;
-
-    margin-top:18px;
-
-    background:rgba(255,255,255,.18);
-
-    transition:.45s ease;
-
-}
-
-
-
-/* ==========================================
-   LINK
-========================================== */
-
-.expedition-life-link{
-
-    display:inline-block;
-
-    margin-top:18px;
-
-    color:#fff;
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    opacity:0;
-
-    transform:translateY(14px);
-
-    transition:
-
-        opacity .45s ease,
-
-        transform .45s ease;
-
-}
-
-.expedition-life-card:hover .expedition-life-divider{
-
-    width:100px;
-
-}
-
-.expedition-life-card:hover .expedition-life-link{
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-/* ==================================================
-   CARD SHADOW
-================================================== */
-
-.expedition-life-card{
-
-    box-shadow:
-
-        0 12px 35px rgba(0,0,0,.18);
-
-    transition:
-
-        transform .45s ease,
-
-        box-shadow .45s ease,
-
-        opacity .45s ease;
-
-}
-
-
-
-/* ==================================================
-   GALLERY DIM EFFECT
-================================================== */
-
-.expedition-life-grid:hover
-.expedition-life-card{
-
-    opacity:.45;
-
-}
-
-.expedition-life-grid:hover
-.expedition-life-card:hover{
-
-    opacity:1;
-
-}
-
-
-
-/* ==================================================
-   CARD HOVER
-================================================== */
-
-.expedition-life-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:
-
-        0 35px 70px rgba(0,0,0,.45);
-
-}
-
-
-
-/* ==================================================
-   IMAGE HOVER
-================================================== */
-
-.expedition-life-card:hover img{
-
-    transform:scale(1.08);
-
-}
-
-
-
-/* ==================================================
-   OVERLAY HOVER
-================================================== */
-
-.expedition-life-card:hover
-.expedition-life-overlay{
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(0,0,0,.96),
-            rgba(0,0,0,.42),
-            rgba(0,0,0,.05)
-        );
-
-}
-
-
-
-/* ==================================================
-   TITLE ANIMATION
-================================================== */
-
-.expedition-life-card:hover
-.expedition-life-title-card{
-
-    transform:translateY(0);
-
-    opacity:1;
-
-}
-
-
-
-/* ==================================================
-   SUBTITLE ANIMATION
-================================================== */
-
-.expedition-life-card:hover
-.expedition-life-subtitle{
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-
-
-/* ==================================================
-   PREMIUM TOUCH
-================================================== */
-
-.expedition-life-card::after{
+/* ==========================================================
+   GLOW
+========================================================== */
+
+.summit-card::before{
 
     content:"";
 
     position:absolute;
 
-    inset:0;
+    inset:-2px;
+
+    border-radius:38px;
 
     background:
 
@@ -3416,296 +3203,429 @@ transform:translate(-50%,-50%);
 
             rgba(255,255,255,.08),
 
-            transparent 40%
+            transparent 40%,
+
+            rgba(255,255,255,.04)
 
         );
 
     opacity:0;
 
-    transition:.45s ease;
+    transition:.5s;
 
-    pointer-events:none;
+    z-index:0;
+
+}
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.summit-card:hover{
+
+    transform:
+        translateY(-18px)
+        scale(1.02);
+
+    box-shadow:
+
+        0 45px 80px rgba(0,0,0,.45);
 
 }
 
-.expedition-life-card:hover::after{
+.summit-card:hover::before{
 
     opacity:1;
 
 }
 
+.summit-card:hover .summit-card-background{
 
+    transform:scale(1.12);
 
-/* ==================================================
-   CURSOR
-================================================== */
+}
 
-.expedition-life-card{
+.summit-card:hover .summit-card-overlay{
 
-    cursor:pointer;
+    background:
+
+        linear-gradient(
+
+            to top,
+
+            rgba(0,0,0,.92),
+
+            rgba(0,0,0,.35) 55%,
+
+            rgba(0,0,0,.05)
+
+        );
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.summit-card-content{
+
+    transition:.5s ease;
+
+}
+
+.summit-card-content h3{
+
+    transition:.45s ease;
+
+}
+
+.summit-card-content p{
+
+    opacity:.75;
+
+    transform:translateY(20px);
+
+    transition:.45s ease;
+
+}
+
+.summit-card-link{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:.45s ease;
+
+}
+
+.summit-card:hover .summit-card-content{
+
+    transform:translateY(-8px);
+
+}
+
+.summit-card:hover h3{
+
+    transform:translateY(-6px);
+
+}
+
+.summit-card:hover p{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+.summit-card:hover .summit-card-link{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+/* ==========================================================
+   GRID EFFECT
+========================================================== */
+
+.summit-showcase-grid:hover .summit-card{
+
+    opacity:.45;
+
+    filter:grayscale(15%);
+
+}
+
+.summit-showcase-grid:hover .summit-card:hover{
+
+    opacity:1;
+
+    filter:none;
+
+}
+
+/* ==========================================================
+   LARGE TABLETS
+========================================================== */
+
+@media (max-width: 1200px){
+
+.summit-showcase{
+
+    width:92%;
+
+    margin:180px auto;
+
+}
+
+.summit-showcase-grid{
+
+    gap:22px;
+
+}
+
+.summit-card{
+
+    width:240px;
+
+    height:460px;
+
+}
+
+.summit-card-featured{
+
+    width:300px;
+
+    height:560px;
+
+    margin-top:-40px;
+
+}
+
+.summit-card-content h3{
+
+    font-size:34px;
+
+}
+
+.summit-card-featured h3{
+
+    font-size:46px;
+
+}
 
 }
 
 
+/* ==========================================================
+   TABLETS
+========================================================== */
 
-/* ==================================================
-   TABLET
-================================================== */
+@media (max-width:992px){
 
-@media (max-width:1200px){
+.summit-showcase{
 
-    .expedition-life{
-
-        margin:clamp(120px,14vw,220px) auto;
-
-    }
-
-    .expedition-life-heading{
-
-        grid-template-columns:1fr;
-
-        gap:35px;
-
-        margin-bottom:65px;
-
-    }
-
-    .expedition-life-description{
-
-        max-width:650px;
-
-    }
-
-    .expedition-life-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-        gap:22px;
-
-        align-items:stretch;
-
-    }
-
-    .expedition-life-everest{
-
-        margin-top:0;
-
-    }
-
-    .expedition-life-card{
-
-        height:480px !important;
-
-    }
+    margin:150px auto;
 
 }
 
+.summit-showcase-header{
 
-
-/* ==================================================
-   MOBILE
-================================================== */
-
-@media (max-width:768px){
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-.expedition-life{
-
-    text-align:right;
+    margin-bottom:70px;
 
 }
 
-.expedition-life-heading{
+.summit-showcase-title{
 
-    display:flex;
+    font-size:64px;
 
-    flex-direction:column;
-
-    align-items:flex-end;
-
-    margin-bottom:45px;
+    letter-spacing:-3px;
 
 }
 
-.expedition-life-description{
+.summit-showcase-description{
 
-    margin-left:auto;
-
-    text-align:right;
+    font-size:17px;
 
 }
 
-.expedition-life-grid{
+.summit-showcase-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.summit-card,
+
+.summit-card-featured{
 
     width:100%;
 
-    margin-left:auto;
+    height:520px;
+
+    margin:0;
+
+    transform:none !important;
 
 }
 
-    .expedition-life-card{
+.summit-card-featured h3{
 
-        height:300px !important;
-
-        border-radius:16px;
-
-    }
-
-    .expedition-life-card img{
-
-        object-fit:cover;
-
-        object-position:center;
-
-    }
-
-    .expedition-life-overlay{
-
-        padding:18px;
-
-    }
-
-    .expedition-life-title-card{
-
-        font-size:18px;
-
-        line-height:1.2;
-
-        transform:none;
-
-        opacity:1;
-
-    }
-
-    .expedition-life-subtitle{
-
-        margin-top:8px;
-
-        font-size:10px;
-
-        letter-spacing:1px;
-
-        line-height:1.5;
-
-        opacity:1;
-
-        transform:none;
-
-    }
-
-    /* Mobile doesn't have hover */
-
-    .expedition-life-grid:hover .expedition-life-card{
-
-        opacity:1;
-
-    }
-
-    .expedition-life-card:hover{
-
-        transform:none;
-
-        box-shadow:0 10px 30px rgba(0,0,0,.18);
-
-    }
-
-    .expedition-life-card:hover img{
-
-        transform:none;
-
-    }
+    font-size:48px;
 
 }
 
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
 
 @media (max-width:768px){
 
-    .expedition-life-divider{
+.summit-showcase{
 
-        width:70px;
-
-        margin-top:12px;
-
-    }
-
-    .expedition-life-link{
-
-        opacity:1;
-
-        transform:none;
-
-        margin-top:12px;
-
-        font-size:10px;
-
-    }
+    margin:120px auto;
 
 }
 
-/* ==================================================
+.summit-showcase-header{
+
+    margin-bottom:50px;
+
+}
+
+.summit-showcase-title{
+
+    font-size:48px;
+
+    letter-spacing:-2px;
+
+}
+
+.summit-showcase-description{
+
+    font-size:16px;
+
+    line-height:1.8;
+
+}
+
+.summit-showcase-grid{
+
+    grid-template-columns:1fr;
+
+    gap:24px;
+
+}
+
+.summit-card,
+
+.summit-card-featured{
+
+    width:100%;
+
+    height:500px;
+
+}
+
+.summit-card-content{
+
+    left:24px;
+
+    right:24px;
+
+    bottom:26px;
+
+}
+
+.summit-card-content h3{
+
+    font-size:36px;
+
+}
+
+.summit-card-featured h3{
+
+    font-size:42px;
+
+}
+
+.summit-card-content p{
+
+    font-size:15px;
+
+}
+
+}
+
+
+/* ==========================================================
    SMALL PHONES
-================================================== */
+========================================================== */
 
 @media (max-width:480px){
 
-    .expedition-life{
+.summit-showcase{
 
-        width:94%;
+    width:94%;
 
-        margin:90px auto;
-
-    }
-
-    .expedition-life-grid{
-
-        gap:10px;
-
-    }
-
-    .expedition-life-card{
-
-        height:330px !important;
-
-        border-radius:14px;
-
-    }
-
-    .expedition-life-overlay{
-
-        padding:14px;
-
-    }
-
-    .expedition-life-title{
-
-        font-size:60px;
-
-    }
-
-    .expedition-life-description{
-
-        font-size:15px;
-
-    }
-
-    .expedition-life-title-card{
-
-        font-size:15px;
-
-    }
-
-    .expedition-life-subtitle{
-
-        font-size:9px;
-
-        line-height:1.4;
-
-    }
+    margin:100px auto;
 
 }
+
+.summit-showcase-title{
+
+    font-size:38px;
+
+}
+
+.summit-showcase-description{
+
+    font-size:15px;
+
+}
+
+.summit-card,
+
+.summit-card-featured{
+
+    height:420px;
+
+    border-radius:28px;
+
+}
+
+.summit-card-background,
+
+.summit-card-overlay{
+
+    border-radius:28px;
+
+}
+
+.summit-card-content{
+
+    left:20px;
+
+    right:20px;
+
+    bottom:22px;
+
+}
+
+.summit-card-content h3{
+
+    font-size:30px;
+
+}
+
+.summit-card-featured h3{
+
+    font-size:34px;
+
+}
+
+.summit-card-number{
+
+    top:20px;
+
+    left:20px;
+
+}
+
+}
+
+
+
+
 
 
 

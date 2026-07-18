@@ -1,9 +1,9 @@
 ---
-title: 8000m Expeditions
+title: Peak Climbing
 
 slug: 8000m-peaks
 
-order: 1
+order: 4
 
 card_image: /assets/css/images/team/8000m.jpg
 card_title: 8000M PEAKS

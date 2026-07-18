@@ -250,28 +250,6 @@ description : ""
 </section>
 
 
-<!-- <section class="about-section">
-
-    <div class="about-container">
-
-        <div class="about-line"></div>
-
-        <h2 class="about-title reveal-up">
-            Hey, I'm Sunil
-        </h2>
-
-        <p class="about-text reveal-up">
-             I'm  an <strong>Expedition Filmmaker</strong>, <strong>Mountaineer</strong>, and aspiring <strong>NNMGA/IFMGA Mountain Guide</strong> based in Nepal. I create cinematic documentaries that capture the spirit of exploration, high-altitude expeditions, and life in some of the world's most remote mountain landscapes.
-        </p>
-
-        <a href="{{ site.baseurl }}/about" class="about-button">
-            READ MY STORY
-            <span>→</span>
-        </a>
-
-    </div>
-
-</section> -->
 
 
 
@@ -427,113 +405,132 @@ description : ""
 
 
 
-        <!-- ========================= -->
-        <!-- QUOTE -->
-        <!-- ========================= -->
 
-        <div class="mountain-journey-footer">
-
-            <p>
-
-                "The summit isn't the destination.
-                Becoming a better mountain partner is."
-
-            </p>
-
-        </div>
 
     </div>
 
 </section>
 
 
-<section class="expedition-life">
 
-    <div class="expedition-life-heading">
+<!-- ==========================================================
+     SUMMIT SHOWCASE
+========================================================== -->
 
-        <div>
+<section class="summit-showcase">
 
-            <p class="expedition-life-label">
+    <div class="summit-showcase-wrapper">
 
-                BEYOND THE CAMERA
+        <!-- ==========================
+             Heading
+        =========================== -->
 
-            </p>
+        <div class="summit-showcase-header">
 
-            <h2 class="expedition-life-title">
+            <span class="summit-showcase-label">
 
-                LIFE<br>
-                IN THE<br>
-                MOUNTAINS
+                LIFE IN THE MOUNTAINS
+
+            </span>
+
+            <h2 class="summit-showcase-title">
+
+                Choose your<br>
+                next adventure.
 
             </h2>
 
+            <p class="summit-showcase-description">
+
+                Every mountain discipline offers a different experience.
+                Whether you're learning to climb frozen waterfalls,
+                moving efficiently on granite, or preparing for
+                Himalayan expeditions, each journey begins here.
+
+            </p>
+
         </div>
 
-        <p class="expedition-life-description">
-
-            Every expedition is lived before it is filmed.
-            From 8000-meter peaks to technical alpine routes,
-            these are the disciplines that shape my life in the mountains.
-
-        </p>
-
-    </div>
 
 
+        <!-- ==========================
+             Cards
+        =========================== -->
 
-    <div class="expedition-life-grid">
+        <div class="summit-showcase-grid">
 
-        {% assign services = site.services | sort: "order" %}
+            {% assign ordered_services = site.services | sort:"order" %}
 
-        {% for service in services %}
+            {% for service in ordered_services %}
 
-        <a href="{{ service.url | relative_url }}"
-           class="expedition-life-card {% if service.slug == '8000m-expeditions' %}expedition-life-everest{% endif %}">
+            <a
+                href="{{ service.url | relative_url }}"
+                class="summit-card {% if forloop.first %}summit-card-featured{% endif %}">
 
-            <img
-                src="{{ service.card_image | relative_url }}"
-                alt="{{ service.title }}">
+                <!-- Background -->
 
-            <div class="expedition-life-overlay">
+                <img
+                    class="summit-card-background"
+                    src="{{ service.card_image | relative_url }}"
+                    alt="{{ service.title }}">
 
-                <span class="expedition-life-title-card">
 
-                    {{ service.card_title }}
+                <!-- Overlay -->
 
-                </span>
+                <div class="summit-card-overlay"></div>
 
-                <span class="expedition-life-subtitle">
 
-                    {{ service.card_subtitle }}
+                <!-- Large Number -->
+
+                <span class="summit-card-number">
+
+                    {{ forloop.index | prepend:"0" }}
 
                 </span>
 
-                <div class="expedition-life-divider"></div>
 
-                <span class="expedition-life-link">
+                <!-- Content -->
 
-                    {{ service.card_button }}
+                <div class="summit-card-content">
 
-                </span>
+                    <h3>
 
-            </div>
+                        {{ service.card_title }}
 
-        </a>
+                    </h3>
 
-        {% endfor %}
+                    <p>
+
+                        {{ service.card_subtitle }}
+
+                    </p>
+
+                    <span class="summit-card-link">
+
+                        Explore →
+
+                    </span>
+
+                </div>
+
+            </a>
+
+            {% endfor %}
+
+        </div>
 
     </div>
 
 </section>
+
 
 
 <!-- =========================================
      SELECTED COLLABORATIONS
 ========================================= -->
 
-<section class="collaboration-showcase">
+<!-- <section class="collaboration-showcase">
 
-    <!-- Background Topographic Map -->
 
     <div class="collaboration-topo"></div>
 
@@ -594,7 +591,8 @@ description : ""
 
     </div>
 
-</section>
+</section> -->
+
 
 <!-- <section class="trusted-by">
 
@@ -638,7 +636,7 @@ description : ""
 </section> -->
 
 
-<!-- <section class="clients">
+<section class="clients">
 
     <div class="clients-container">
 
@@ -668,7 +666,7 @@ description : ""
 
     </div>
 
-</section> -->
+</section> 
 
 
 <section class="featured-work">
