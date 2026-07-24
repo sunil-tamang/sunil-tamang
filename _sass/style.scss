@@ -79,6 +79,8 @@ transform:translate(-50%,-50%);
 
 
 
+
+
 /* ==========================================
    STUDIO NAVIGATION
 ========================================== */
@@ -2337,30 +2339,99 @@ transform:translate(-50%,-50%);
 
 
 
-
-
-
-
-
 /* ==========================================================
    MOUNTAIN JOURNEY
 ========================================================== */
 
 .mountain-journey{
 
-    width:92%;
+    position:relative;
 
-    max-width:1400px;
+    width:92%;
+    max-width:1500px;
 
     margin:220px auto;
 
+    overflow:hidden;
+
+    border-radius:40px;
+
+    background:#0d0d0d;
+
+    isolation:isolate;
+
+
 }
+
+.mountain-journey::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("/assets/css/images/contour.jpeg");
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    background-size:cover;
+
+    opacity:.15;
+
+    z-index:0;
+
+    pointer-events:none;
+
+}
+.mountain-journey::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.82)
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.65)
+        );
+
+}
+
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
 
 .mountain-journey-container{
 
-    width:100%;
+    position:relative;
+
+    z-index:2;
+
+    width:90%;
+    max-width:1350px;
+
+    margin:auto;
+
+    padding:120px 0;
 
 }
+
+
 
 
 /* ==========================================================
@@ -3583,11 +3654,11 @@ transform:translate(-50%,-50%);
 
 .summit-card-content p{
 
-    font-size:14px;
+    font-size:10px;
 
     line-height:1.6;
 
-    margin-bottom:18px;
+    margin-bottom:10px;
 
 }
 
@@ -3667,7 +3738,7 @@ transform:translate(-50%,-50%);
 
 .summit-card-content h3{
 
-    font-size:30px;
+    font-size:25px;
 
 }
 

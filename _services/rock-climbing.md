@@ -18,8 +18,8 @@ card_button: Explore →
 # Hero
 ####################################################
 
-hero: /assets/css/images/services/rock/hero.jpg
-hero2: /assets/css/images/services/rock/hero2.jpeg
+hero: /assets/css/images/services/rock/hero2.jpg
+hero2: /assets/css/images/services/rock/hero2.jpg
 
 subtitle: Trad • Sport • Multi-Pitch Guiding
 
