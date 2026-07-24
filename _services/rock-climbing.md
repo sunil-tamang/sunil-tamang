@@ -9,7 +9,7 @@ order: 2
 # Homepage Card
 ####################################################
 
-card_image: /assets/css/images/team/trad.jpeg
+card_image: /assets/css/images/services/rock/hero.jpeg
 card_title: ROCK CLIMBING
 card_subtitle: Trad • Sport • Multi-Pitch
 card_button: Explore →

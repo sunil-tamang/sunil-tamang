@@ -3478,13 +3478,13 @@ transform:translate(-50%,-50%);
 
 .summit-showcase-header{
 
-    margin-bottom:50px;
+    margin-bottom:55px;
 
 }
 
 .summit-showcase-title{
 
-    font-size:48px;
+    font-size:46px;
 
     letter-spacing:-2px;
 
@@ -3498,54 +3498,118 @@ transform:translate(-50%,-50%);
 
 }
 
+/* -------------------------- */
+
 .summit-showcase-grid{
 
-    grid-template-columns:1fr;
+    display:grid;
 
-    gap:24px;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
 
 }
 
-.summit-card,
+/* -------------------------- */
 
+.summit-card,
 .summit-card-featured{
 
     width:100%;
+    height:420px;
 
-    height:500px;
+    border-radius:10px;
 
 }
+
+/* Image */
+
+.summit-card-background{
+
+    border-radius:10px;
+
+}
+
+/* Overlay */
+
+.summit-card-overlay{
+
+    border-radius:10px;
+
+}
+
+/* Number */
+
+.summit-card-number{
+
+    top:24px;
+    left:24px;
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+}
+
+/* Content */
 
 .summit-card-content{
 
     left:24px;
-
     right:24px;
-
-    bottom:26px;
+    bottom:24px;
 
 }
 
+/* Title */
+
 .summit-card-content h3{
 
-    font-size:36px;
+    font-size:30px;
+
+    line-height:.92;
+
+    margin-bottom:12px;
 
 }
 
 .summit-card-featured h3{
 
-    font-size:42px;
+    font-size:34px;
 
 }
+
+/* Subtitle */
 
 .summit-card-content p{
 
-    font-size:15px;
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-bottom:18px;
 
 }
 
+/* Button */
+
+.summit-card-link{
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
 }
 
+.summit-card,
+.summit-card-featured{
+
+    height:420px;
+    transform:none !important;
+    margin:0;
+
+}
+}
 
 /* ==========================================================
    SMALL PHONES
@@ -3579,7 +3643,7 @@ transform:translate(-50%,-50%);
 
     height:420px;
 
-    border-radius:28px;
+    border-radius:10px;
 
 }
 
@@ -3587,7 +3651,7 @@ transform:translate(-50%,-50%);
 
 .summit-card-overlay{
 
-    border-radius:28px;
+    border-radius:10px;
 
 }
 
@@ -3609,7 +3673,7 @@ transform:translate(-50%,-50%);
 
 .summit-card-featured h3{
 
-    font-size:34px;
+    font-size:25px;
 
 }
 

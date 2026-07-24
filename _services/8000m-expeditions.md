@@ -6,8 +6,8 @@ slug: 8000m-peaks
 order: 4
 
 card_image: /assets/css/images/team/8000m.jpg
-card_title: 8000M PEAKS
-card_subtitle: Everest • Makalu • Lhotse
+card_title: Peak Climbing
+card_subtitle: Ama Dablam • Mera • Lobuche
 card_button: Explore →
 
 hero: /assets/css/images/services/8000m/hero.jpg
