@@ -1,13 +1,13 @@
----
-title: Peak Climbing
+<!-- ---
+title: Guided Peak Climbing
 
 slug: 8000m-peaks
 
 order: 4
 
 card_image: /assets/css/images/team/8000m.jpg
-card_title: Peak Climbing
-card_subtitle: Ama Dablam • Mera • Lobuche
+card_title: Mountain Guiding
+card_subtitle: Professional Guiding for Himalayan Peaks
 card_button: Explore →
 
 hero: /assets/css/images/services/8000m/hero.jpg
@@ -100,4 +100,4 @@ related:
 
 ---
 
-High-altitude expeditions demand patience, preparation and teamwork...
+High-altitude expeditions demand patience, preparation and teamwork... -->
