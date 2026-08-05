@@ -81,6 +81,251 @@ transform:translate(-50%,-50%);
 
 
 
+/* ==========================================================
+   EXPEDITION LOADER
+========================================================== */
+
+.expedition-loader{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:999999;
+
+    background:#050505;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:opacity 1s ease,
+               visibility 1s ease;
+
+}
+
+/* Hide */
+
+.expedition-loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+/* ===================================== */
+
+.expedition-loader-inner{
+
+    width:min(460px,90vw);
+
+    text-align:center;
+
+}
+
+/* ===================================== */
+
+.expedition-loader-label{
+
+    display:block;
+
+    margin-bottom:35px;
+
+    font-size:11px;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,.45);
+
+}
+
+/* ===================================== */
+
+.expedition-loader-altitude{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:8px;
+
+    margin-bottom:50px;
+
+}
+
+/* Number */
+
+.expedition-loader-altitude span{
+
+    font-size:clamp(72px,9vw,120px);
+
+    font-weight:300;
+
+    line-height:.85;
+
+    letter-spacing:-5px;
+
+    color:#fff;
+
+}
+
+/* m */
+
+.expedition-loader-altitude small{
+
+    font-size:22px;
+
+    color:rgba(255,255,255,.55);
+
+    margin-bottom:16px;
+
+}
+
+/* =====================================
+   PROGRESS BAR
+===================================== */
+
+.expedition-loader-route{
+
+    position:relative;
+
+    width:100%;
+
+    height:2px;
+
+    background:rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    margin-bottom:30px;
+
+}
+
+/* Animated line */
+
+.expedition-loader-progress{
+
+    width:0%;
+
+    height:100%;
+
+    background:#fff;
+
+    transition:width .35s linear;
+
+}
+
+/* Glow */
+
+.expedition-loader-progress::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    top:50%;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    transform:translate(50%,-50%);
+
+    box-shadow:
+
+        0 0 12px rgba(255,255,255,.7),
+
+        0 0 30px rgba(255,255,255,.35);
+
+}
+
+/* ===================================== */
+
+.expedition-loader-stage{
+
+    font-size:15px;
+
+    color:rgba(255,255,255,.55);
+
+    letter-spacing:.5px;
+
+    transition:.35s;
+
+}
+
+/* =====================================
+   BACKGROUND EFFECT
+===================================== */
+
+.expedition-loader::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+
+            circle at center,
+
+            rgba(255,255,255,.03),
+
+            transparent 65%
+
+        );
+
+}
+
+/* =====================================
+   FADE-IN
+===================================== */
+
+.expedition-loader-inner{
+
+    animation:loaderAppear 1s ease;
+
+}
+
+@keyframes loaderAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+
+
+
+
 /* ==========================================
    STUDIO NAVIGATION
 ========================================== */

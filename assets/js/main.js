@@ -1,3 +1,111 @@
+/* ==========================================================
+   EXPEDITION LOADER
+========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const loader = document.getElementById("expeditionLoader");
+    const altitude = document.getElementById("altitudeCounter");
+    const progress = document.getElementById("loaderProgress");
+    const stage = document.getElementById("loaderStage");
+
+    if(!loader) return;
+
+    const stages = [
+
+        {
+            altitude: 500,
+            text: "Preparing Equipment"
+        },
+
+        {
+            altitude: 1800,
+            text: "Approaching Base Camp"
+        },
+
+        {
+            altitude: 3500,
+            text: "Crossing Glacier"
+        },
+
+        {
+            altitude: 5600,
+            text: "Ascending Icefall"
+        },
+
+        {
+            altitude: 7200,
+            text: "Entering High Camp"
+        },
+
+        {
+            altitude: 8848,
+            text: "Summit Reached"
+        }
+
+    ];
+
+    const summitAltitude = 8848;
+    const duration = 3000;      // total animation time
+    const start = performance.now();
+
+    function animate(now){
+
+        const elapsed = now - start;
+
+        const t = Math.min(elapsed / duration, 1);
+
+        const currentAltitude = Math.floor(t * summitAltitude);
+
+        altitude.textContent = currentAltitude.toLocaleString();
+
+        progress.style.width = `${t * 100}%`;
+
+        for(let i = stages.length - 1; i >= 0; i--){
+
+            if(currentAltitude >= stages[i].altitude){
+
+                stage.textContent = stages[i].text;
+
+                break;
+
+            }
+
+        }
+
+        if(t < 1){
+
+            requestAnimationFrame(animate);
+
+        }else{
+
+            altitude.textContent = "8,848";
+
+            stage.textContent = "Welcome to the Himalayas";
+
+            setTimeout(() => {
+
+                loader.classList.add("hide");
+
+                document.body.style.overflow = "";
+
+            },700);
+
+        }
+
+    }
+
+    document.body.style.overflow = "hidden";
+
+    requestAnimationFrame(animate);
+
+});
+
+
+
+
+
+
 const observer=new IntersectionObserver(entries=>{
 
 entries.forEach(entry=>{

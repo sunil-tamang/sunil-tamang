@@ -8,6 +8,51 @@ tags : "Everest Base Camp Trek, Annapurna Circuit Trek, Annapurna Base Camp Trek
 description : ""
 ---
 
+<!-- ==========================================================
+     EXPEDITION LOADER
+========================================================== -->
+
+<div class="expedition-loader" id="expeditionLoader">
+
+    <div class="expedition-loader-inner">
+
+        <span class="expedition-loader-label">
+
+            EXPEDITION START
+
+        </span>
+
+        <div class="expedition-loader-altitude">
+
+            <span id="altitudeCounter">
+
+                0
+
+            </span>
+
+            <small>
+
+                m
+
+            </small>
+
+        </div>
+
+        <div class="expedition-loader-route">
+
+            <div class="expedition-loader-progress" id="loaderProgress"></div>
+
+        </div>
+
+        <div class="expedition-loader-stage" id="loaderStage">
+
+            Preparing Equipment
+
+        </div>
+
+    </div>
+
+</div>
 
 {% assign video_slide = site.data.slideshow.slides | where: "type", "video" | first %}
 
