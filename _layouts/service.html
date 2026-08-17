@@ -6,7 +6,6 @@ layout: default
 <!-- ==================================================
      ADVENTURE HERO
 ================================================== -->
-
 <section class="summit-hero">
 
     <img
@@ -16,7 +15,23 @@ layout: default
 
     <div class="summit-hero-overlay"></div>
 
+
     <div class="summit-hero-content">
+
+        <div class="summit-hero-location">
+
+            <span>
+                {{ page.location }}
+            </span>
+
+            <span class="summit-hero-location-line"></span>
+
+            <span>
+                NEPAL
+            </span>
+
+        </div>
+
 
         <span class="summit-hero-label">
 
@@ -24,11 +39,13 @@ layout: default
 
         </span>
 
+
         <h1 class="summit-hero-title">
 
             {{ page.title }}
 
         </h1>
+
 
         <p class="summit-hero-subtitle">
 
@@ -36,17 +53,76 @@ layout: default
 
         </p>
 
-        <a
-            href="#booking"
-            class="summit-hero-button">
 
-            Book Your Climb
+        <div class="summit-hero-bottom">
 
-        </a>
+            <div class="summit-hero-meta">
+
+                <div>
+
+                    <span>
+                        SEASON
+                    </span>
+
+                    <strong>
+                        {{ page.season }}
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        DURATION
+                    </span>
+
+                    <strong>
+                        {{ page.duration }}
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        GROUP
+                    </span>
+
+                    <strong>
+                        {{ page.group_size }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="#booking"
+                class="summit-hero-button">
+
+                <span>
+                    PLAN YOUR CLIMB
+                </span>
+
+                <span class="summit-hero-button-arrow">
+                    →
+                </span>
+
+            </a>
+
+        </div>
 
     </div>
 
+
     <div class="summit-scroll-indicator">
+
+        <span>
+            SCROLL
+        </span>
 
         <span></span>
 
@@ -181,86 +257,6 @@ layout: default
     </div>
 
 </section>
-<!-- ==================================================
-     QUICK FACTS
-================================================== -->
-
-<section class="guide-service-facts" id="details">
-
-    <div class="guide-service-container">
-
-        <div class="guide-service-facts-grid">
-
-            <div class="guide-service-fact">
-
-                <span class="guide-service-fact-label">
-
-                    Location
-
-                </span>
-
-                <h3>
-
-                    {{ page.location }}
-
-                </h3>
-
-            </div>
-
-            <div class="guide-service-fact">
-
-                <span class="guide-service-fact-label">
-
-                    Season
-
-                </span>
-
-                <h3>
-
-                    {{ page.season }}
-
-                </h3>
-
-            </div>
-
-            <div class="guide-service-fact">
-
-                <span class="guide-service-fact-label">
-
-                    Duration
-
-                </span>
-
-                <h3>
-
-                    {{ page.duration }}
-
-                </h3>
-
-            </div>
-
-            <div class="guide-service-fact">
-
-                <span class="guide-service-fact-label">
-
-                    Difficulty
-
-                </span>
-
-                <h3>
-
-                    {{ page.difficulty }}
-
-                </h3>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
 
 
 <!-- ==================================================
