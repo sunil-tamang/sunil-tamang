@@ -33,28 +33,37 @@ contains_ads : "YES"
 
 
     <form class="contact-form"
-          action="https://formsubmit.co/YOUR_EMAIL"
+          action="https://formsubmit.co/{{ site.email }}"
           method="POST">
+
+        <input type="hidden" name="_next" value="{{ "/thanks/" | absolute_url }}">
 
         <input
             type="text"
             name="name"
+            aria-label="Name"
+            autocomplete="name"
             placeholder="Name"
             required>
 
         <input
             type="email"
             name="email"
+            aria-label="Email"
+            autocomplete="email"
             placeholder="Email"
             required>
 
         <input
             type="text"
             name="subject"
+            aria-label="Subject"
             placeholder="Subject">
 
         <textarea
             name="message"
+            aria-label="Message"
+            required
             placeholder="Tell me about your project..."
             rows="7"></textarea>
 
@@ -73,9 +82,9 @@ contains_ads : "YES"
 
         <span>OR EMAIL ME DIRECTLY</span>
 
-        <a href="mailto:hello@suniltamang.com">
+        <a href="mailto:{{ site.email }}">
 
-            hello@suniltamang.com
+            {{ site.email }}
 
         </a>
 
@@ -84,11 +93,11 @@ contains_ads : "YES"
 
     <div class="contact-social">
 
-        <a href="#">Instagram</a>
+        <a href="https://www.instagram.com/sunilghalan_/" target="_blank" rel="noopener">Instagram</a>
 
-        <a href="#">YouTube</a>
 
-        <a href="#">Vimeo</a>
+
+
 
     </div>
 

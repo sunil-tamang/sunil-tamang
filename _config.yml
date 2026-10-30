@@ -1,6 +1,6 @@
 title: Sunil Tamang
 name: Sunil Tamang
-email: ""
+email: "hello@suniltamang.com"
 description: >-
   Outdoor Adventure
 
@@ -58,7 +58,7 @@ defaults:
       path: ""
       type: team
     values:
-      layout: team
+      layout: team-member
 
   - scope:
       path: ""
@@ -107,7 +107,8 @@ strict_front_matter: true
 exclude:
   - Gemfile
   - Gemfile.lock
-  - readme.md
+  - README.md
+  - scripts
   - license
   - packages.html
   - "_treks/assets/css/*.scss"

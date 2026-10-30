@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const progress = document.getElementById("loaderProgress");
     const stage = document.getElementById("loaderStage");
 
-    if(!loader) return;
+    if (!loader || !altitude || !progress || !stage) return;
 
     const stages = [
 
@@ -165,6 +165,9 @@ summitFaqItems.forEach(item => {
 
     const answer = item.querySelector(".summit-faq-answer");
 
+    if (!button || !answer) return;
+    button.setAttribute("aria-expanded", "false");
+
     button.addEventListener("click",()=>{
 
         const active = item.classList.contains("active");
@@ -172,14 +175,17 @@ summitFaqItems.forEach(item => {
         summitFaqItems.forEach(faq=>{
 
             faq.classList.remove("active");
+            faq.querySelector(".summit-faq-question")?.setAttribute("aria-expanded", "false");
 
-            faq.querySelector(".summit-faq-answer").style.maxHeight = null;
+            const faqAnswer = faq.querySelector(".summit-faq-answer");
+            if (faqAnswer) faqAnswer.style.maxHeight = null;
 
         });
 
         if(!active){
 
             item.classList.add("active");
+            button.setAttribute("aria-expanded", "true");
 
             answer.style.maxHeight = answer.scrollHeight + "px";
 
@@ -196,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       video.addEventListener('mouseenter', function () {
           video.load(); // Load metadata
-          video.play();
+          video.play().catch(() => {});
       });
 
       video.addEventListener('mouseleave', function () {
@@ -213,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeButton = document.getElementById("closeVideo");
     const player = document.getElementById("youtubePlayer");
 
-    if (!openButton || !modal || !player) return;
+    if (!openButton || !modal || !player || !closeButton) return;
 
     // ======================================
     // OPEN VIDEO
@@ -300,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-$(document).ready(function(){
+if (window.jQuery && jQuery.fn.slick) jQuery(document).ready(function(){
 
     $('.featured-slider').slick({
 
@@ -370,7 +376,7 @@ $(document).ready(function(){
 
         video.currentTime = 0;
 
-        video.play();
+        video.play().catch(() => {});
 
     });
 
@@ -394,37 +400,37 @@ $(document).ready(function(){
     const filmsGrid = document.getElementById("filmsGrid");
     const filmsList = document.getElementById("filmsList");
 
-    gridBtn.addEventListener("click", function () {
+    if (gridBtn && listBtn && filmsGrid && filmsList) {
+        gridBtn.addEventListener("click", function () {
 
-        filmsGrid.style.display = "grid";
-        filmsList.style.display = "none";
+            filmsGrid.style.display = "grid";
+            filmsList.style.display = "none";
 
-        gridBtn.classList.add("active");
-        listBtn.classList.remove("active");
+            gridBtn.classList.add("active");
+            listBtn.classList.remove("active");
 
-    });
+        });
 
-    listBtn.addEventListener("click", function () {
+        listBtn.addEventListener("click", function () {
 
-        filmsGrid.style.display = "none";
-        filmsList.style.display = "block";
+            filmsGrid.style.display = "none";
+            filmsList.style.display = "block";
 
-        listBtn.classList.add("active");
-        gridBtn.classList.remove("active");
+            listBtn.classList.add("active");
+            gridBtn.classList.remove("active");
 
-    });
+        });
 
+    }
 
-
-
-$(document).ready(function(){
+if (window.jQuery && jQuery.fn.slick) jQuery(document).ready(function(){
     $('.banner-slider').slick({
       autoplay: true,
       autoplaySpeed: 3000,
       dots: false,
       arrows: true,
       adaptiveHeight: true,
-      lazyLoad: true,
+      lazyLoad: "ondemand",
       
       // Additional options can be added here
     });
@@ -461,7 +467,7 @@ $(document).ready(function(){
           fullscreenVideo.msRequestFullscreen();
         }
   
-        fullscreenVideo.play();
+        fullscreenVideo.play().catch(() => fullscreenVideo.remove());
   
         // Remove the full-screen video element when exiting full screen
         fullscreenVideo.addEventListener('fullscreenchange', function() {

@@ -11,7 +11,7 @@ card_subtitle: Fast • Light • Self Supported
 card_button: Explore →
 
 hero: /assets/css/images/services/alpine/hero.jpg
-hero2: /assets/css/images/services/alpine/hero2.jpg
+hero2: /assets/css/images/services/alpine/hero.jpg
 
 subtitle: Technical Alpine Ascents
 
@@ -71,13 +71,6 @@ stats:
 
   - label: Years
     value: 8+
-
-gallery:
-
-  - /assets/css/images/services/alpine/1.jpg
-  - /assets/css/images/services/alpine/2.jpg
-  - /assets/css/images/services/alpine/3.jpg
-  - /assets/css/images/services/alpine/4.jpg
 
 faq:
 
