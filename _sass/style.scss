@@ -1,9 +1,13 @@
 html{
 
 scroll-behavior:smooth;
+background-color:#000;
+color-scheme:dark;
 
 }
 body{
+    background-color:#000;
+    color:#fff;
     opacity:0;
     animation:pageFade 1s ease forwards;
 }
@@ -3317,7 +3321,7 @@ transform:translate(-50%,-50%);
 
     inset:0;
 
-    background-image:url("/assets/css/images/contour.jpeg");
+    background-image:url("images/contour.jpeg");
 
     background-repeat:no-repeat;
 
@@ -4740,7 +4744,7 @@ transform:translate(-50%,-50%);
 
     inset:0;
 
-    background-image:url("/assets/css/images/map.jpeg");
+    background-image:url("images/map.jpeg");
 
     background-size:cover;
 

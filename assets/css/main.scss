@@ -1,12 +1,13 @@
 ---
 ---
 /* External CSS */
-@import "ladda/ladda";
+@use "ladda/ladda";
 
 /* Internal CSS */
-@import "reset";
-@import "base";
-@import "layout";
-@import "blogpost";
-@import "style";
-@import "form";
+@use "reset";
+@use "base";
+@use "layout";
+@use "blogpost";
+@use "form";
+
+@use "../../_sass/style";

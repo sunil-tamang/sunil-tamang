@@ -2,7 +2,7 @@
 layout: team-member
 name: Eric Crosland
 role: DIRECTOR
-photo: /assets/css/images/team/eric-profile.jpg
+photo: /assets/css/images/team/eric.jpg
 hover_image: /assets/css/images/team/eric.jpg
 order: 3
 ---
