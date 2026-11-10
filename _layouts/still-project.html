@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% assign project = site.data.still_projects | where: 'slug', page.project_slug | first %}
+{% assign project_images = site.static_files | where_exp: 'file', 'file.path contains project.folder' | where_exp: 'file', "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.webp' or file.extname == '.avif'" | sort: 'path' %}
+{% assign previous_index = 0 %}{% assign next_index = 0 %}
+{% for item in site.data.still_projects %}{% if item.slug == project.slug %}
+{% assign previous_index = forloop.index0 | minus: 1 %}{% assign next_index = forloop.index | modulo: site.data.still_projects.size %}
+{% endif %}{% endfor %}
+{% if previous_index < 0 %}{% assign previous_index = site.data.still_projects.size | minus: 1 %}{% endif %}
+{% assign previous_project = site.data.still_projects[previous_index] %}{% assign next_project = site.data.still_projects[next_index] %}
+<section class="still-slideshow" data-still-slideshow aria-labelledby="still-project-title">
+<div class="still-photo-stage" data-still-photo-stage aria-roledescription="carousel" aria-label="{{ project.title }} photographs">
+{% for photo in project_images %}
+<figure class="still-photo{% if forloop.first %} is-active{% endif %}" data-still-photo {% unless forloop.first %}inert aria-hidden="true"{% endunless %}>
+<img {% if forloop.first %}src="{{ photo.path | relative_url }}" fetchpriority="high"{% else %}data-src="{{ photo.path | relative_url }}"{% endif %} alt="{{ project.title | escape }} — photograph {{ forloop.index }}" decoding="async" draggable="false">
+</figure>
+{% endfor %}
+</div>
+<header class="still-photo-caption"><p>PHOTOGRAPHY BY:<br>SUNIL TAMANG</p><h1 id="still-project-title">{{ project.title }}</h1><span>( # ) IMAGE · EXPEDITION · HIMALAYAS</span></header>
+<div class="still-photo-controls"><a href="{{ '/stills/' | relative_url }}">( &lt; ) CLOSE</a><div class="still-photo-counter"><button type="button" data-still-prev aria-label="Previous photograph">↑</button><output data-still-current aria-live="polite" aria-atomic="true">001</output><span aria-hidden="true">/</span><span>{{ project_images.size | prepend: '00' }}</span><button type="button" data-still-next aria-label="Next photograph">↓</button></div><div class="still-project-links"><a href="{{ '/stills/' | append: previous_project.slug | append: '/' | relative_url }}">PREV PROJECT</a><span aria-hidden="true">/</span><a href="{{ '/stills/' | append: next_project.slug | append: '/' | relative_url }}">NEXT PROJECT</a></div></div>
+<noscript><style>.still-slideshow{height:auto}.still-photo-stage{position:static;margin-top:110px}.still-photo{position:static;opacity:1;visibility:visible;margin:12px}.still-photo img{height:auto}.still-photo[inert]{display:none}.still-photo-caption{top:130px}</style></noscript>
+</section>

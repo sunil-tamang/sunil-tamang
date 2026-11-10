@@ -3,12 +3,10 @@ layout: default
 ---
 
 
-<!-- ==================================================
-     ADVENTURE HERO
-================================================== -->
+
 <section class="summit-hero">
 
-    <img
+    <img decoding="async" fetchpriority="high"
         class="summit-hero-image"
         src="{{ page.hero | relative_url }}"
         alt="{{ page.title }}">
@@ -131,9 +129,7 @@ layout: default
 </section>
 
 
-<!-- ==================================================
-     THE STORY
-================================================== -->
+
 
 <section class="summit-story">
 
@@ -173,7 +169,7 @@ layout: default
 
         <div class="summit-story-image">
 
-            <img
+            <img decoding="async" loading="lazy"
                 src="{{ page.story_image | default: page.hero2 | relative_url }}"
                 alt="{{ page.title }}">
 
@@ -185,9 +181,7 @@ layout: default
 
 
 
-<!-- ==================================================
-     THE EXPERIENCE
-================================================== -->
+
 
 <section class="summit-experience">
 
@@ -259,9 +253,7 @@ layout: default
 </section>
 
 
-<!-- ==================================================
-     WHY CLIMB WITH ME
-================================================== -->
+
 
 <section class="summit-values">
 
@@ -333,9 +325,7 @@ layout: default
 </section>
 
 
-<!-- ==================================================
-     TRIP STATISTICS
-================================================== -->
+
 
 <section class="guide-service-statistics">
 
@@ -389,9 +379,7 @@ layout: default
 </section>
 
 
-<!-- ==================================================
-     WHAT'S INCLUDED
-================================================== -->
+
 
 <section class="guide-service-included">
 
@@ -476,9 +464,7 @@ layout: default
 </section>
 
 
-<!-- ==================================================
-     TRIP GALLERY
-================================================== -->
+
 
 <section class="guide-service-gallery">
 
@@ -516,7 +502,7 @@ layout: default
 
         <div class="guide-service-gallery-item">
 
-            <img
+            <img decoding="async" loading="lazy"
                 src="{{ image | relative_url }}"
                 alt="{{ page.title }}">
 
@@ -530,9 +516,7 @@ layout: default
 
 
 
-<!-- ==================================================
-     KEEP EXPLORING
-================================================== -->
+
 
 <section class="summit-next">
 
@@ -579,9 +563,7 @@ layout: default
 
 
 
-<!-- ==================================================
-     QUESTIONS BEFORE THE CLIMB
-================================================== -->
+
 
 <section class="summit-faq">
 
@@ -655,9 +637,7 @@ layout: default
 
 </section>
 
-<!-- ==================================================
-     BOOK THIS EXPERIENCE
-================================================== -->
+
 
 <section
     class="guide-service-booking"

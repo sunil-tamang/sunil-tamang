@@ -1,0 +1,4 @@
+{%- assign responsive = site.data.responsive_images[include.src] -%}
+{%- if responsive -%}
+srcset="{{ responsive.small | relative_url }} 640w, {{ include.src | relative_url }} {{ responsive.width }}w" sizes="(max-width: 768px) 100vw, 50vw"
+{%- endif -%}

@@ -29,7 +29,7 @@ collections:
     permalink: /films/:name/
 
   team:
-    output: true
+    output: false
     permalink: /team/:name/
 
   services:

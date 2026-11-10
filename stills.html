@@ -1,46 +1,34 @@
 ---
 layout: default
+title: Stills
 permalink: /stills/
 ---
-
-
-<section class="stills-page">
-
-    <div class="stills-header">
-
-        <h1>STILLS</h1>
-
-        <p>
-            A selection of photographs captured during expeditions,
-            climbs and documentary projects across the Himalaya.
-        </p>
-
-    </div>
-
-    <div class="stills-grid">
-
-        {% for photo in site.data.photos %}
-
-        <figure class="still">
-
-            <img
-                src="{{ photo.image_url | relative_url }}"
-                alt="{{ photo.title }}">
-
-            <figcaption>
-
-                <h3>{{ photo.title }}</h3>
-
-                {% if photo.location %}
-                <span>{{ photo.location }}</span>
-                {% endif %}
-
-            </figcaption>
-
-        </figure>
-
-        {% endfor %}
-
-    </div>
-
+<section class="project-directory" aria-labelledby="projects-title" data-project-directory>
+<div class="project-directory-backdrops" aria-hidden="true">
+{% for project in site.data.still_projects %}
+<img class="project-directory-image{% if forloop.first %} is-active{% endif %}" data-project-image="{{ project.slug }}" {% if forloop.first %}src="{{ project.cover | relative_url }}" fetchpriority="high"{% else %}data-src="{{ project.cover | relative_url }}"{% endif %} alt="" decoding="async">
+{% endfor %}
+</div>
+{% assign expedition_count = 0 %}{% assign short_film_count = 0 %}
+{% for project in site.data.still_projects %}{% assign category = project.category | slugify %}
+{% if category == 'expedition' %}{% assign expedition_count = expedition_count | plus: 1 %}{% endif %}
+{% if category == 'short-film' %}{% assign short_film_count = short_film_count | plus: 1 %}{% endif %}
+{% endfor %}
+<header class="project-directory-heading">
+<h1 id="projects-title" class="project-directory-sr-only">Stills</h1>
+<div class="project-directory-filters" role="group" aria-label="Filter photography projects">
+<button type="button" data-project-filter="all" aria-pressed="true">ALL ( {{ site.data.still_projects.size | prepend: '0' }} )</button><span aria-hidden="true">/</span>
+<button type="button" data-project-filter="expedition" aria-pressed="false">EXPEDITIONS ( {{ expedition_count | prepend: '0' }} )</button><span aria-hidden="true">/</span>
+<button type="button" data-project-filter="short-film" aria-pressed="false">SHORT FILMS ( {{ short_film_count | prepend: '0' }} )</button>
+</div>
+</header>
+<div class="project-directory-names">
+{% for project in site.data.still_projects %}
+{% assign row_position = forloop.index0 | modulo: 2 %}{% if row_position == 0 %}<div class="project-directory-row">{% endif %}
+<a class="project-directory-link{% if forloop.first %} is-active{% endif %}" data-project-name="{{ project.slug }}" data-project-category="{{ project.category | slugify }}" href="{{ '/stills/' | append: project.slug | append: '/' | relative_url }}"><h2>{{ project.title | escape }}</h2><span>{{ project.category }}</span></a>
+{% if row_position == 1 or forloop.last %}</div>{% endif %}
+{% endfor %}
+</div>
+<p class="project-directory-empty" hidden role="status">No projects in this category yet.</p>
+<p class="project-directory-sr-only" data-project-status aria-live="polite" aria-atomic="true"></p>
 </section>

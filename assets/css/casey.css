@@ -1,0 +1,1039 @@
+/* CASEY-inspired editorial system, using the portfolio's own content and assets. */
+:root {
+  --casey-ink:#0b0b0b;
+  --casey-paper:#eed1d0;
+  --casey-line:rgba(238,209,208,.25)
+}
+
+html {
+  scroll-behavior:smooth
+}
+
+.casey-theme {
+  background:var(--casey-ink);
+  color:var(--casey-paper);
+  animation:none;
+  opacity:1;
+  font-family:Inter,sans-serif;
+  letter-spacing:0;
+  font-variant:normal;
+  line-height:1.4
+}
+
+.casey-theme main {
+  min-height:70vh
+}
+
+html body.casey-theme :is(h1,h2,h3,h4,h5,h6) {
+  color:inherit;
+  font-family:Inter,sans-serif;
+  font-style:normal;
+  font-weight:400;
+  letter-spacing:-.055em
+}
+
+.casey-theme p,.casey-theme button,.casey-theme small,.casey-theme input,.casey-theme textarea,.casey-theme label {
+  font-family:'Roboto Mono',monospace
+}
+
+.casey-theme a {
+  color:inherit;
+  text-decoration:none
+}
+
+.casey-theme button {
+  background:none;
+  border:0;
+  color:inherit;
+  cursor:pointer;
+  font-size:11px;
+  letter-spacing:0
+}
+
+.casey-theme a:focus-visible,.casey-theme button:focus-visible {
+  outline:1px solid currentColor;
+  outline-offset:6px
+}
+
+.casey-theme [hidden] {
+  display:none!important
+}
+
+.casey-nav {
+  position:fixed;
+  inset:0 0 auto;
+  z-index:10020;
+  display:flex;
+  align-items:start;
+  justify-content:space-between;
+  padding:26px 32px;
+  color:var(--casey-paper);
+  mix-blend-mode:difference
+}
+
+.casey-wordmark {
+  font-size:clamp(22px,3vw,44px);
+  font-weight:650;
+  line-height:.77;
+  letter-spacing:-.07em
+}
+
+.casey-nav-work {
+  font:11px/1.4 'Roboto Mono',monospace
+}
+
+.casey-menu-button {
+  display:flex;
+  gap:36px
+}
+
+.casey-menu {
+  position:fixed;
+  inset:0;
+  z-index:10010;
+  background:var(--casey-paper);
+  color:var(--casey-ink);
+  padding:120px 5vw 30px;
+  overflow:auto
+}
+
+.casey-menu nav {
+  max-width:1300px;
+  margin:auto
+}
+
+.casey-menu nav>a {
+  display:flex;
+  align-items:baseline;
+  gap:28px;
+  border-bottom:1px solid #0b0b0b33;
+  padding:8px 0
+}
+
+.casey-menu nav small {
+  font-size:12px;
+  letter-spacing:0
+}
+
+.casey-menu nav a>span {
+  font-size:clamp(36px,6vw,90px);
+  line-height:1.03;
+  letter-spacing:-.065em
+}
+
+.casey-menu-bottom {
+  display:flex;
+  gap:15vw;
+  justify-content:space-between;
+  max-width:1300px;
+  margin:40px auto 0
+}
+
+.casey-menu-bottom p {
+  max-width:520px;
+  font-size:12px;
+  color:inherit
+}
+
+.casey-menu-bottom a {
+  font-size:14px
+}
+
+.casey-menu-open {
+  overflow:hidden
+}
+
+.casey-slide {
+  position:relative;
+  isolation:isolate;
+  height:100svh;
+  min-height:640px;
+  overflow:hidden;
+  background:#111;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:125px 4vw 85px
+}
+
+.casey-slide-image,.casey-slide-video,.casey-slide-shade {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+
+.casey-slide-image {
+  z-index:-3
+}
+
+.casey-slide-video {
+  z-index:-2;
+  opacity:0;
+  transition:opacity .8s
+}
+
+.casey-slide-video.is-playing {
+  opacity:1
+}
+
+.casey-slide-shade {
+  z-index:-1;
+  background:linear-gradient(#0005,#0001 35%,#0009)
+}
+
+.casey-slide-top {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font:11px/1.4 'Roboto Mono',monospace;
+  text-transform:uppercase
+}
+
+.casey-slide-title {
+  display:block;
+  align-self:center;
+  width:95%;
+  text-align:center
+}
+
+.casey-theme .casey-slide-title :is(h1,h2) {
+  font-size:clamp(52px,8vw,160px);
+  font-weight:450;
+  line-height:.89;
+  letter-spacing:-.07em;
+  text-transform:uppercase;
+  margin:0;
+  text-wrap:balance;
+  transition:transform .8s cubic-bezier(.2,.7,.2,1)
+}
+
+.casey-slide-title:hover h1 {
+  transform:scale(1.025)
+}
+
+.casey-slide-bottom {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  align-items:end;
+  gap:24px
+}
+
+.casey-eyebrow {
+  font:10px/1.5 'Roboto Mono',monospace;
+  letter-spacing:.02em
+}
+
+.casey-slide-bottom p {
+  font:16px/1.4 Inter,sans-serif;
+  margin:7px 0 0;
+  color:inherit
+}
+
+.casey-slide-tags {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  font:11px 'Roboto Mono',monospace
+}
+
+.casey-project-link {
+  justify-self:end;
+  font:11px 'Roboto Mono',monospace;
+  display:flex;
+  gap:30px
+}
+
+.casey-player-controls {
+  position:fixed;
+  bottom:24px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:20;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  font:11px 'Roboto Mono',monospace;
+  color:var(--casey-paper);
+  mix-blend-mode:difference
+}
+
+.casey-control-line {
+  height:1px;
+  width:70px;
+  background:currentColor
+}
+
+.casey-player-controls.is-away {
+  opacity:0;
+  pointer-events:none
+}
+
+.casey-intro {
+  padding:130px 5vw;
+  display:grid;
+  grid-template-columns:1fr 2fr 1fr;
+  gap:40px;
+  border-bottom:1px solid var(--casey-line)
+}
+
+.casey-theme .casey-intro h2 {
+  font-size:clamp(38px,5vw,78px);
+  line-height:1;
+  margin:0
+}
+
+.casey-intro p {
+  font-size:12px;
+  color:inherit;
+  line-height:1.7
+}
+
+.casey-intro a {
+  font:11px 'Roboto Mono',monospace
+}
+
+.casey-expeditions {
+  padding:80px 5vw 140px
+}
+
+.casey-theme .casey-expeditions>h2 {
+  font-size:clamp(32px,4vw,60px);
+  margin-bottom:40px
+}
+
+.casey-expeditions>a {
+  display:flex;
+  align-items:center;
+  gap:30px;
+  border-top:1px solid var(--casey-line);
+  padding:22px 0
+}
+
+.casey-expeditions h3 {
+  font-size:clamp(22px,3vw,44px);
+  margin:0
+}
+
+.casey-expeditions a>span {
+  font:10px 'Roboto Mono',monospace
+}
+
+.casey-expeditions a>span:last-child {
+  margin-left:auto
+}
+
+.casey-projects {
+  padding:160px 4vw 120px
+}
+
+.casey-index-heading {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  margin-bottom:60px;
+  gap:24px
+}
+
+.casey-theme .casey-index-heading h1 {
+  font-size:clamp(72px,12vw,190px);
+  line-height:.8;
+  margin:0
+}
+
+.casey-index-heading button {
+  padding:8px 0;
+  margin-left:20px;
+  opacity:.5
+}
+
+.casey-index-heading button[aria-pressed=true] {
+  opacity:1;
+  border-bottom:1px solid
+}
+
+.casey-project-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:50px 16px
+}
+
+.casey-project-visual {
+  position:relative;
+  aspect-ratio:16/10;
+  overflow:hidden
+}
+
+.casey-project-visual img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .7s
+}
+
+.casey-project-card:hover img {
+  transform:scale(1.035)
+}
+
+.casey-card-plus {
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  font-size:25px
+}
+
+.casey-project-caption {
+  display:grid;
+  grid-template-columns:30px 1fr;
+  gap:8px;
+  padding-top:14px
+}
+
+.casey-theme .casey-project-caption h2 {
+  font-size:22px;
+  line-height:1.1;
+  margin:0
+}
+
+.casey-project-caption>span {
+  font:10px 'Roboto Mono',monospace
+}
+
+.casey-project-caption>span:last-child {
+  grid-column:2
+}
+
+.casey-project-grid.is-list {
+  display:block
+}
+
+.is-list .casey-project-card {
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:30px;
+  padding:22px 0;
+  border-top:1px solid var(--casey-line)
+}
+
+.is-list .casey-project-visual {
+  aspect-ratio:16/9
+}
+
+.is-list .casey-project-caption {
+  align-content:center
+}
+
+.is-list .casey-project-caption h2 {
+  font-size:clamp(24px,4vw,56px)
+}
+
+.casey-footer {
+  padding:70px 4vw 25px;
+  border-top:1px solid var(--casey-line)
+}
+
+.casey-footer-top,.casey-footer-bottom {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  font:10px 'Roboto Mono',monospace
+}
+
+.casey-footer-name {
+  display:block;
+  font:600 clamp(48px,13.6vw,260px)/1 Inter,sans-serif;
+  letter-spacing:-.08em;
+  white-space:nowrap;
+  margin:60px 0 45px
+}
+
+.casey-footer-bottom button {
+  font-size:10px
+}
+
+/* Retained Jekyll pages inherit the same editorial treatment. */
+.casey-theme .film-project {
+  color:inherit
+}
+
+.casey-theme .film-header {
+  margin-bottom:55px;
+  text-align:left
+}
+
+.casey-theme .film-title {
+  font-size:clamp(48px,8vw,115px);
+  font-weight:400;
+  line-height:.92
+}
+
+.casey-theme .film-meta {
+  justify-content:start;
+  gap:50px
+}
+
+.casey-theme .meta-item {
+  text-align:left
+}
+
+.casey-theme .meta-item strong,.casey-theme .film-details h2,.casey-theme .film-details h3,.casey-theme .film-description p,.casey-theme .film-credit dt,.casey-theme .film-credit dd {
+  color:inherit
+}
+
+.casey-theme .film-video-banner,.casey-theme .film-gallery-frame {
+  border-radius:0
+}
+
+.casey-theme .film-gallery-grid {
+  gap:12px
+}
+
+.casey-theme .film-details>h2 {
+  font-family:Inter,sans-serif;
+  font-size:38px
+}
+
+.casey-theme .film-details h3 {
+  font-family:Inter,sans-serif;
+  font-size:22px
+}
+
+.casey-theme .stills-page {
+  padding-top:150px
+}
+
+.casey-theme .stills-header h1 {
+  font-size:clamp(60px,10vw,145px);
+  line-height:.9;
+  font-weight:400
+}
+
+.casey-theme .stills-grid img {
+  border-radius:0
+}
+
+.casey-theme .about-hero {
+  padding-top:130px
+}
+
+.casey-theme .contact-page {
+  color:inherit
+}
+
+.casey-theme .contact-title,.casey-theme .about-content h1 {
+  font-size:clamp(52px,8vw,110px);
+  font-weight:400;
+  line-height:1
+}
+
+.casey-theme .summit-hero-title {
+  font-size:clamp(55px,8vw,130px);
+  font-weight:400
+}
+
+.casey-theme .team-page {
+  padding-top:150px;
+  color:inherit
+}
+
+.casey-theme .team-info h1 {
+  font-size:clamp(40px,6vw,90px)
+}
+
+@media(max-width:800px) {
+  .casey-nav {
+    padding:24px 20px
+  }
+  .casey-nav-work {
+    display:none
+  }
+  .casey-menu {
+    padding:110px 22px 30px
+  }
+  .casey-menu-bottom {
+    flex-direction:column;
+    gap:20px
+  }
+  .casey-slide {
+    min-height:650px;
+    padding:110px 22px 100px
+  }
+  .casey-slide-top {
+    font-size:10px
+  }
+  .casey-slide-top>span:nth-child(2) {
+    max-width:45%
+  }
+  .casey-theme .casey-slide-title :is(h1,h2) {
+    font-size:clamp(42px,11vw,82px)
+  }
+  .casey-slide-bottom {
+    grid-template-columns:1fr 1fr;
+    gap:20px
+  }
+  .casey-slide-tags {
+    grid-row:2;
+    grid-column:1/-1
+  }
+  .casey-intro {
+    grid-template-columns:1fr;
+    padding:80px 22px;
+    gap:28px
+  }
+  .casey-projects {
+    padding:140px 20px 80px
+  }
+  .casey-index-heading {
+    align-items:start;
+    flex-direction:column;
+    gap:25px
+  }
+  .casey-index-heading button {
+    margin:0 20px 0 0
+  }
+  .casey-project-grid {
+    grid-template-columns:1fr;
+    gap:34px
+  }
+  .casey-project-caption h2 {
+    font-size:20px
+  }
+  .is-list .casey-project-card {
+    grid-template-columns:100px 1fr;
+    gap:18px
+  }
+  .casey-footer {
+    padding:50px 22px 25px
+  }
+  .casey-footer-name {
+    font-size:13vw;
+    margin:45px 0
+  }
+  .casey-footer-bottom {
+    gap:20px
+  }
+  .casey-expeditions {
+    padding:60px 22px
+  }
+  .casey-expeditions>a {
+    gap:16px
+  }
+  .casey-project-link {
+    gap:12px
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .casey-theme * {
+    scroll-behavior:auto!important;
+    animation:none!important;
+    transition:none!important
+  }
+}
+
+.casey-slide {
+  scroll-snap-align:start
+}
+
+html:has(.casey-home) {
+  scroll-snap-type:y proximity
+}
+
+.casey-theme .casey-next-project {
+  padding:100px 4vw;
+  border-top:1px solid var(--casey-line)
+}
+
+.casey-next-project span {
+  font:11px 'Roboto Mono',monospace
+}
+
+.casey-theme .casey-next-project h2 {
+  font-size:clamp(40px,7vw,110px);
+  line-height:1;
+  margin:30px 0 0
+}
+
+.casey-theme .casey-next-project a {
+  display:block
+}
+
+/* Editorial styling shared by the existing content pages. */
+.casey-theme .contact-page {
+  max-width:1500px;
+  width:100%;
+  margin:100px auto 130px;
+  text-align:left;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px 8vw
+}
+
+.casey-theme .contact-hero {
+  margin:0
+}
+
+.casey-theme .contact-hero h1 {
+  font-size:clamp(62px,8vw,140px);
+  font-weight:400;
+  line-height:.88;
+  letter-spacing:-.065em
+}
+
+.casey-theme .contact-hero p {
+  font-size:13px;
+  line-height:1.7;
+  color:inherit;
+  max-width:410px;
+  margin:0
+}
+
+.casey-theme .contact-label {
+  color:inherit;
+  font-size:10px;
+  letter-spacing:0
+}
+
+.casey-theme .contact-form {
+  padding-top:20px
+}
+
+.casey-theme .contact-form input,.casey-theme .contact-form textarea {
+  border:0;
+  border-bottom:1px solid var(--casey-line);
+  border-radius:0;
+  background:transparent;
+  color:inherit;
+  padding:16px 0;
+  font-size:13px
+}
+
+.casey-theme .contact-form input:focus,.casey-theme .contact-form textarea:focus {
+  border-color:var(--casey-paper);
+  outline:0
+}
+
+.casey-theme .contact-form button {
+  background:var(--casey-paper);
+  color:var(--casey-ink);
+  border-radius:0;
+  font-size:12px
+}
+
+.casey-theme .contact-divider {
+  display:none
+}
+
+.casey-theme .contact-email {
+  grid-column:1/-1;
+  border-top:1px solid var(--casey-line);
+  padding-top:45px
+}
+
+.casey-theme .contact-email span {
+  color:inherit;
+  font-size:10px
+}
+
+.casey-theme .contact-email a {
+  font:400 clamp(24px,5vw,70px)/1.2 Inter,sans-serif;
+  letter-spacing:-.05em
+}
+
+.casey-theme .contact-social {
+  margin-top:0;
+  gap:25px
+}
+
+.casey-theme .contact-social a {
+  font-size:11px;
+  color:inherit
+}
+
+.casey-theme .about-hero {
+  background:transparent;
+  padding:150px 4vw 100px
+}
+
+.casey-theme .about-hero-container {
+  width:100%;
+  max-width:1600px;
+  border-radius:0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px
+}
+
+.casey-theme .about-bg {
+  position:relative;
+  inset:auto;
+  width:100%;
+  height:100%;
+  min-height:600px;
+  object-fit:cover;
+  z-index:auto
+}
+
+.casey-theme .about-overlay {
+  display:none
+}
+
+.casey-theme .about-content {
+  padding:30px 0 0;
+  align-items:start;
+  text-align:left
+}
+
+.casey-theme .about-content h1 {
+  color:inherit;
+  font-size:clamp(70px,10vw,150px);
+  letter-spacing:-.065em;
+  margin-bottom:45px
+}
+
+.casey-theme .about-text {
+  margin-bottom:40px
+}
+
+.casey-theme .about-text p,.casey-theme .about-text strong {
+  color:inherit;
+  text-shadow:none;
+  font-size:13px;
+  line-height:1.8
+}
+
+.casey-theme .featured-gallery {
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  margin:0
+}
+
+.casey-theme .featured-gallery img {
+  height:100px;
+  border-radius:0
+}
+
+.casey-theme .stills-header p {
+  font-size:12px;
+  color:inherit
+}
+
+.casey-theme .still figcaption {
+  background:transparent;
+  color:inherit
+}
+
+.casey-theme .profile-photo {
+  border-radius:0;
+  box-shadow:none
+}
+
+.casey-theme .team-bio {
+  font-size:14px
+}
+
+.casey-theme .team-page {
+  max-width:1300px;
+  width:92%;
+  padding-bottom:100px
+}
+
+.casey-theme :is(.summit-story,.summit-experience,.summit-values,.guide-service-statistics,.guide-service-included,.guide-service-gallery,.summit-next,.summit-faq) {
+  background:var(--casey-ink);
+  color:var(--casey-paper)
+}
+
+.casey-theme :is(.summit-story-title,.summit-experience-title,.summit-values-title,.guide-service-statistics-title,.guide-service-included-title,.summit-next-title,.summit-faq-title) {
+  font-size:clamp(36px,4.5vw,72px);
+  font-weight:400;
+  letter-spacing:-.05em;
+  line-height:1.05;
+  color:inherit
+}
+
+.casey-theme :is(.summit-story-image img,.guide-service-gallery-item,.summit-next-button) {
+  border-radius:0
+}
+
+.casey-theme .guide-service-stat-value {
+  color:inherit
+}
+
+@media(max-width:800px) {
+  .casey-theme .contact-page {
+    grid-template-columns:1fr;
+    gap:45px;
+    margin:110px auto 70px
+  }
+  .casey-theme .contact-hero h1 {
+    font-size:clamp(62px,13vw,100px)
+  }
+  .casey-theme .contact-form {
+    padding-top:0
+  }
+  .casey-theme .about-hero {
+    padding:130px 20px 70px
+  }
+  .casey-theme .about-hero-container {
+    grid-template-columns:1fr;
+    gap:35px
+  }
+  .casey-theme .about-bg {
+    height:65svh;
+    min-height:350px
+  }
+  .casey-theme .about-content {
+    padding:0
+  }
+  .casey-theme .featured-gallery img {
+    height:80px
+  }
+}
+
+.casey-roster .casey-project-visual {
+  aspect-ratio:4/5
+}
+
+.casey-theme .casey-roster .casey-project-caption h2 {
+  text-transform:uppercase;
+  font-size:clamp(26px,3vw,48px)
+}
+
+@media(prefers-reduced-motion:no-preference) {
+  .casey-theme .casey-project-visual img {
+    will-change:auto
+  }
+  .casey-theme .casey-slide-title {
+    animation:casey-arrive 1s cubic-bezier(.2,.7,.2,1) both
+  }
+  @keyframes casey-arrive {
+    from {
+      opacity:0;
+      transform:translateY(25px)
+    }
+    to {
+      opacity:1;
+      transform:translateY(0)
+    }
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html:has(.casey-theme) {
+    scroll-behavior:auto;
+    scroll-snap-type:none
+  }
+}
+
+/* The homepage is one viewport; only the selected film is interactive. */
+html:has(.casey-home.is-slideshow) { scroll-snap-type: none; }
+.casey-home.is-slideshow { overflow: hidden; overscroll-behavior: none; }
+.casey-home.is-slideshow main { height: 100svh; min-height: 0; }
+.casey-home.is-slideshow .casey-films { position: relative; height: 100%; overflow: hidden; touch-action: pan-x pinch-zoom; }
+.casey-home.is-slideshow .casey-slide {
+ position: absolute; inset: 0; height: 100%; min-height: 0;
+ opacity: 0; visibility: hidden; pointer-events: none;
+ transform: translate3d(0,var(--slide-offset,40px),0);
+ transition: opacity .65s ease, transform .8s cubic-bezier(.2,.7,.2,1), visibility .8s;
+}
+.casey-home.is-slideshow .casey-slide.is-active {
+ opacity: 1; visibility: visible; pointer-events: auto; transform: translate3d(0,0,0);
+}
+@media (max-height: 600px) {
+ .casey-home.is-slideshow .casey-slide { padding-top: 95px; padding-bottom: 65px; }
+ .casey-home.is-slideshow .casey-slide-title :is(h1,h2) { font-size: clamp(28px,6vw,68px); }
+ .casey-home.is-slideshow .casey-slide-tags { display: none; }
+}
+
+/* Projects: condensed names, category filters and photographic hover previews. */
+@font-face {
+ font-family: 'Portfolio Condensed'; font-style: normal; font-weight: 700;
+ font-display: swap; src: url('../fonts/roboto-condensed-bold-latin.woff2') format('woff2');
+}
+.project-directory {
+ position: relative; isolation: isolate; min-height: 100svh;
+ padding: clamp(150px,15.5vh,230px) 5.5vw 12vh;
+ display: flex; flex-direction: column; overflow: hidden;
+}
+.project-directory-backdrops { position: absolute; inset: 0; z-index: -2; background: var(--casey-ink); transition: opacity .6s; }
+.project-directory-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .65s ease; }
+.project-directory-image.is-active { opacity: 1; }
+.project-directory::after {
+ content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+ background: rgba(0,0,0,.4);
+}
+.project-directory-heading { position: relative; z-index: 1; margin-bottom: 18vh; }
+.project-directory-filters { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px; }
+.casey-theme .project-directory-filters button,.project-directory-filters>span {
+ font: 400 clamp(10px,.78vw,16px)/1.5 'Roboto Mono',monospace;
+ letter-spacing: .12em; padding: 0; color: var(--casey-paper); opacity: .22; transition: opacity .35s;
+}
+.casey-theme .project-directory-filters button[aria-pressed=true],.casey-theme .project-directory-filters button:hover,.casey-theme .project-directory-filters button:focus-visible { opacity: 1; }
+.project-directory-names { display: flex; flex-direction: column; gap: 12px; margin: auto; width: 100%; max-width: 1900px; }
+.project-directory-row { display: flex; align-items: baseline; justify-content: space-between; gap: 4vw; width: 100%; }
+.project-directory-row:nth-child(odd) { padding-left: 12%; }
+.project-directory-row:nth-child(even) { padding-right: 3%; }
+.project-directory-row:not(:has(.project-directory-link:not([hidden]))) { display: none; }
+.project-directory-link { display: flex; align-items: baseline; gap: 9px; width: auto; flex: 0 1 auto; min-width: 0; max-width: 100%; color: var(--casey-paper); opacity: .24; transition: opacity .5s; }
+.casey-theme .project-directory-link h2 {
+ font: 700 clamp(34px,3.55vw,100px)/1.08 'Portfolio Condensed','Arial Narrow',sans-serif;
+ letter-spacing: -.025em; text-transform: uppercase; margin: 0; min-width: 0; flex: 0 1 auto; overflow-wrap: normal; text-align: left;
+}
+.project-directory-link>span { flex: 0 0 auto; font: 400 clamp(9px,.65vw,14px)/1.3 'Roboto Mono',monospace; letter-spacing: .06em; text-transform: uppercase; }
+.project-directory-link.is-active,.project-directory-link:hover,.project-directory-link:focus-visible { opacity: 1; }
+.project-directory.is-empty .project-directory-backdrops { opacity: 0; }
+.casey-theme .project-directory-empty { color: var(--casey-paper); text-align: center; margin: auto; font-size: 13px; }
+.project-directory-sr-only { position: absolute!important; width: 1px; height: 1px; padding: 0!important; margin: -1px!important; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+/* Keep the wordmark left and the Projects link centered. */
+body:has([data-project-directory]) .casey-nav-work { position: absolute; left: 50%; transform: translateX(-50%); letter-spacing: .12em; }
+body:has([data-project-directory]) .casey-menu-button { margin-left: auto; }
+@media(max-width:800px) {
+ .project-directory { padding: 145px 22px 80px; }
+ .project-directory-heading { margin-bottom: 70px; }
+ .project-directory-filters { gap: 9px; }
+ .casey-theme .project-directory-filters button,.project-directory-filters>span { font-size: 10px; letter-spacing: .03em; }
+ .project-directory-names { gap: 24px; }
+ .project-directory-link { gap: 8px; }
+ .casey-theme .project-directory-link h2 { font-size: clamp(30px,5.5vw,46px); }
+ .project-directory-link>span { font-size: 9px; }
+ body:has([data-project-directory]) .casey-nav-work { display: block; font-size: 9px; letter-spacing: 0; }
+ body:has([data-project-directory]) .casey-menu-button { gap: 12px; font-size: 10px; }
+}
+
+@media(max-width:600px) {
+ .project-directory-row { flex-direction: column; align-items: flex-start; gap: 24px; }
+ .project-directory-row:nth-child(n) { padding: 0; }
+ .project-directory-row:nth-child(odd) { padding-left: 5%; }
+}
+
+.casey-menu-qualifications { display: flex; flex-direction: row; gap: 28px; margin-top: 22px; }
+.casey-menu-qualification { display: flex; align-items: center; gap: 14px; }
+.casey-menu-qualification img { display: block; width: 32px; height: 32px; object-fit: contain; flex: 0 0 32px; }
+.casey-menu-qualification>div { display: flex; flex-direction: column; gap: 3px; }
+.casey-menu-qualification strong { font: 500 14px/1.3 Inter,sans-serif; }
+.casey-menu-qualification span { font: 11px/1.5 'Roboto Mono',monospace; opacity: .65; }
+
+.casey-menu-bio { max-width: 520px; }
+@media(max-width:480px) { .casey-menu-qualifications { gap: 18px; } .casey-menu-qualification { gap: 9px; } }
+
+/* About: the full biography scrolls over one fixed photograph. */
+.about-editorial { position: relative; isolation: isolate; min-height: 100svh; color: var(--casey-paper); }
+.about-editorial-backdrop { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: #0b0b0b; }
+.about-editorial-backdrop img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.about-editorial-backdrop::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,.6); }
+.about-editorial-content { width: 100%; max-width: 1500px; margin: 0 auto; padding: 160px 5vw 100px; }
+.casey-theme .about-editorial-label { font: 11px/1.5 'Roboto Mono',monospace; letter-spacing: .12em; color: inherit; margin-bottom: 35px; }
+.casey-theme .about-editorial h1 { font: 500 clamp(72px,10vw,160px)/.9 Inter,sans-serif; letter-spacing: -.065em; margin: 0 0 50px; }
+.about-editorial-bio { max-width: 760px; }
+.casey-theme .about-editorial-bio p { font: 400 15px/1.85 'Roboto Mono',monospace; color: inherit; margin: 0 0 26px; }
+.about-editorial-bio strong { font-weight: 500; }
+@media(max-width:800px) {
+ .about-editorial-content { padding: 140px 24px 65px; }
+ .casey-theme .about-editorial h1 { font-size: clamp(64px,13vw,100px); margin-bottom: 35px; }
+ .casey-theme .about-editorial-bio p { font-size: 13px; line-height: 1.8; }
+ .about-editorial-backdrop::after { background: rgba(0,0,0,.67); }
+ .casey-menu-qualifications { gap: 18px; }
+ .casey-menu-qualification span { max-width: 150px; }
+}

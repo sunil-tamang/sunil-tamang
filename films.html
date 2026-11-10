@@ -1,135 +1,34 @@
 ---
 layout: default
-title: Films
+title: Projects
 permalink: /films/
 ---
-
-<!-- <link rel="stylesheet" href="{{ '/assets/css/films.css' | relative_url }}"> -->
-
-<!-- <section class="films-page">
-
-  <h1 class="films-title">Films</h1>
-
-  <div class="films-grid">
-
-    {% for pair in site.data.films %}
-      {% assign slug = pair[0] %}
-      {% assign film = pair[1] %}
-
-      <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}" class="film-card">
-
-       
-        <img class="film-thumb" src="{{ film.thumbnail | relative_url }}" alt="{{ film.title }}">
-
-
-        {% if film.hover_video %}
-        <video class="film-video" muted preload="metadata" loop>
-          <source src="{{ film.hover_video | relative_url }}" type="video/mp4">
-        </video>
-        {% endif %}
-
-        <div class="film-info">
-          <h2 class="film-title">{{ film.title }}</h2>
-          <p class="film-meta">{{ film.year }} • {{ film.category }}</p>
-        </div>
-
-      </a>
-
-    {% endfor %}
-
-  </div>
-
-</section> -->
-
-
-
-<section class="films-page">
-
-    <div class="films-header">
-
-        <h1>WORK</h1>
-
-        <div class="view-switch">
-
-            <button class="active" id="gridBtn">Grid</button>
-
-            <span>/</span>
-
-            <button id="listBtn">List</button>
-
-        </div>
-
-    </div>
-
-    <div class="films-grid" id="filmsGrid">
-
-        {% for pair in site.data.films %}
-        {% assign slug = pair[0] %}
-        {% assign film = pair[1] %}
-
-        <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}"
-        class="film-card">
-
-            <img
-                class="film-thumb"
-                src="{{ film.thumbnail | relative_url }}"
-                alt="{{ film.title }}">
-
-            {% if film.hover_video %}
-            <video
-                class="film-video"
-                muted
-                loop
-                playsinline
-                preload="auto">
-
-                <source
-                    src="{{ film.hover_video | relative_url }}"
-                    type="video/mp4">
-
-            </video>
-            {% endif %}
-            <div class="film-overlay">
-
-                <h2>{{ film.title }}</h2>
-                <p>{{ film.category }}</p>
-
-            </div>
-
-        </a>
-
-        {% endfor %}
-
-    </div>
-
-
-
-    <div class="films-list" id="filmsList">
-
-        {% for pair in site.data.films %}
-        {% assign slug = pair[0] %}
-        {% assign film = pair[1] %}
-
-        <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}"
-           class="film-row">
-
-            <span class="film-name">
-                {{ film.title }}
-            </span>
-
-            <span class="film-category">
-                {{ film.category }}
-            </span>
-
-            <span class="film-year">
-                {{ film.year }}
-            </span>
-
-        </a>
-
-        {% endfor %}
-
-    </div>
-
+<section class="project-directory" aria-labelledby="projects-title" data-project-directory>
+<div class="project-directory-backdrops" aria-hidden="true">
+{% for pair in site.data.films %}{% assign film = pair[1] %}
+<img class="project-directory-image{% if forloop.first %} is-active{% endif %}" data-project-image="{{ pair[0] }}" {% if forloop.first %}src="{{ film.poster | relative_url }}" fetchpriority="high"{% else %}data-src="{{ film.poster | relative_url }}"{% endif %} alt="" decoding="async">
+{% endfor %}
+</div>
+{% assign documentary_count = 0 %}{% assign short_film_count = 0 %}
+{% for pair in site.data.films %}{% assign category = pair[1].category | slugify %}
+{% if category == 'documentary' %}{% assign documentary_count = documentary_count | plus: 1 %}{% endif %}
+{% if category == 'short-film' %}{% assign short_film_count = short_film_count | plus: 1 %}{% endif %}
+{% endfor %}
+<header class="project-directory-heading">
+<h1 id="projects-title" class="project-directory-sr-only">Projects</h1>
+<div class="project-directory-filters" role="group" aria-label="Filter projects">
+<button type="button" data-project-filter="all" aria-pressed="true">ALL ( {{ site.data.films.size | prepend: '0' }} )</button><span aria-hidden="true">/</span>
+<button type="button" data-project-filter="documentary" aria-pressed="false">DOCUMENTARY ( {{ documentary_count | prepend: '0' }} )</button><span aria-hidden="true">/</span>
+<button type="button" data-project-filter="short-film" aria-pressed="false">SHORT FILM ( {{ short_film_count | prepend: '0' }} )</button>
+</div>
+</header>
+<div class="project-directory-names">
+{% for pair in site.data.films %}{% assign film = pair[1] %}
+{% assign row_position = forloop.index0 | modulo: 2 %}{% if row_position == 0 %}<div class="project-directory-row">{% endif %}
+<a class="project-directory-link{% if forloop.first %} is-active{% endif %}" data-project-name="{{ pair[0] }}" data-project-category="{{ film.category | slugify }}" href="{{ '/films/' | append: pair[0] | append: '/' | relative_url }}"><h2>{{ film.title | escape }}</h2><span>{{ film.category }}</span></a>
+{% if row_position == 1 or forloop.last %}</div>{% endif %}
+{% endfor %}
+</div>
+<p class="project-directory-empty" hidden role="status">No projects in this category yet.</p>
+<p class="project-directory-sr-only" data-project-status aria-live="polite" aria-atomic="true"></p>
 </section>
-

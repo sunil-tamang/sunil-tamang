@@ -1,13 +1,14 @@
 ---
 ---
-/* External CSS */
-@use "ladda/ladda";
-
 /* Internal CSS */
 @use "reset";
-@use "base";
+// Keep current layout metrics; font families are controlled only by base.scss.
+@use "base.css" as base-layout;
+@use "../../_sass/base" as typography with ($typography-only: true);
 @use "layout";
 @use "blogpost";
 @use "form";
 
 @use "../../_sass/style";
+
+@include typography.reference-typography;

@@ -1,247 +1,128 @@
-// /*+++++++++++++++++++++++++++++++++BASE.CSS+++++++++++++++++++++++++++++++++**/
-// html{overflow-x: hidden;}
-// html, body{ background-color: black; font-family: 'Lato', 'Montserrat', sans-serif; height: 100%; letter-spacing: 0.05em; /*font-variant: small-caps;*/}
-// h1{ font-size: 1.7em; font-family: Tasaorbiterdeck, sans-serif; font-weight: 200;}
-// p{line-height: 2em; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 15px; font-style: normal; letter-spacing: .035em;}
-// a{ color: inherit; text-decoration: none;}
-// a:hover{ text-decoration: none;}
-// a:focus{ outline: 0;}
-// *, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-// a,.no-select{ -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
-// *::selection {
-//     background-color: #fb4a4a;
-//     color:#fff;
-// }
-// .highlight{ line-height: 1.6em; font-family: 'Montserrat'; font-weight: bold; font-size:0.9em; font-style: normal; color: #00b7ff; }
-// .holo{ font-size: 1em; font-family: 'Roboto',sans-serif; font-weight: 900; }
-// .hover:hover{ color: #428bca;}
-// h2{
-//     font-family: Tasaorbiterdeck, sans-serif;
-// }
+$typography-only: false !default;
 
-
-
-// .film-grain{
-
-//     position:fixed;
-
-//     inset:0;
-
-//     pointer-events:none;
-
-//     z-index:999998;
-
-//     opacity:0.06;
-
-//     background-image:url("/assets/css/images/grain.png");
-
-//     background-repeat:repeat;
-
-//     mix-blend-mode:overlay;
-
-// }
-
-/* ==================== BASE STYLES ==================== */
-/* Reset and Box Sizing */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Root Variables for Easy Theme Management */
-:root {
-  /* Colors */
-  --color-primary: #00b7ff;
-  --color-accent: #fb4a4a;
-  --color-bg: #000000;
-  --color-text: #ffffff;
-  --color-selection-bg: #fb4a4a;
-  --color-selection-text: #ffffff;
-  
-  /* Typography */
-  --font-primary: 'Montserrat', sans-serif;
-  --font-secondary: 'Lato', sans-serif;
-  --font-heading: 'Tasaorbiterdeck', sans-serif;
-  --font-roboto: 'Roboto', sans-serif;
-  
-  /* Spacing */
-  --base-spacing: 0.05em;
-  --line-height-base: 1.6;
-  --line-height-tight: 1.2;
-  
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
-}
-
-/* HTML & Body */
-html {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  min-height: 100vh;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-primary), var(--font-secondary), sans-serif;
-  font-weight: 400;
-  letter-spacing: var(--base-spacing);
-  line-height: var(--line-height-base);
-  overflow-x: hidden;
-}
-
-/* Typography Scale */
-h1, .h1 {
-  font-family: var(--font-heading), sans-serif;
-  font-size: clamp(1.5rem, 2.5vw, 2rem); /* Responsive */
-  font-weight: 200;
-  line-height: var(--line-height-tight);
-  margin-bottom: 1rem;
-}
-
-h2, .h2 {
-  font-family: var(--font-heading), sans-serif;
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-  font-weight: 300;
-  line-height: var(--line-height-tight);
-  margin-bottom: 0.875rem;
-}
-
-p {
-  font-family: var(--font-primary), sans-serif;
-  font-size: clamp(0.9375rem, 1.5vw, 1rem); /* 15px base, scales */
-  font-weight: 400;
-  line-height: 1.8; /* Slightly more than base for readability */
-  letter-spacing: 0.035em;
-  margin-bottom: 1.5rem;
-}
-
-/* Links */
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--transition-fast);
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-a:hover,
-a:focus-visible {
-  // color: var(--color-primary);
-  text-decoration: none;
-}
-
-a:focus-visible {
-  outline: 2px solid var(--color-primary);
-}
-
-/* Selection Styling */
-::selection {
-  background-color: var(--color-selection-bg);
-  color: var(--color-selection-text);
-}
-
-::-moz-selection {
-  background-color: var(--color-selection-bg);
-  color: var(--color-selection-text);
-}
-
-/* Utility Classes */
-.highlight {
-  display: inline-block;
-  font-family: var(--font-primary), sans-serif;
-  font-weight: 700;
-  font-size: 0.9em;
-  color: var(--color-primary);
-  line-height: 1.6em;
+/* Locally hosted variable fonts. Paths are relative to the compiled CSS file. */
+@font-face {
+  font-family: "Inter";
   font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.holo {
-  font-family: var(--font-roboto), sans-serif;
-  font-weight: 900;
-  font-size: 1em;
+@font-face {
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url("../fonts/roboto-mono-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.hover-effect {
-  transition: color var(--transition-base);
+/* Theme settings supplied for this portfolio. */
+:root {
+  --font-family: "Roboto Mono", sans-serif;
+  --font-size: 14px;
+  --font-weight: 400;
+  --font-family-heading: "Inter", sans-serif;
+  --font-weight-heading: 300;
+  --font-family-button: "Inter", sans-serif;
+  --font-size-button: 14px;
+  --font-weight-button: 500;
+  --font-family-navigation: "Inter", sans-serif;
+  --font-weight-navigation: 500;
+  --site-padding-raw: 10rem;
+  --editor-offset-top: 0px;
+  --editor-offset-left: 0px;
+  --editor-offset-right: 0px;
+
+  /* Compatibility with existing components. */
+  --font-primary: var(--font-family);
+  --font-secondary: var(--font-family);
+  --font-heading: var(--font-family-heading);
+  --font-roboto: var(--font-family);
 }
 
-.hover-effect:hover {
-  color: var(--color-primary);
+body { font-family: var(--font-primary); }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.mountain-journey-title, .film-name,
+.content__title, .content__sub-title, .content__sub-title_child, .brand-name {
+  font-family: var(--font-heading);
 }
 
-/* Selection Prevention for Specific Elements */
-.no-select,
-a.no-select {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+p, label, legend, caption, small, dt, dd, figcaption, blockquote,
+input, textarea, select {
+  font-family: var(--font-primary);
+}
+button, input[type="button"], input[type="submit"] {
+  font-family: var(--font-family-button);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-button);
+}
+nav, nav a, .studio-navigation a {
+  font-family: var(--font-family-navigation);
+  font-weight: var(--font-weight-navigation);
 }
 
-/* Accessibility Improvements */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Focus Visible Polyfill (for older browsers) */
-.js-focus-visible :focus:not(.focus-visible) {
-  outline: none;
-}
-
-/* Print Styles */
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: transparent !important;
-    color: #ffff !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
+/*
+ * Reference typography for pages that explicitly include this mixin.
+ * Slightly larger copy and more comfortable line spacing; layout unchanged.
+ */
+@mixin reference-typography {
+  html body {
+    font-family: var(--font-primary);
+    font-variant: normal;
+    letter-spacing: 0;
   }
-  
-  a {
-    text-decoration: underline;
-  }
-}
 
-/* Reduced Motion Preference */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  html body :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6,
+    .mountain-journey-title, .film-name, .content__title, .content__sub-title,
+    .content__sub-title_child, .brand-name) {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading);
+    font-style: normal;
+    font-variant: normal;
+    letter-spacing: -.025em;
+    line-height: 1.3;
+    text-transform: none;
   }
-}
 
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
-  :root {
-    --color-primary: #00a8ff;
-    --color-accent: #ff0000;
-  }
-}
+  html body :is(h1, .h1) { font-size: clamp(30px, 3.2vw, 40px); }
+  html body :is(h2, .h2, .mountain-journey-title) { font-size: clamp(22px, 2.2vw, 30px); }
+  html body :is(h3, .h3) { font-size: 20px; }
+  html body :is(h4, h5, h6, .h4, .h5, .h6) { font-size: 17px; }
 
-/* Dark Mode Support (if you ever switch from dark theme) */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-bg: #000000;
-    --color-text: #000000;
+  // Restore the portrait reference's larger type without changing page layout.
+  html body .portrait-hero h1 {
+    font-size: clamp(38px, 3.55vw, 64px);
+    font-weight: 650;
+    line-height: 1.04;
+    letter-spacing: -.045em;
   }
+  html body .portrait-hero-aside h2 {
+    font-size: clamp(26px, 1.95vw, 36px);
+    font-weight: 650;
+    line-height: 1.18;
+    letter-spacing: -.035em;
+  }
+  html body .portrait-hero .portrait-hero-description {
+    font-size: clamp(17px, 1vw, 24px);
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -.025em;
+  }
+  @media (max-width: 1100px) {
+    html body .portrait-hero h1 { font-size: clamp(32px, 6.5vw, 56px); }
+    html body .portrait-hero-aside h2 { font-size: clamp(24px, 4vw, 32px); }
+    html body .portrait-hero .portrait-hero-description { font-size: 17px; }
+  }
+  @media (max-width: 480px) {
+    html body .portrait-hero h1 { font-size: clamp(26px, 7.7vw, 38px); }
+  }
+
+  html body .summit-showcase :is(h2, h3) { font-family: "Inter", sans-serif; }
+  html body .summit-showcase :is(p, .summit-showcase-label, .summit-card-link) { font-family: "Roboto Mono", monospace; }
+  html body .summit-showcase .summit-card-number { font-family: "Inter", sans-serif; font-style: normal; font-variant-numeric: tabular-nums; }
 }

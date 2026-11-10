@@ -1,0 +1,48 @@
+- slug: everest
+  title: Everest
+  category: Expedition
+  folder: /assets/css/images/stills/everest/
+  cover: /assets/css/images/stills/everest/01-banner2.jpg
+  thumbnail: /assets/css/thumbs/stills/everest/banner2-640.jpg
+- slug: ama-dablam
+  title: Ama Dablam
+  category: Expedition
+  folder: /assets/css/images/stills/ama-dablam/
+  cover: /assets/css/images/stills/ama-dablam/01-banner02.jpg
+  thumbnail: /assets/css/thumbs/stills/ama-dablam/banner02-640.jpg
+- slug: lobuche
+  title: Lobuche Peak
+  category: Expedition
+  folder: /assets/css/images/stills/lobuche/
+  cover: /assets/css/images/stills/lobuche/01-banner1.jpg
+  thumbnail: /assets/css/thumbs/stills/lobuche/banner1-640.jpg
+- slug: mera-peak
+  title: Mera Peak
+  category: Expedition
+  folder: /assets/css/images/stills/mera-peak/
+  cover: /assets/css/images/stills/mera-peak/01-banner9.jpg
+  thumbnail: /assets/css/thumbs/stills/mera-peak/banner9-640.jpg
+- slug: island-peak
+  title: Island Peak
+  category: Expedition
+  folder: /assets/css/images/stills/island-peak/
+  cover: /assets/css/images/stills/island-peak/01-banner13.jpg
+  thumbnail: /assets/css/thumbs/stills/island-peak/banner13-640.jpg
+- slug: baruntse
+  title: Baruntse Peak
+  category: Expedition
+  folder: /assets/css/images/stills/baruntse/
+  cover: /assets/css/images/stills/baruntse/01-banner16.jpg
+  thumbnail: /assets/css/thumbs/stills/baruntse/banner16-640.jpg
+- slug: pisang-peak
+  title: Pisang Peak
+  category: Expedition
+  folder: /assets/css/images/stills/pisang-peak/
+  cover: /assets/css/images/stills/pisang-peak/01-banner19.jpg
+  thumbnail: /assets/css/thumbs/stills/pisang-peak/banner19-640.jpg
+- slug: langtang
+  title: Langtang
+  category: Expedition
+  folder: /assets/css/images/stills/langtang/
+  cover: /assets/css/images/stills/langtang/01-banner22.jpg
+  thumbnail: /assets/css/thumbs/stills/langtang/banner22-640.jpg
