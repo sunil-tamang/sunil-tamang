@@ -1135,3 +1135,17 @@ html:has(.casey-home.is-slideshow) { scroll-snap-type: none; overflow-y: auto; }
 .casey-control-line [data-casey-progress] { position: absolute; inset: 0; background: currentColor; transform: scaleX(0); transform-origin: left center; }
 
 .casey-slide-counter { display: inline-flex; align-items: center; gap: 7px; }
+
+/* Menu qualifications occupy the space between the biography and email. */
+.casey-menu-bottom { display: grid; grid-template-columns: minmax(0,1fr) auto auto; align-items: start; gap: clamp(24px,2.5vw,48px); }
+.casey-menu-bottom>.casey-menu-qualifications { margin-top: 0; }
+.casey-menu-bottom>a { white-space: nowrap; }
+@media(min-width:801px) and (max-width:1100px) {
+ .casey-menu-bottom { grid-template-columns: minmax(0,1fr) auto; }
+ .casey-menu-bottom>a { grid-column: 1 / -1; justify-self: end; }
+}
+@media(max-width:800px) {
+ .casey-menu-bottom { grid-template-columns: minmax(0,1fr); gap: 20px; }
+ .casey-menu-bottom>.casey-menu-qualifications { flex-wrap: wrap; row-gap: 16px; }
+ .casey-menu-bottom>a { justify-self: start; }
+}

@@ -1,25 +1,41 @@
-.mountaineering-archive { position: relative; isolation: isolate; min-height: 100svh; padding: 160px 5vw 70px; color: var(--casey-paper); }
+/* Editorial summit directory, composed around the existing portrait and records. */
+.mountaineering-archive { position: relative; isolation: isolate; min-height: 100svh; display: grid; grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr); align-items: center; gap: 4vw; padding: 155px 5vw 90px; color: var(--casey-paper); }
 .mountain-backgrounds { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; background: var(--casey-ink); }
 .mountain-backgrounds img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .8s ease; }
 .mountain-backgrounds img.is-active { opacity: 1; }
-.mountain-backgrounds::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,.65); }
-.mountaineering-archive .mountain-header { position: relative; inset: auto; width: auto; z-index: auto; }
-.casey-theme .mountain-header h1 { font-size: clamp(48px,5.5vw,88px); line-height: 1; margin: 0 0 32px; }
-.mountain-browse { transition: width .4s ease; width: 100%; }
-.mountain-filters { display: flex; flex-wrap: wrap; gap: 14px 25px; margin-bottom: 34px; }
-.casey-theme .mountain-filters button { padding: 8px 0; font-size: 11px; opacity: .6; transition: opacity .3s; }
+.mountain-backgrounds .mountain-portrait { inset: -20% auto auto -35%; width: 140%; height: 140%; object-position: 50% 50%; }
+.mountain-backgrounds::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,rgba(0,0,0,.61),rgba(0,0,0,.59) 38%,rgba(0,0,0,.8) 66%,rgba(0,0,0,.86)),linear-gradient(0deg,rgba(0,0,0,.3),transparent 70%); }
+.mountain-intro { min-width: 0; }
+.casey-theme .mountain-eyebrow { font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: .23em; margin: 0 0 24px; }
+.casey-theme .mountain-intro h1 { font-size: clamp(64px,6.2vw,116px); line-height: 1.04; margin: 0 0 32px; }
+.casey-theme .mountain-intro-copy { font-size: clamp(12px,.8vw,14px); font-weight: 400; line-height: 1.8; max-width: 560px; margin: 0; }
+.mountain-statistics { display: flex; gap: clamp(28px,4vw,72px); margin: 58px 0 0; }
+.mountain-statistics>div { display: flex; flex-direction: column-reverse; gap: 8px; min-width: 0; }
+.mountain-statistics dd { font-size: 34px; font-weight: 500; line-height: 1; margin: 0; }
+.casey-theme .mountain-statistics p { font-size: 11px; font-weight: 400; line-height: 1.45; margin: 0; }
+.mountain-browse { min-width: 0; width: 100%; }
+.mountain-filters { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 0; margin-bottom: 44px; }
+.casey-theme .mountain-filters button { position: relative; padding: 0 13px 17px; font-size: 10px; line-height: 1.5; opacity: .65; transition: opacity .3s; }
+.mountain-filters button:first-child { padding-left: 0; }
+.mountain-filters button+button::before { content: ''; position: absolute; top: 2px; bottom: 20px; left: 0; width: 1px; background: currentColor; opacity: .35; }
 .mountain-filters button[aria-pressed=true],.mountain-filters button:hover,.mountain-filters button:focus-visible { opacity: 1; }
-.mountain-index { display: grid; width: fit-content; max-width: 100%; grid-template-columns: repeat(3,minmax(0,max-content)); gap: 24px clamp(24px,2.4vw,44px); }
-.casey-theme .mountain-name { display: block; width: 100%; min-width: 0; text-align: left; padding: 5px 0; background: none; border: 0; transition: opacity .3s,transform .3s; }
-.casey-theme .mountain-name h2 { font-size: clamp(23px,2.3vw,38px); line-height: 1.15; margin: 0 0 8px; }
-.casey-theme .mountain-name p { font-size: 10px; line-height: 1.5; margin: 0; }
+.mountain-filters button[aria-pressed=true]::after { content: ''; position: absolute; left: 13px; right: 13px; bottom: 0; height: 2px; background: currentColor; }
+.mountain-filters button:first-child[aria-pressed=true]::after { left: 0; }
+.mountain-index { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); grid-template-rows: repeat(var(--mountain-rows,3),max-content); grid-auto-flow: column; align-content: start; gap: 28px 30px; min-height: 290px; }
+.casey-theme .mountain-name { display: flex; align-items: baseline; gap: 14px; min-width: 0; text-align: left; padding: 4px 0; background: none; border: 0; transition: opacity .3s,transform .3s; }
+.casey-theme .mountain-name h2 { font-size: clamp(19px,1.45vw,28px); line-height: 1.2; margin: 0; }
+.casey-theme .mountain-name p { flex: 0 0 auto; font-size: 10px; font-weight: 400; line-height: 1.5; margin: 0; white-space: nowrap; }
 .mountain-index:has(.mountain-name:hover) .mountain-name:not(:hover) { opacity: .4; }
 .mountain-name:hover { transform: translateX(3px); }
-.mountain-name:focus-visible,.mountain-filters button:focus-visible,.mountain-more:focus-visible,.mountain-detail button:focus-visible { outline: 1px solid currentColor; outline-offset: 6px; }
-.casey-theme .mountain-more { margin-top: 38px; padding: 10px 0; font-size: 11px; }
-.casey-theme .mountain-status { font-size: 10px; margin-top: 24px; }
-.casey-theme .mountain-empty { font-size: 13px; }
+.mountain-name:focus-visible,.mountain-filters button:focus-visible,.mountain-more:focus-visible,.mountain-history:focus-visible,.mountain-detail button:focus-visible { outline: 1px solid currentColor; outline-offset: 6px; }
+.casey-theme .mountain-history { display: inline-flex; align-items: center; gap: 10px; margin-top: 34px; padding: 8px 0; font-size: 11px; line-height: 1.5; }
+.casey-theme .mountain-more { display: block; margin-top: 20px; padding: 8px 0; font-size: 11px; }
+.casey-theme .mountain-empty { font-size: 12px; }
+.mountain-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .mountaineering-archive [hidden] { display: none!important; }
+.mountaineering-archive.has-detail .mountain-browse { width: 100%; }
+.mountain-history-record { margin-top: 40px; }
+body:has(.mountaineering-archive):not(.casey-menu-open) .casey-nav { mix-blend-mode: normal; }
 .mountain-detail { position: fixed; top: 120px; bottom: 0; left: auto; right: 0; margin: 0; width: min(43vw,650px); max-width: none; max-height: calc(100svh - 120px); padding: 20px 4vw 50px; border: 0; color: inherit; background: var(--casey-ink); overflow-y: auto; overscroll-behavior: contain; }
 .mountain-detail::backdrop { background: rgba(0,0,0,.65); }
 .casey-theme .mountain-detail-close { display: block; margin: 0 0 32px auto; padding: 10px 0; font-size: 11px; }
@@ -32,19 +48,39 @@
 .casey-theme .mountain-expedition p,.casey-theme .mountain-record-note { font-size: 12px; line-height: 1.8; margin: 0 0 24px; }
 .mountain-expedition { margin-bottom: 35px; }
 .mountain-expedition a { display: inline-block; font-size: 11px; margin-top: 22px; }
-.mountaineering-archive.has-detail .mountain-browse { width: 54%; }
-
-@media(max-width:1100px) { .mountain-index { grid-template-columns: repeat(2,minmax(0,max-content)); } }
-@media(max-width:700px) {
- .mountaineering-archive { padding: 145px 24px 50px; }
- .casey-theme .mountain-header h1 { font-size: clamp(38px,8vw,58px); margin-bottom: 35px; }
- .mountain-filters { gap: 8px 20px; margin-bottom: 35px; }
- .mountain-index { width: 100%; grid-template-columns: 1fr; gap: 22px; }
- .casey-theme .mountain-name h2 { font-size: 30px; }
- .mountaineering-archive.has-detail .mountain-browse { width: 100%; }
- .mountain-detail { width: 100%; top: 110px; max-height: calc(100svh - 110px); padding: 20px 24px 40px; }
- .mountaineering-archive.has-detail .mountain-index { grid-template-columns: 1fr; }
-}
-@media(prefers-reduced-motion:reduce) { .mountain-backgrounds img,.mountain-name,.mountain-browse { transition: none; } }
 
 .casey-theme .mountain-facts dd p { font-size: inherit; line-height: inherit; margin: 0; }
+@media(min-width:1101px) and (max-width:1450px) {
+ .mountaineering-archive { grid-template-columns: minmax(0,.78fr) minmax(0,1.22fr); gap: 3vw; }
+ .mountain-index { gap: 26px 20px; }
+ .casey-theme .mountain-name { gap: 9px; }
+ .casey-theme .mountain-name h2 { font-size: 21px; }
+ .casey-theme .mountain-filters button { padding-inline: 9px; font-size: 9px; }
+}
+@media(max-width:1100px) {
+ .mountaineering-archive { grid-template-columns: 1fr; align-content: start; gap: 54px; padding: 150px 6vw 65px; }
+ .mountain-intro,.mountain-browse { width: 100%; max-width: 900px; margin: 0 auto; }
+ .casey-theme .mountain-intro h1 { font-size: clamp(64px,9vw,96px); }
+ .mountain-statistics { margin-top: 35px; }
+ .mountain-index { grid-template-columns: repeat(2,minmax(0,1fr)); min-height: 0; gap: 28px 35px; }
+ .casey-theme .mountain-name h2 { font-size: 25px; }
+ .mountain-backgrounds .mountain-portrait { inset: 0; width: 100%; height: 100%; object-position: 45% 50%; }
+}
+@media(max-width:700px) {
+ .mountaineering-archive { padding: 140px 24px 50px; gap: 42px; }
+ .casey-theme .mountain-eyebrow { font-size: 10px; margin-bottom: 18px; }
+ .casey-theme .mountain-intro h1 { font-size: clamp(60px,13vw,82px); margin-bottom: 24px; }
+ .mountain-wide-break { display: none; }
+ .mountain-statistics { gap: 26px; }
+ .mountain-statistics dd { font-size: 28px; }
+ .casey-theme .mountain-statistics p { font-size: 9px; }
+ .mountain-filters { margin-bottom: 30px; }
+ .casey-theme .mountain-filters button { padding-inline: 10px; font-size: 10px; }
+ .mountain-index { grid-template-columns: 1fr; gap: 20px; }
+ .casey-theme .mountain-name { gap: 18px; }
+ .casey-theme .mountain-name h2 { font-size: 27px; }
+ .mountain-detail { width: 100%; top: 110px; max-height: calc(100svh - 110px); padding: 20px 24px 40px; }
+}
+@media(prefers-reduced-motion:reduce) { .mountain-backgrounds img,.mountain-name { transition: none; } }
+
+.mountaineering-archive.is-empty .mountain-index { min-height: 0; }

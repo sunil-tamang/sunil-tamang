@@ -24,7 +24,7 @@
  if(slides.length){
   const stage=document.querySelector('.casey-films'),counter=document.querySelector('[data-casey-current]'),progress=document.querySelector('[data-casey-progress]'),meter=document.querySelector('[data-casey-meter]');
   const videos=slides.map(slide=>slide.querySelector('video'));
-  let current=-1,cursor=0,request=0,pending=false,abort,fadeTimer,frame=0,frameVideo=null,inView=true,touch=null,wheelTotal=0,lastWheel=0,lastNavigation=0,lastAria=0,lastWheelNavigation=-Infinity,lastTouchNavigation=-Infinity;
+  let current=-1,request=0,pending=false,abort,fadeTimer,frame=0,frameVideo=null,inView=true,touch=null,wheelTotal=0,lastWheel=0,lastNavigation=0,lastAria=0,wheelTaken=false;
   document.body.classList.add('is-slideshow');
   const allowed=()=>inView&&!document.hidden&&!menuOpen;
   const autoplay=()=>allowed()&&!reduce.matches&&!navigator.connection?.saveData;
@@ -54,8 +54,7 @@
    });
   }
   async function show(index,manual=false){
-   cursor=(index+slides.length)%slides.length;
-   const next=cursor,token=++request;abort?.abort();abort=new AbortController();pending=true;
+   const next=((index%slides.length)+slides.length)%slides.length,token=++request;abort?.abort();abort=new AbortController();pending=true;
    if(manual)lastNavigation=performance.now();
    const video=videos[next];
    if(!await prepare(video,abort.signal)||token!==request){if(token===request)pending=false;return}
@@ -79,19 +78,33 @@
    video.addEventListener('ended',()=>{if(i===current&&!pending&&autoplay()&&performance.now()-lastNavigation>100)show(current+1)});
   });
   stage.setAttribute('aria-roledescription','carousel');stage.setAttribute('aria-label','Selected films. Swipe or scroll to browse; page scrolling remains available.');
-  const navigate=direction=>{if(!allowed())return;show(cursor+direction,true)};
+  function navigate(direction){
+   if(!allowed()||pending||current<0)return false;
+   const next=Math.max(0,Math.min(slides.length-1,current+direction));
+   if(next===current)return false;
+   show(next,true);return true;
+  }
   stage.addEventListener('wheel',event=>{
    if(!allowed()||event.ctrlKey)return;
    const now=performance.now(),delta=(Math.abs(event.deltaX)>Math.abs(event.deltaY)?event.deltaX:event.deltaY)*(event.deltaMode===1?16:event.deltaMode===2?innerHeight:1);
-   if(!delta)return;if(now-lastWheel>180||Math.sign(wheelTotal)!==Math.sign(delta))wheelTotal=0;lastWheel=now;wheelTotal+=delta;
-   if(now-lastWheelNavigation<240){wheelTotal=0;return}
-   if(Math.abs(wheelTotal)>=110){navigate(Math.sign(wheelTotal));wheelTotal=0;lastWheelNavigation=now}
+   if(!delta)return;
+   if(now-lastWheel>200){wheelTaken=false;wheelTotal=0}
+   lastWheel=now;
+   if(wheelTaken)return;
+   if(Math.sign(wheelTotal)!==Math.sign(delta))wheelTotal=0;
+   wheelTotal+=delta;
+   if(Math.abs(wheelTotal)>=110){wheelTaken=true;wheelTotal=0;navigate(Math.sign(delta))}
   },{passive:true});
-  stage.addEventListener('touchstart',event=>{lastTouchNavigation=-Infinity;const p=event.touches[0];touch=event.touches.length===1?{x:p.clientX,y:p.clientY}:null},{passive:true});
-  stage.addEventListener('touchmove',event=>{if(!touch||event.touches.length!==1){touch=null;return}const p=event.touches[0],dx=touch.x-p.clientX,dy=touch.y-p.clientY;if(Math.max(Math.abs(dx),Math.abs(dy))>=85&&performance.now()-lastTouchNavigation>=240){lastTouchNavigation=performance.now();navigate(Math.sign(Math.abs(dx)>Math.abs(dy)?dx:dy));touch={x:p.clientX,y:p.clientY}}},{passive:true});
+  stage.addEventListener('touchstart',event=>{const p=event.touches[0];touch=event.touches.length===1?{x:p.clientX,y:p.clientY,taken:false}:null},{passive:true});
+  stage.addEventListener('touchmove',event=>{
+   if(!touch||event.touches.length!==1){touch=null;return}
+   if(touch.taken)return;
+   const p=event.touches[0],dx=touch.x-p.clientX,dy=touch.y-p.clientY;
+   if(Math.max(Math.abs(dx),Math.abs(dy))>=85){touch.taken=true;navigate(Math.sign(Math.abs(dx)>Math.abs(dy)?dx:dy))}
+  },{passive:true});
   stage.addEventListener('touchend',()=>{touch=null},{passive:true});stage.addEventListener('touchcancel',()=>{touch=null},{passive:true});
   document.addEventListener('keydown',event=>{
-   if(!allowed()||event.target.closest('input,textarea,select,button,a,[contenteditable]'))return;
+   if(!allowed()||event.repeat||event.target.closest('input,textarea,select,button,a,[contenteditable]'))return;
    const direction=['ArrowDown','ArrowRight','PageDown',' '].includes(event.key)?1:['ArrowUp','ArrowLeft','PageUp'].includes(event.key)?-1:0;
    // Arrow/space events retain their normal page scrolling behavior.
    if(direction)navigate(event.shiftKey&&event.key===' '?-1:direction);

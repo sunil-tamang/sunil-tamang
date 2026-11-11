@@ -7,12 +7,24 @@ description: Sunil Tamang's mountain records, expeditions, and high-altitude fil
 <link rel="stylesheet" href="{% include asset-url.html path='/assets/css/mountaineering.css' %}">
 <section class="mountaineering-archive" data-mountain-archive aria-labelledby="mountaineering-title">
 <div class="mountain-backgrounds" aria-hidden="true">
+<img class="mountain-portrait is-active" {% include responsive-image-attributes.html src='/assets/css/images/stills/everest/banner01.jpg' sizes='140vw' %} src="{{ '/assets/css/images/stills/everest/banner01.jpg' | relative_url }}" alt="" fetchpriority="high" decoding="async">
 {% for mountain in site.data.summit %}
 {% assign photo = site.static_files | where: 'path', mountain.image | first %}
-{% if photo %}<img data-mountain-image="{{ mountain.archive_id }}" class="{% if forloop.first %}is-active{% endif %}" {% if forloop.first %}{% include responsive-image-attributes.html src=mountain.image sizes='100vw' %} src="{{ mountain.image | relative_url }}" fetchpriority="high"{% else %}{% include responsive-image-attributes.html src=mountain.image sizes='100vw' deferred=true %} data-src="{{ mountain.image | relative_url }}"{% endif %} alt="" decoding="async">{% endif %}
+{% if photo %}<img data-mountain-image="{{ mountain.archive_id }}" class="" {% include responsive-image-attributes.html src=mountain.image sizes='100vw' deferred=true %} data-src="{{ mountain.image | relative_url }}" alt="" decoding="async">{% endif %}
 {% endfor %}
 </div>
-<!-- <header class="mountain-header"><h1 id="mountaineering-title">Summits.</h1></header> -->
+{% assign film_total = 0 %}{% for mountain in site.data.summit %}{% for expedition in mountain.expeditions %}{% if expedition.type == 'film_project' %}{% assign film_total = film_total | plus: 1 %}{% endif %}{% endfor %}{% endfor %}
+{% assign ama_record = site.data.summit | where: 'archive_id', 'ama-dablam' | first %}
+<div class="mountain-intro">
+<p class="mountain-eyebrow">MOUNTAINEERING</p>
+<h1 id="mountaineering-title">Summits.</h1>
+<p class="mountain-intro-copy">A record of my expeditions, ascents, and high-altitude<br class="mountain-wide-break"> work across the Himalaya and beyond.</p>
+<dl class="mountain-statistics" aria-label="Archive statistics">
+<div><dt><p>MOUNTAINS</p></dt><dd>{{ site.data.summit.size }}</dd></div>
+<div><dt><p>FILM PROJECTS</p></dt><dd>{{ film_total }}</dd></div>
+<div><dt><p>AMA DABLAM<br>SUMMITS</p></dt><dd>{{ ama_record.summit_count | default: '—' }}</dd></div>
+</dl>
+</div>
 <div class="mountain-browse" data-mountain-browse>
 <div class="mountain-filters" role="group" aria-label="Filter mountain records">
 {% assign filters = 'all:All,8000m:8000m,7000m:7000m,6000m:6000m,first-ascents:First Ascents,film-projects:Film Projects,guiding:Guiding' | split: ',' %}
@@ -25,12 +37,13 @@ description: Sunil Tamang's mountain records, expeditions, and high-altitude fil
 {% assign is_first_ascent = mountain.first_ascent %}{% assign is_guiding = mountain.guiding %}{% assign is_film = false %}{% if mountain.film_projects.size > 0 %}{% assign is_film = true %}{% endif %}{% for event in mountain.expeditions %}{% if event.first_ascent == true %}{% assign is_first_ascent = true %}{% endif %}{% if event.guiding == true %}{% assign is_guiding = true %}{% endif %}{% if event.type == 'film_project' %}{% assign is_film = true %}{% endif %}{% endfor %}
 {% capture tags %}all {% if mountain.elevation_m >= 8000 %}8000m{% elsif mountain.elevation_m >= 7000 %}7000m{% elsif mountain.elevation_m >= 6000 %}6000m{% endif %} {% if is_first_ascent == true %}first-ascents{% endif %} {% if is_film %}film-projects{% endif %} {% if is_guiding == true %}guiding{% endif %}{% endcapture %}
 <button class="mountain-name" type="button" data-mountain="{{ mountain.archive_id }}" data-tags="{{ tags | strip }}" aria-controls="mountain-detail" aria-expanded="false">
-<h2>{{ mountain.name | escape }}</h2><p>{% if mountain.elevation %}{{ mountain.elevation }} m{% else %}EXPEDITION ARCHIVE{% endif %}{% if mountain.summit_count %} · ×{{ mountain.summit_count | prepend: '0' }}{% endif %}</p>
+<h2>{{ mountain.name | escape }}</h2><p>{% if mountain.elevation_m >= 1000 %}{% assign elevation_high = mountain.elevation_m | divided_by: 1000 %}{% assign elevation_low = mountain.elevation_m | modulo: 1000 | prepend: '000' | slice: -3, 3 %}{{ elevation_high }},{{ elevation_low }} m{% elsif mountain.elevation %}{{ mountain.elevation }} m{% else %}—{% endif %}</p>
 </button>
 {% endfor %}
 </div>
 <p class="mountain-empty" data-mountain-empty hidden>No documented records for this filter.</p>
 <button class="mountain-more" type="button" data-mountain-more aria-expanded="false" hidden>Show More</button>
+<button class="mountain-history" data-mountain-history type="button" aria-controls="mountain-detail" aria-expanded="false">View full expedition history <span aria-hidden="true">↗</span></button>
 <p class="mountain-status" data-mountain-status role="status" aria-live="polite"></p>
 </div>
 <dialog class="mountain-detail" id="mountain-detail" aria-labelledby="mountain-detail-title">

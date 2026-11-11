@@ -48,10 +48,10 @@ layout: compress
 {% assign links = 'Home:/,Projects:/films/,Photography:/stills/,Summits:/summits/,About:/about/,Contact:/contact/' | split: ',' %}
 {% for item in links %}{% assign link = item | split: ':' %}<a href="{{ link[1] | relative_url }}"><small>{{ forloop.index | prepend: '0' }}</small><span>{{ link[0] }}</span></a>{% endfor %}
 </nav>
-<div class="casey-menu-bottom"><div class="casey-menu-bio"><p>I’m Sunil Tamang, an expedition cinematographer and mountaineer based in Nepal. I capture films, photographs, and human stories from the Himalayas.</p><div class="casey-menu-qualifications" aria-label="Mountain guide journey">
+<div class="casey-menu-bottom"><div class="casey-menu-bio"><p>I’m Sunil Tamang, an expedition cinematographer and mountaineer based in Nepal. I capture films, photographs, and human stories from the Himalayas.</p></div><div class="casey-menu-qualifications" aria-label="Mountain guide journey">
 <div class="casey-menu-qualification"><img src="{{ '/assets/css/images/logos/nnmga.png' | relative_url }}" srcset="{{ '/assets/media/nnmga-128.png' | relative_url }} 128w, {{ '/assets/css/images/logos/nnmga.png' | relative_url }} 300w" sizes="32px" alt="NNMGA" width="32" height="32" decoding="async"><div><strong>NNMGA</strong><span>Aspirant mountain guide</span></div></div>
 <div class="casey-menu-qualification"><img src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}" srcset="{{ '/assets/media/ifmga-128.png' | relative_url }} 128w, {{ '/assets/css/images/logos/ifmga.png' | relative_url }} 300w" sizes="32px" alt="IFMGA" width="32" height="32" decoding="async"><div><strong>IFMGA</strong><span>Future goal</span></div></div>
-</div></div><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+</div><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
 </div>
 <main id="main-content">{{ content }}</main>
 {% assign footerless_pages = '/,/contact/,/about/,/stills/,/films/,/mountaineering/,/summits/' | split: ',' %}
