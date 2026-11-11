@@ -20,19 +20,13 @@
   title: Mera Peak
   category: Expedition
   folder: /assets/css/images/stills/mera-peak/
-  cover: /assets/css/images/stills/mera-peak/01-banner9.jpg
+  cover: /assets/css/images/stills/banner9.jpg
   thumbnail: /assets/css/thumbs/stills/mera-peak/banner9-640.jpg
-- slug: island-peak
-  title: Island Peak
-  category: Expedition
-  folder: /assets/css/images/stills/island-peak/
-  cover: /assets/css/images/stills/island-peak/01-banner13.jpg
-  thumbnail: /assets/css/thumbs/stills/island-peak/banner13-640.jpg
 - slug: baruntse
   title: Baruntse Peak
   category: Expedition
   folder: /assets/css/images/stills/baruntse/
-  cover: /assets/css/images/stills/baruntse/01-banner16.jpg
+  cover: /assets/css/images/stills/banner16.jpg
   thumbnail: /assets/css/thumbs/stills/baruntse/banner16-640.jpg
 - slug: pisang-peak
   title: Pisang Peak
@@ -40,9 +34,3 @@
   folder: /assets/css/images/stills/pisang-peak/
   cover: /assets/css/images/stills/pisang-peak/01-banner19.jpg
   thumbnail: /assets/css/thumbs/stills/pisang-peak/banner19-640.jpg
-- slug: langtang
-  title: Langtang
-  category: Expedition
-  folder: /assets/css/images/stills/langtang/
-  cover: /assets/css/images/stills/langtang/01-banner22.jpg
-  thumbnail: /assets/css/thumbs/stills/langtang/banner22-640.jpg

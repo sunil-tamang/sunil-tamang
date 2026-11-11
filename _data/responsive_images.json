@@ -216,8 +216,8 @@
     "medium": "/assets/media/hero2-09427a5e-1280.jpg"
   },
   "/assets/css/images/stills/ama-dablam/01-banner02.jpg": {
-    "width": 2200,
-    "height": 1469,
+    "width": 1920,
+    "height": 1080,
     "small": "/assets/media/01-banner02-10691e3a-640.jpg",
     "medium": "/assets/media/01-banner02-10691e3a-1280.jpg"
   },
@@ -412,5 +412,263 @@
     "height": 1925,
     "small": "/assets/media/03-banner21-c503b63e-640.jpg",
     "medium": "/assets/media/03-banner21-c503b63e-1280.jpg"
+  },
+  "/assets/css/images/stills/ama-dablam/taylor.jpg": {
+    "width": 2560,
+    "height": 1710,
+    "small": "/assets/media/taylor-c1462b70-640.jpg",
+    "medium": "/assets/media/taylor-c1462b70-1280.jpg"
+  },
+  "/assets/css/images/stills/banner23.jpg": {
+    "width": 2200,
+    "height": 936,
+    "small": "/assets/media/banner23-a89e2625-640.jpg",
+    "medium": "/assets/media/banner23-a89e2625-1280.jpg"
+  },
+  "/assets/css/images/stills/banner24.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/banner24-dac43a1a-640.jpg",
+    "medium": "/assets/media/banner24-dac43a1a-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/01-banner18.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/01-banner18-ac2ddff7-640.jpg",
+    "medium": "/assets/media/01-banner18-ac2ddff7-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR0830.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr0830-74915c86-640.jpg",
+    "medium": "/assets/media/gopr0830-74915c86-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1033.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1033-94477c62-640.jpg",
+    "medium": "/assets/media/gopr1033-94477c62-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1121.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1121-ebb7d3da-640.jpg",
+    "medium": "/assets/media/gopr1121-ebb7d3da-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1132.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1132-5eeb8e0b-640.jpg",
+    "medium": "/assets/media/gopr1132-5eeb8e0b-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1146.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1146-5ad2d72c-640.jpg",
+    "medium": "/assets/media/gopr1146-5ad2d72c-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1153.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1153-08aab378-640.jpg",
+    "medium": "/assets/media/gopr1153-08aab378-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1155.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1155-9b6febb8-640.jpg",
+    "medium": "/assets/media/gopr1155-9b6febb8-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1170.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1170-8ebb6443-640.jpg",
+    "medium": "/assets/media/gopr1170-8ebb6443-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1207_1730809884364.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1207_1730809884364-de0d5481-640.jpg",
+    "medium": "/assets/media/gopr1207_1730809884364-de0d5481-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1214 copy.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1214-copy-4c1364a4-640.jpg",
+    "medium": "/assets/media/gopr1214-copy-4c1364a4-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1219 copy.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1219-copy-46493d4b-640.jpg",
+    "medium": "/assets/media/gopr1219-copy-46493d4b-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1234.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1234-2e529131-640.jpg",
+    "medium": "/assets/media/gopr1234-2e529131-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1325.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1325-f14dc8b0-640.jpg",
+    "medium": "/assets/media/gopr1325-f14dc8b0-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1331.JPG": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1331-9cbe8059-640.jpg",
+    "medium": "/assets/media/gopr1331-9cbe8059-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1336.JPG": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1336-c3a7d0d1-640.jpg",
+    "medium": "/assets/media/gopr1336-c3a7d0d1-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1340.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1340-38117803-640.jpg",
+    "medium": "/assets/media/gopr1340-38117803-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/GOPR1356.jpg": {
+    "width": 2560,
+    "height": 2240,
+    "small": "/assets/media/gopr1356-26cb69ff-640.jpg",
+    "medium": "/assets/media/gopr1356-26cb69ff-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/IMG20241103075554.jpg": {
+    "width": 2560,
+    "height": 1152,
+    "small": "/assets/media/img20241103075554-a7753145-640.jpg",
+    "medium": "/assets/media/img20241103075554-a7753145-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/06-banner04.jpg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/06-banner04-ba1214d7-640.jpg",
+    "medium": "/assets/media/06-banner04-ba1214d7-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/DJI_20260416142707_0009_D.jpg": {
+    "width": 2560,
+    "height": 1918,
+    "small": "/assets/media/dji_20260416142707_0009_d-977c6d3b-640.jpg",
+    "medium": "/assets/media/dji_20260416142707_0009_d-977c6d3b-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/DJI_20260416142722_0011_D.jpg": {
+    "width": 2560,
+    "height": 1918,
+    "small": "/assets/media/dji_20260416142722_0011_d-fe117af3-640.jpg",
+    "medium": "/assets/media/dji_20260416142722_0011_d-fe117af3-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/DJI_20260515060351_0032_D.jpeg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/dji_20260515060351_0032_d-86d77e3f-640.jpg",
+    "medium": "/assets/media/dji_20260515060351_0032_d-86d77e3f-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/DJI_20260515060641_0042_D.jpeg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/dji_20260515060641_0042_d-68fdbac4-640.jpg",
+    "medium": "/assets/media/dji_20260515060641_0042_d-68fdbac4-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/DJI_20260515061017_0062_D.jpeg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/dji_20260515061017_0062_d-39be5e3e-640.jpg",
+    "medium": "/assets/media/dji_20260515061017_0062_d-39be5e3e-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/DJI_20260515062531_0089_D.jpeg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/dji_20260515062531_0089_d-2c395136-640.jpg",
+    "medium": "/assets/media/dji_20260515062531_0089_d-2c395136-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/DSC04775.JPG": {
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/dsc04775-55ba800f-640.jpg",
+    "medium": "/assets/media/dsc04775-55ba800f-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/DSC04789.JPG": {
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/dsc04789-542af819-640.jpg",
+    "medium": "/assets/media/dsc04789-542af819-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/DSC04820.JPG": {
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/dsc04820-1d4bab9c-640.jpg",
+    "medium": "/assets/media/dsc04820-1d4bab9c-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/DSC08548.jpg": {
+    "width": 2560,
+    "height": 1710,
+    "small": "/assets/media/dsc08548-0a749fe2-640.jpg",
+    "medium": "/assets/media/dsc08548-0a749fe2-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/banner9.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner9-89c7acd9-640.jpg",
+    "medium": "/assets/media/banner9-89c7acd9-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/taylor.jpg": {
+    "width": 2560,
+    "height": 1710,
+    "small": "/assets/media/taylor-b5402fba-640.jpg",
+    "medium": "/assets/media/taylor-b5402fba-1280.jpg"
+  },
+  "/assets/css/images/stills/lobuche/banner01.jpg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/banner01-359b3dff-640.jpg",
+    "medium": "/assets/media/banner01-359b3dff-1280.jpg"
+  },
+  "/assets/css/images/stills/mera-peak/DJI_20250430115954_0038_D.jpg": {
+    "width": 2560,
+    "height": 1707,
+    "small": "/assets/media/dji_20250430115954_0038_d-368038ba-640.jpg",
+    "medium": "/assets/media/dji_20250430115954_0038_d-368038ba-1280.jpg"
+  },
+  "/assets/css/images/stills/mera-peak/DJI_20250430120042_0049_D.jpg": {
+    "width": 2560,
+    "height": 1920,
+    "small": "/assets/media/dji_20250430120042_0049_d-a121b392-640.jpg",
+    "medium": "/assets/media/dji_20250430120042_0049_d-a121b392-1280.jpg"
+  },
+  "/assets/css/images/stills/mera-peak/DJI_20250430120052_0051_D.jpg": {
+    "width": 2560,
+    "height": 1920,
+    "small": "/assets/media/dji_20250430120052_0051_d-bc746fbc-640.jpg",
+    "medium": "/assets/media/dji_20250430120052_0051_d-bc746fbc-1280.jpg"
+  },
+  "/assets/css/images/stills/mera-peak/DJI_20250430124555_0079_D.jpg": {
+    "width": 2560,
+    "height": 1707,
+    "small": "/assets/media/dji_20250430124555_0079_d-07a86f72-640.jpg",
+    "medium": "/assets/media/dji_20250430124555_0079_d-07a86f72-1280.jpg"
+  },
+  "/assets/css/images/stills/mera-peak/DJI_20250502015625_0017_D.JPG": {
+    "width": 2560,
+    "height": 1707,
+    "small": "/assets/media/dji_20250502015625_0017_d-b6cf9c35-640.jpg",
+    "medium": "/assets/media/dji_20250502015625_0017_d-b6cf9c35-1280.jpg"
+  },
+  "/assets/css/images/stills/mera-peak/DJI_20250502015626_0020_D.JPG": {
+    "width": 2560,
+    "height": 1707,
+    "small": "/assets/media/dji_20250502015626_0020_d-74bafc1e-640.jpg",
+    "medium": "/assets/media/dji_20250502015626_0020_d-74bafc1e-1280.jpg"
+  },
+  "/assets/css/images/stills/mera-peak/DSC00627.jpg": {
+    "width": 2560,
+    "height": 1710,
+    "small": "/assets/media/dsc00627-38a39049-640.jpg",
+    "medium": "/assets/media/dsc00627-38a39049-1280.jpg"
   }
 }

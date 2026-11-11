@@ -3,7 +3,7 @@
  const video=document.querySelector('[data-about-video]');if(!video)return;
  const section=video.closest('section'),reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let visible=true;
- const allowed=()=>visible&&!document.hidden&&!document.body.classList.contains('casey-menu-open')&&!reduced.matches&&!navigator.connection?.saveData;
+ const allowed=()=>visible&&!document.hidden&&!document.body.classList.contains('contact-modal-open')&&!reduced.matches&&!navigator.connection?.saveData;
  function sync(){
   video.autoplay=allowed();
   if(!allowed()){video.pause();return}

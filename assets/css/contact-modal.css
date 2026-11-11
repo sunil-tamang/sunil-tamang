@@ -1,0 +1,33 @@
+/* Contact overlays the current page; typography inherits the existing system. */
+body.contact-modal-open { overflow:hidden; }
+.contact-modal {
+ position:fixed; inset:0; margin:auto; padding:0; border:0; background:transparent;
+ color:var(--casey-paper); width:min(1040px,calc(100% - 48px)); max-width:none;
+ max-height:calc(100dvh - 48px); overflow:auto; overscroll-behavior:contain;
+ border-radius:14px; scrollbar-width:thin;
+}
+.contact-modal::backdrop { background:rgba(0,0,0,.48); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
+.contact-modal-panel { padding:36px 48px 52px; border:1px solid rgba(238,209,208,.22); border-radius:14px; background:rgba(11,11,11,.96); }
+.contact-modal-top { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:64px; }
+.casey-theme .contact-modal h2,.casey-theme .contact-modal h3 { font-size:15px; line-height:1.5; font-weight:400; letter-spacing:.12em; margin:0; }
+.casey-theme .contact-modal-top button { font-size:13px; letter-spacing:.1em; padding:6px 0; display:flex; gap:24px; }
+.contact-modal-body { display:grid; grid-template-columns:1fr 1fr; gap:44px; }
+.contact-modal-copy { display:flex; flex-direction:column; gap:40px; }
+.casey-theme .contact-modal p { font-size:14px; line-height:1.8; letter-spacing:.03em; margin:14px 0 0; }
+.contact-modal-identity { border-left:1px solid var(--casey-line); padding-left:44px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; }
+.casey-theme .contact-modal-brand { display:block; font-size:clamp(44px,5vw,74px); line-height:.78; }
+.contact-modal-identity a { transition:opacity .2s ease; }
+.contact-modal-identity a:hover { opacity:.7; }
+.contact-modal-identity p { overflow-wrap:anywhere; }
+.contact-modal-social { display:flex; flex-direction:column; gap:6px; }
+@media(max-width:700px) {
+ .contact-modal { width:calc(100% - 28px); max-height:calc(100dvh - 28px); }
+ .contact-modal-panel { padding:26px 24px 34px; }
+ .contact-modal-top { margin-bottom:44px; }
+ .contact-modal-body { grid-template-columns:1fr; gap:52px; }
+ .contact-modal-identity { border:0; padding:0; gap:20px; }
+ .casey-theme .contact-modal-brand { font-size:64px; }
+ .casey-theme .contact-modal p { font-size:13px; }
+ .casey-theme .contact-modal-top button { gap:12px; font-size:12px; }
+}
+@media(prefers-reduced-motion:reduce) { .contact-modal-identity a { transition:none; } }

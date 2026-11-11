@@ -91,8 +91,10 @@ html body.casey-theme :is(h1,h2,h3,h4,h5,h6) {
   position:fixed;
   inset:0;
   z-index:10010;
-  background:var(--casey-paper);
-  color:var(--casey-ink);
+  background:rgba(11,11,11,.66);
+  color:var(--casey-paper);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
   padding:120px 5vw 30px;
   overflow:auto
 }
@@ -106,7 +108,7 @@ html body.casey-theme :is(h1,h2,h3,h4,h5,h6) {
   display:flex;
   align-items:baseline;
   gap:28px;
-  border-bottom:1px solid #0b0b0b33;
+  border-bottom:1px solid rgba(238,209,208,.15);
   padding:8px 0
 }
 
@@ -141,6 +143,10 @@ html body.casey-theme :is(h1,h2,h3,h4,h5,h6) {
 
 .casey-menu-open {
   overflow:hidden
+}
+
+.casey-menu-open .casey-nav {
+  mix-blend-mode:normal
 }
 
 .casey-slide {

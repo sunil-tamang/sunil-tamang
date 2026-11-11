@@ -2,16 +2,17 @@
  const button=document.querySelector('.casey-menu-button'),menu=document.getElementById('casey-menu');
  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
  let menuOpen=false;
- function close(){
-  if(!menu||!menuOpen)return;
+ function close(after=()=>{}){
+  if(!menu||!menuOpen){after();return}
   menuOpen=false;menu.inert=true;button.setAttribute('aria-expanded','false');button.innerHTML='MENU <span aria-hidden="true">( + )</span>';button.focus();
-  const finish=()=>{if(!menuOpen){menu.hidden=true;document.getElementById('main-content').inert=false;document.body.classList.remove('casey-menu-open');document.dispatchEvent(new CustomEvent('portfolio:menu-state',{detail:{open:false}}))}};
+  const finish=()=>{if(!menuOpen){menu.hidden=true;document.getElementById('main-content').inert=false;document.body.classList.remove('casey-menu-open');document.dispatchEvent(new CustomEvent('portfolio:menu-state',{detail:{open:false}}));after()}};
   if(window.PortfolioMotion)window.PortfolioMotion.menu(false,finish);else finish();
  }
  function open(){
   menuOpen=true;document.getElementById('main-content').inert=true;menu.hidden=false;menu.inert=false;button.setAttribute('aria-expanded','true');button.innerHTML='CLOSE <span aria-hidden="true">( − )</span>';document.body.classList.add('casey-menu-open');
   document.dispatchEvent(new CustomEvent('portfolio:menu-state',{detail:{open:true}}));window.PortfolioMotion?.menu(true);menu.querySelector('a')?.focus();
  }
+ document.addEventListener('portfolio:close-menu',event=>close(event.detail.done));
  button?.addEventListener('click',()=>menuOpen?close():open());
  menu?.addEventListener('click',e=>{if(e.target.closest('a'))close()});
  document.addEventListener('keydown',e=>{
@@ -26,8 +27,9 @@
   const videos=slides.map(slide=>slide.querySelector('video'));
   let current=-1,request=0,pending=false,abort,fadeTimer,frame=0,frameVideo=null,inView=true,touch=null,wheelTotal=0,lastWheel=0,lastNavigation=0,lastAria=0,wheelTaken=false;
   document.body.classList.add('is-slideshow');
-  const allowed=()=>inView&&!document.hidden&&!menuOpen;
-  const autoplay=()=>allowed()&&!reduce.matches&&!navigator.connection?.saveData;
+  const playbackAllowed=()=>inView&&!document.hidden&&!document.body.classList.contains('contact-modal-open');
+  const allowed=()=>playbackAllowed()&&!menuOpen;
+  const autoplay=()=>playbackAllowed()&&!reduce.matches&&!navigator.connection?.saveData;
   function paint(){
    const video=videos[current],duration=video?.duration;
    const ratio=duration>0&&Number.isFinite(duration)?Math.min(1,Math.max(0,video.currentTime/duration)):0;
@@ -35,7 +37,7 @@
    if(meter&&performance.now()-lastAria>250){meter.setAttribute('aria-valuenow',String(Math.round(ratio*100)));lastAria=performance.now()}
   }
   function stopFrames(){if(frameVideo?.cancelVideoFrameCallback)frameVideo.cancelVideoFrameCallback(frame);else cancelAnimationFrame(frame);frame=0;frameVideo=null}
-  function tick(){frame=0;paint();const video=videos[current];if(!video||video.paused||!allowed())return;frameVideo=video;frame=video.requestVideoFrameCallback?video.requestVideoFrameCallback(tick):requestAnimationFrame(tick)}
+  function tick(){frame=0;paint();const video=videos[current];if(!video||video.paused||!playbackAllowed())return;frameVideo=video;frame=video.requestVideoFrameCallback?video.requestVideoFrameCallback(tick):requestAnimationFrame(tick)}
   function sync(){
    videos.forEach((video,i)=>{if(!video)return;video.autoplay=i===current&&autoplay();if(i!==current||!autoplay())video.pause();else{video.muted=true;video.playsInline=true;video.play().catch(()=>{})}});
    document.querySelector('.casey-player-controls')?.classList.toggle('is-away',!inView);

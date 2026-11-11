@@ -29,6 +29,8 @@ layout: compress
 {% endif %}
 <script defer src="{% include asset-url.html path='/assets/js/motion.js' %}"></script>
 <script defer src="{% include asset-url.html path='/assets/js/casey.js' %}"></script>
+<link rel="stylesheet" href="{% include asset-url.html path='/assets/css/contact-modal.css' %}">
+<script defer src="{% include asset-url.html path='/assets/js/contact-modal.js' %}"></script>
 {% if page.layout == 'still-project' %}
 <link rel="stylesheet" href="{% include asset-url.html path='/assets/css/stills-world.css' %}">
 <script defer src="{% include asset-url.html path='/assets/js/stills-world.js' %}"></script>
@@ -53,6 +55,7 @@ layout: compress
 <div class="casey-menu-qualification"><img src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}" srcset="{{ '/assets/media/ifmga-128.png' | relative_url }} 128w, {{ '/assets/css/images/logos/ifmga.png' | relative_url }} 300w" sizes="32px" alt="IFMGA" width="32" height="32" decoding="async"><div><strong>IFMGA</strong><span>Future goal</span></div></div>
 </div><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
 </div>
+{% include contact-modal.html %}
 <main id="main-content">{{ content }}</main>
 {% assign footerless_pages = '/,/contact/,/about/,/stills/,/films/,/mountaineering/,/summits/' | split: ',' %}
 {% unless footerless_pages contains page.url or page.layout == 'still-project' or page.layout == 'film' %}

@@ -7,7 +7,7 @@ description: Sunil Tamang's mountain records, expeditions, and high-altitude fil
 <link rel="stylesheet" href="{% include asset-url.html path='/assets/css/mountaineering.css' %}">
 <section class="mountaineering-archive" data-mountain-archive aria-labelledby="mountaineering-title">
 <div class="mountain-backgrounds" aria-hidden="true">
-<img class="mountain-portrait is-active" {% include responsive-image-attributes.html src='/assets/css/images/stills/everest/banner01.jpg' sizes='140vw' %} src="{{ '/assets/css/images/stills/everest/banner01.jpg' | relative_url }}" alt="" fetchpriority="high" decoding="async">
+<img class="mountain-portrait is-active" {% include responsive-image-attributes.html src='/assets/css/images/stills/banner01.jpg' sizes='140vw' %} src="{{ '/assets/css/images/stills/banner01.jpg' | relative_url }}" alt="" fetchpriority="high" decoding="async">
 {% for mountain in site.data.summit %}
 {% assign photo = site.static_files | where: 'path', mountain.image | first %}
 {% if photo %}<img data-mountain-image="{{ mountain.archive_id }}" class="" {% include responsive-image-attributes.html src=mountain.image sizes='100vw' deferred=true %} data-src="{{ mountain.image | relative_url }}" alt="" decoding="async">{% endif %}
