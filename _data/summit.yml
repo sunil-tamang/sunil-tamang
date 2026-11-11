@@ -1,37 +1,281 @@
+# Existing legacy fields are retained; cumulative counts do not imply dated ascents.
+# Unknown details remain null until the expedition-history source is supplied.
 - name: Everest
-  elevation: 8,848 
+  elevation: 8848
   country: Nepal
   year: 2018
-  image: "/css/images/k2.jpg" # Adjust the path accordingly
+  image: "/assets/css/images/hero.jpg"
   slug: everest
-
+  archive_id: everest
+  elevation_m: 8848
+  region:
+  summit_count: 1
+  dates:
+  expedition_years:
+  - 2025
+  climbing_style:
+  roles:
+  - Cinematography
+  partners:
+  notable_achievements:
+  first_ascent:
+  guiding:
+  film_projects:
+  - ebc-night
+  - decio-gomes
+  expeditions:
+  - id: film-ebc-night
+    type: film_project
+    title: Expedição ao Everest - V8.Tech
+    film_slug: ebc-night
+    film_year: 2025
+    year: 2025
+    dates: May 2025
+    status:
+    highest_camp:
+    climbing_style:
+    roles:
+    - Cinematography
+    partners:
+    client: Rodrigo Xavier
+    director: Murilo Vargas
+    production_company: Elevation Lab
+    notable_achievements:
+    description: Expedition to Everest (May/2025), led by Rodrigo Xavier, CEO of V8.Tech,
+      with the bold objective of reaching the top of the world in under 30 days, challenging
+      physical and mental limits in one of the most intense journeys ever undertaken
+      by a Brazilian. After a month of pre-acclimatization in a hypoxic chamber and
+      meticulously planned logistics, Rodrigo faced extreme temperatures, death zones,
+      aerial rescues, and his own human vulnerability at over 8,000 meters of altitude.
+      His journey took place on the greatest symbol of world mountaineering, set against
+      a backdrop of fear, overcoming, and love for life and family.
+    first_ascent:
+    guiding:
+    counts_toward_summits: false
+    source: _data/films.yml:ebc-night
+  - id: film-decio-gomes
+    type: film_project
+    title: A jornada continua e o cume nos espera!
+    film_slug: decio-gomes
+    film_year: 2025
+    year:
+    dates:
+    status:
+    highest_camp:
+    climbing_style:
+    roles:
+    - Cinematography
+    partners:
+    client: Décio Gomes
+    director: Murilo Vargas
+    production_company: Elevation Lab
+    notable_achievements:
+    description: Follow Decio Gomes, President of the DVG Group, on his audacious
+      journey to the top of Mount Everest. This is more than a climbing film—it is
+      a raw, intimate portrait of a leader applying the core principles of business—strategy,
+      resilience, and mental fortitude—in the most extreme environment on Earth.
+    first_ascent:
+    guiding:
+    counts_toward_summits: false
+    source: _data/films.yml:decio-gomes
+  count_source: Summit counts provided by Sunil Tamang
+  history_source:
 - name: Baruntse Peak
-  elevation: 7,119 
+  elevation: 7119
   country: Nepal
   year: 2018
-  image: "/css/images/lobuche.jpg" # Adjust the path accordingly
+  image: "/assets/css/images/stills/baruntse/01-banner16.jpg"
   slug: baruntse-peak
-
+  archive_id: baruntse-peak
+  elevation_m: 7119
+  region:
+  summit_count:
+  dates:
+  expedition_years:
+  climbing_style:
+  roles:
+  partners:
+  notable_achievements:
+  first_ascent:
+  guiding:
+  film_projects:
+  expeditions:
+  history_source:
 - name: Ama Dablam
-  elevation: 6,812 
+  elevation: 6812
   country: Nepal
   year: 2019
-  image: "/css/images/ama.jpg" # Adjust the path accordingly
+  image: "/assets/css/images/stills/ama-dablam/01-banner02.jpg"
   slug: ama-dablam
-
-
+  archive_id: ama-dablam
+  elevation_m: 6812
+  region:
+  summit_count: 1
+  dates:
+  expedition_years:
+  climbing_style:
+  roles:
+  - Cinematography
+  partners:
+  notable_achievements:
+  first_ascent:
+  guiding:
+  film_projects:
+  - xander
+  - everest
+  expeditions:
+  - id: film-xander
+    type: film_project
+    title: 32 Days In The Himalayas
+    film_slug: xander
+    film_year: 2025
+    year:
+    dates:
+    status:
+    highest_camp:
+    climbing_style:
+    roles:
+    - Cinematography
+    partners:
+    client: Xander Budnick
+    director: Xander Budnick
+    production_company: Elevation Lab
+    notable_achievements:
+    description: Xander Budnick sets out on a high-altitude expedition to reach Everest
+      Base Camp and attempt to summit Ama Dablam with his brother.
+    first_ascent:
+    guiding:
+    counts_toward_summits: false
+    source: _data/films.yml:xander
+  - id: film-everest
+    type: film_project
+    title: Climbing Mt Everest
+    film_slug: everest
+    film_year: 2026
+    year:
+    dates:
+    status:
+    highest_camp:
+    climbing_style:
+    roles:
+    - Cinematography
+    partners:
+    client: Xander Budnick
+    director: Xander Budnick
+    production_company: Elevation Lab
+    notable_achievements:
+    description: Xander Budnick sets out on a high-altitude expedition to reach Everest
+      Base Camp and attempt to summit Ama Dablam with his brother.
+    first_ascent:
+    guiding:
+    counts_toward_summits: false
+    source: _data/films.yml:everest
+  count_source: Summit counts provided by Sunil Tamang
+  history_source:
 - name: Mera Peak
-  elevation: 6,476
+  elevation: 6476
   country: Nepal
   year: 2019
-  image: "/css/images/mera-peak.jpg" # Adjust the path accordingly
+  image: "/assets/css/images/stills/mera-peak/01-banner9.jpg"
   slug: mera-peak
-
-
-
+  archive_id: mera-peak
+  elevation_m: 6476
+  region:
+  summit_count: 2
+  dates:
+  expedition_years:
+  climbing_style:
+  roles:
+  partners:
+  notable_achievements:
+  first_ascent:
+  guiding:
+  film_projects:
+  expeditions:
+  count_source: Summit counts provided by Sunil Tamang
+  history_source:
 - name: Island Peak
-  elevation:  6,165 
+  elevation: 6165
   country: Nepal
   year: 2019
-  image: "/css/images/island.jpg" # Adjust the path accordingly
+  image: "/assets/css/images/stills/island-peak/01-banner13.jpg"
   slug: pisang-peak
+  archive_id: island-peak
+  elevation_m: 6165
+  region:
+  summit_count:
+  dates:
+  expedition_years:
+  climbing_style:
+  roles:
+  partners:
+  notable_achievements:
+  first_ascent:
+  guiding:
+  film_projects:
+  expeditions:
+  history_source:
+- name: Lobuche Peak
+  elevation:
+  country: Nepal
+  year:
+  image: "/assets/css/images/stills/lobuche/01-banner1.jpg"
+  slug: lobuche
+  archive_id: lobuche-peak
+  elevation_m:
+  region:
+  summit_count: 3
+  dates:
+  expedition_years:
+  climbing_style:
+  roles:
+  partners:
+  notable_achievements:
+  first_ascent:
+  guiding:
+  film_projects:
+  expeditions:
+  count_source: Summit counts provided by Sunil Tamang
+  history_source:
+- name: Pisang Peak
+  elevation:
+  country: Nepal
+  year:
+  image: "/assets/css/images/stills/pisang-peak/01-banner19.jpg"
+  slug: pisang
+  archive_id: pisang-peak
+  elevation_m:
+  region:
+  summit_count:
+  dates:
+  expedition_years:
+  climbing_style:
+  roles:
+  partners:
+  notable_achievements:
+  first_ascent:
+  guiding:
+  film_projects:
+  expeditions:
+  history_source:
+- name: Langtang
+  elevation:
+  country: Nepal
+  year:
+  image: "/assets/css/images/stills/langtang/01-banner22.jpg"
+  slug: langtang
+  archive_id: langtang
+  elevation_m:
+  region:
+  summit_count:
+  dates:
+  expedition_years:
+  climbing_style:
+  roles:
+  partners:
+  notable_achievements:
+  first_ascent:
+  guiding:
+  film_projects:
+  expeditions:
+  history_source:

@@ -13,7 +13,7 @@ layout: default
 <div class="still-photo-stage" data-still-photo-stage aria-roledescription="carousel" aria-label="{{ project.title }} photographs">
 {% for photo in project_images %}
 <figure class="still-photo{% if forloop.first %} is-active{% endif %}" data-still-photo {% unless forloop.first %}inert aria-hidden="true"{% endunless %}>
-<img {% if forloop.first %}src="{{ photo.path | relative_url }}" fetchpriority="high"{% else %}data-src="{{ photo.path | relative_url }}"{% endif %} alt="{{ project.title | escape }} — photograph {{ forloop.index }}" decoding="async" draggable="false">
+<img {% if forloop.first %}{% include responsive-image-attributes.html src=photo.path sizes='100vw' %}{% else %}{% include responsive-image-attributes.html src=photo.path sizes='100vw' deferred=true %}{% endif %} {% if forloop.first %}src="{{ photo.path | relative_url }}" fetchpriority="high"{% else %}data-src="{{ photo.path | relative_url }}"{% endif %} alt="{{ project.title | escape }} — photograph {{ forloop.index }}" decoding="async" draggable="false">
 </figure>
 {% endfor %}
 </div>

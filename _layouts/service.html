@@ -6,7 +6,7 @@ layout: default
 
 <section class="summit-hero">
 
-    <img decoding="async" fetchpriority="high"
+    <img {% include responsive-image-attributes.html src=page.hero sizes='100vw' %} decoding="async" fetchpriority="high"
         class="summit-hero-image"
         src="{{ page.hero | relative_url }}"
         alt="{{ page.title }}">
@@ -169,7 +169,8 @@ layout: default
 
         <div class="summit-story-image">
 
-            <img decoding="async" loading="lazy"
+            {% assign story_photo = page.story_image | default: page.hero2 %}
+            <img {% include responsive-image-attributes.html src=story_photo %} decoding="async" loading="lazy"
                 src="{{ page.story_image | default: page.hero2 | relative_url }}"
                 alt="{{ page.title }}">
 
@@ -502,7 +503,7 @@ layout: default
 
         <div class="guide-service-gallery-item">
 
-            <img decoding="async" loading="lazy"
+            <img {% include responsive-image-attributes.html src=image %} decoding="async" loading="lazy"
                 src="{{ image | relative_url }}"
                 alt="{{ page.title }}">
 

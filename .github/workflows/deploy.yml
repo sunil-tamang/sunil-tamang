@@ -32,10 +32,19 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
 
+      - name: Validate summit archive
+        run: ruby scripts/validate_summits.rb
+
+      - name: Generate stable asset cache versions
+        run: python3 scripts/asset_versions.py
+
       - name: Build Jekyll site
         env:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --trace
+
+      - name: Check generated links and assets
+        run: python3 scripts/check_site.py _site
 
       - name: Upload Pages artifact
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

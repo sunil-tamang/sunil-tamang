@@ -5,9 +5,10 @@
  if(viewer){
   const photos=[...viewer.querySelectorAll('[data-still-photo]')];
   const stage=viewer.querySelector('[data-still-photo-stage]'),counter=viewer.querySelector('[data-still-current]');
-  let current=0,token=0,lockedUntil=0,wheelTotal=0,wheelReady=true,wheelTimer,touch=null;
+  let current=0,token=0,lockedUntil=0,wheelTotal=0,wheelReady=true,wheelTimer,touch=null,fadeTimer;
   function load(index){
    const image=photos[index].querySelector('img');
+   if(image.dataset.srcset){image.srcset=image.dataset.srcset;delete image.dataset.srcset}
    if(image.dataset.src){image.src=image.dataset.src;delete image.dataset.src}
    return image.decode();
   }
@@ -15,9 +16,13 @@
    const next=(index+photos.length)%photos.length,request=++token;
    try{await load(next)}catch{return}
    if(request!==token)return;
-   photos.forEach((photo,i)=>{photo.classList.toggle('is-active',i===next);photo.inert=i!==next;photo.setAttribute('aria-hidden',String(i!==next))});
+   const previous=current;
+   clearTimeout(fadeTimer);
+   photos.forEach((photo,i)=>{photo.classList.toggle('is-outgoing',i===previous&&i!==next);photo.classList.toggle('is-active',i===next);photo.inert=i!==next;photo.setAttribute('aria-hidden',String(i!==next))});
+   fadeTimer=setTimeout(()=>photos.forEach(photo=>photo.classList.remove('is-outgoing')),reduced.matches?0:700);
    current=next;counter.value=String(current+1).padStart(3,'0');
-   load((next+1)%photos.length).catch(()=>{});
+   document.dispatchEvent(new CustomEvent('portfolio:photochange',{detail:{photo:photos[current],index:current}}));
+   if(!navigator.connection?.saveData)load((next+1)%photos.length).catch(()=>{});
   }
   function menuOpen(){return document.body.classList.contains('casey-menu-open')}
   function advance(direction){if(menuOpen()||performance.now()<lockedUntil)return;lockedUntil=performance.now()+(reduced.matches?200:700);show(current+direction)}

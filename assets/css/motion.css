@@ -1,0 +1,25 @@
+/* Motion only: existing typography, colors, dimensions and compositions stay in place. */
+@view-transition { navigation: auto; }
+.motion-ready .project-directory-image { transform: scale(1.035); transition: opacity .75s ease, transform 1.25s cubic-bezier(.2,.7,.2,1); }
+.motion-ready .project-directory-image.is-active { transform: scale(1); }
+.motion-ready .project-directory-link { transition: opacity .38s ease, color .38s ease; }
+.motion-ready .casey-menu nav>a { transition: opacity .25s ease; }
+@media(hover:hover) { .motion-ready .casey-menu nav:has(a:hover)>a:not(:hover) { opacity: .55; } }
+.motion-ready .casey-slide-title { animation: none!important; }
+a[data-project-name][data-motion-selected], a.casey-slide-title[data-motion-selected] :is(h1,h2), .film-title, .still-photo-caption h1 { view-transition-name: project-title; }
+[data-motion-image], .film-video-banner>img, .still-photo.is-active>img { view-transition-name: project-image; }
+::view-transition-group(root) { animation-duration: .55s; }
+::view-transition-group(project-title), ::view-transition-group(project-image) { animation-duration: .85s; animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+::view-transition-old(project-image) { animation: motion-image-out .5s ease both; }
+::view-transition-new(project-image) { animation: motion-image-in .85s cubic-bezier(.2,.7,.2,1) both; }
+::view-transition-old(project-title) { animation: motion-image-out .35s ease both; }
+::view-transition-new(project-title) { animation: motion-title-in .65s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes motion-image-out { to { opacity: 0; } }
+@keyframes motion-image-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes motion-title-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media(prefers-reduced-motion:reduce) {
+ @view-transition { navigation: none; }
+ .motion-ready .project-directory-image { transform: none; transition: none; }
+ .motion-ready .casey-menu nav>a, .motion-ready .project-directory-link { transition: none; }
+ ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none!important; }
+}

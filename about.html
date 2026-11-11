@@ -3,9 +3,25 @@ layout: default
 title: About Sunil Tamang
 permalink: /about/
 description: Expedition cinematographer, mountaineer, and aspirant mountain guide based in Nepal.
+summit_records:
+  - name: Everest
+    count: 1
+    image: /assets/css/images/stills/everest/04-banner7.jpg
+  - name: Ama Dablam
+    count: 1
+    image: /assets/css/images/stills/ama-dablam/01-banner02.jpg
+  - name: Lobuche Peak
+    count: 3
+    image: /assets/css/images/stills/lobuche/01-banner1.jpg
+  - name: Mera Peak
+    count: 2
+    image: /assets/css/images/stills/mera-peak/01-banner9.jpg
 ---
-<section class="about-editorial" aria-labelledby="about-title">
-<div class="about-editorial-backdrop" aria-hidden="true"><img src="{{ '/assets/css/images/about-bg.jpg' | relative_url }}" alt="" fetchpriority="high" decoding="async"></div>
+<link rel="stylesheet" href="{% include asset-url.html path='/assets/css/about-summits.css' %}">
+<section class="about-editorial about-summit-page" aria-labelledby="about-title">
+<div class="about-summit-backdrops" aria-hidden="true">
+{% for summit in page.summit_records %}<img class="{% if forloop.first %}is-active{% endif %}" data-summit-background="{{ forloop.index0 }}" {% if forloop.first %}{% include responsive-image-attributes.html src=summit.image sizes='100vw' %} src="{{ summit.image | relative_url }}" fetchpriority="high"{% else %}{% include responsive-image-attributes.html src=summit.image sizes='100vw' deferred=true %} data-src="{{ summit.image | relative_url }}"{% endif %} alt="" decoding="async">{% endfor %}
+</div>
 <div class="about-editorial-content">
 <p class="about-editorial-label">NEPAL / FILM / MOUNTAINS</p>
 <h1 id="about-title">About.</h1>
@@ -14,5 +30,26 @@ description: Expedition cinematographer, mountaineer, and aspirant mountain guid
 <p>My work is shaped by firsthand experience in the mountains. From technical climbing to remote expeditions, I believe the most compelling stories come from those who truly live the adventure. Every frame is driven by authenticity, respect for the environment, and a passion for visual storytelling.</p>
 <p>Whether documenting Himalayan expeditions, alpine ascents, or the people whose lives are connected to the mountains, my goal is to tell powerful stories that inspire exploration, resilience, and a deeper appreciation for the natural world.</p>
 </div>
+<div class="about-summit-qualifications" aria-label="Mountain guide qualifications">
+<div class="about-summit-qualification"><img src="{{ '/assets/css/images/logos/nnmga.png' | relative_url }}" srcset="{{ '/assets/media/nnmga-128.png' | relative_url }} 128w, {{ '/assets/css/images/logos/nnmga.png' | relative_url }} 300w" sizes="44px" alt="NNMGA" width="44" height="44" decoding="async"><p><strong>NNMGA</strong><span>Current Mountain Guide Candidate</span></p></div>
+<div class="about-summit-qualification"><img src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}" srcset="{{ '/assets/media/ifmga-128.png' | relative_url }} 128w, {{ '/assets/css/images/logos/ifmga.png' | relative_url }} 300w" sizes="44px" alt="IFMGA" width="44" height="44" decoding="async"><p><strong>IFMGA</strong><span>Future Certification Goal</span></p></div>
+</div>
+</div>
+<div class="about-summit-slider" data-summit-slider role="region" aria-roledescription="carousel" aria-label="Summit records" tabindex="0">
+<p class="about-summit-label">SUMMIT RECORDS</p>
+<div class="about-summit-stage" data-summit-stage>
+{% for summit in page.summit_records %}
+<article class="about-summit-slide{% if forloop.first %} is-active{% endif %}" data-summit-slide role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ forloop.length }}: {{ summit.name }}, {{ summit.count }} {% if summit.count == 1 %}summit{% else %}summits{% endif %}"{% unless forloop.first %} inert aria-hidden="true"{% endunless %}>
+<div class="about-summit-reveal"><h2>{{ summit.name }}</h2></div>
+<div class="about-summit-reveal"><p class="about-summit-count">×{{ summit.count | prepend: '0' }}<span>SUMMITS</span></p></div>
+</article>
+{% endfor %}
+</div>
+<div class="about-summit-controls">
+<button type="button" data-summit-prev aria-label="Previous summit">←</button>
+<output data-summit-current aria-live="polite" aria-atomic="true">01 / 04</output>
+<button type="button" data-summit-next aria-label="Next summit">→</button>
+</div>
 </div>
 </section>
+<script defer src="{% include asset-url.html path='/assets/js/about-summits.js' %}"></script>

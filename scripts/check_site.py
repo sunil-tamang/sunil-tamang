@@ -58,7 +58,7 @@ class Page(HTMLParser):
             target = check(attrs.get(key), self.file)
             if tag == 'link' and key == 'href' and 'stylesheet' in attrs.get('rel', '').split() and target:
                 stylesheets.add(target)
-        for item in attrs.get('srcset', '').split(','):
+        for item in (attrs.get('srcset', '') + ',' + attrs.get('data-srcset', '')).split(','):
             if item.strip():
                 check(item.strip().split()[0], self.file)
         if attrs.get('style'):

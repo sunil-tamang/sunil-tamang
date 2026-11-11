@@ -1,0 +1,1 @@
+{%- assign version = site.data.asset_versions[include.path] -%}{{- include.path | relative_url -}}{%- if version -%}?v={{ version }}{%- endif -%}

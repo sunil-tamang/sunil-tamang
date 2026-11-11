@@ -1,0 +1,56 @@
+/* About-only composition; typography inherits the existing portfolio families and colors. */
+.about-summit-page { height: 100vh; height: 100svh; min-height: 0; display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; column-gap: 5vw; padding: 135px 5vw 35px; overflow: hidden; }
+.about-summit-backdrops { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: var(--casey-ink); overflow: hidden; }
+.about-summit-backdrops img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease; }
+.about-summit-backdrops img.is-active { opacity: 1; }
+.about-summit-backdrops::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,.6); }
+.about-summit-page .about-editorial-content { max-width: none; padding: 0; margin: 0; min-width: 0; }
+.casey-theme .about-summit-page .about-editorial-label { margin: 0 0 18px; }
+.casey-theme .about-summit-page h1 { font-size: clamp(52px,5.2vw,92px); margin: 0 0 24px; }
+.casey-theme .about-summit-page .about-editorial-bio p { font-size: clamp(12px,.9vw,15px); line-height: 1.65; margin: 0 0 16px; }
+.about-summit-qualifications { display: flex; align-items: center; gap: 20px; margin-top: 24px; }
+.about-summit-qualification { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+.about-summit-qualification img { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
+.about-summit-qualification p { margin: 0; }
+.about-summit-qualification strong,.about-summit-qualification span { display: block; }
+.about-summit-qualification strong { font-size: 12px; font-weight: 500; }
+.about-summit-qualification span { font-size: 10px; line-height: 1.5; }
+.about-summit-slider { min-width: 0; width: 100%; align-self: center; outline-offset: 10px; }
+.casey-theme .about-summit-label { font-size: 11px; letter-spacing: .12em; margin: 0 0 42px; }
+.about-summit-stage { position: relative; min-height: 310px; overflow: hidden; touch-action: pan-y pinch-zoom; }
+.about-summit-slide { position: absolute; inset: 0; visibility: hidden; pointer-events: none; }
+.about-summit-slide.is-active { visibility: visible; pointer-events: auto; }
+.about-summit-reveal { overflow: hidden; }
+.casey-theme .about-summit-slide h2 { font-size: clamp(40px,4.6vw,88px); line-height: 1.05; margin: 0 0 32px; }
+.casey-theme .about-summit-count { font-size: clamp(58px,6.3vw,120px); line-height: 1.1; margin: 0; letter-spacing: -.055em; }
+.about-summit-count span { display: block; font-size: 10px; letter-spacing: .12em; margin-top: 16px; }
+.about-summit-controls { display: flex; align-items: center; justify-content: space-between; width: min(100%,320px); margin-top: 30px; }
+.casey-theme .about-summit-controls button { min-width: 44px; min-height: 44px; font-size: 24px; transition: transform .3s; }
+.about-summit-controls button:hover { transform: translateX(3px); }
+.about-summit-controls button:first-child:hover { transform: translateX(-3px); }
+.about-summit-controls output { font-size: 11px; letter-spacing: .1em; }
+@media(min-width:901px) and (max-height:780px) {
+ .about-summit-page { padding-top: 110px; padding-bottom: 24px; column-gap: 4vw; grid-template-columns: 1.25fr 1fr; }
+ .casey-theme .about-summit-page h1 { font-size: 48px; margin-bottom: 16px; }
+ .casey-theme .about-summit-page .about-editorial-label { margin-bottom: 12px; }
+ .casey-theme .about-summit-page .about-editorial-bio p { font-size: clamp(11px,.85vw,13px); line-height: 1.5; margin-bottom: 12px; }
+ .about-summit-qualifications { margin-top: 16px; gap: 14px; }
+ .about-summit-qualification img { width: 36px; height: 36px; }
+ .about-summit-stage { min-height: 260px; }
+ .casey-theme .about-summit-label { margin-bottom: 24px; }
+ .about-summit-controls { margin-top: 12px; }
+}
+@media(max-width:900px) {
+ .about-summit-page { height: auto; min-height: 100svh; grid-template-columns: 1fr; padding: 145px 24px 45px; row-gap: 68px; overflow: clip; }
+ .casey-theme .about-summit-page h1 { font-size: clamp(60px,10vw,90px); }
+ .casey-theme .about-summit-page .about-editorial-bio p { font-size: 13px; line-height: 1.8; margin-bottom: 20px; }
+ .about-summit-slider { max-width: 650px; }
+ .about-summit-qualifications { flex-wrap: wrap; gap: 18px; }
+ .about-summit-qualification { flex-basis: 200px; }
+ .casey-theme .about-summit-slide h2 { font-size: clamp(44px,9vw,72px); }
+ .about-summit-stage { min-height: 265px; }
+ .casey-theme .about-summit-count { font-size: 80px; }
+ .casey-theme .about-summit-label { margin-bottom: 28px; }
+ .about-summit-controls { margin-top: 16px; }
+}
+@media(prefers-reduced-motion:reduce) { .about-summit-backdrops img,.about-summit-controls button { transition: none; } }

@@ -1,4 +1,4 @@
 {%- assign responsive = site.data.responsive_images[include.src] -%}
 {%- if responsive -%}
-srcset="{{ responsive.small | relative_url }} 640w, {{ include.src | relative_url }} {{ responsive.width }}w" sizes="(max-width: 768px) 100vw, 50vw"
+{% if include.deferred %}data-srcset{% else %}srcset{% endif %}="{{ responsive.small | relative_url | uri_escape }} 640w,{% if responsive.medium %} {{ responsive.medium | relative_url | uri_escape }} 1280w,{% endif %} {{ include.src | relative_url | uri_escape }} {{ responsive.width }}w" sizes="{{ include.sizes | default: '(max-width: 768px) 100vw, 50vw' }}"
 {%- endif -%}

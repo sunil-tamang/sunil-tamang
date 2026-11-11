@@ -60,16 +60,15 @@ ebc-night:
     - drone
     - documentary
     - himalayas
-    
 everest:
-  title: "Life In Death Zone"
+  title: "Climbing Mt Everest"
   year: 2026
   category: "Documentary"
   client: "Xander Budnick"
   duration: "24:53"
   thumbnail: "/assets/css/images/films/everest-xander.jpg"
   poster: "/assets/css/images/films/everest-xander.jpg"
-  youtube: "https://www.youtube.com/embed/5uAld7-FhCY?si=WUkqyFnf5ZFD7HEm"
+  youtube: "https://www.youtube.com/embed/NmV22jRADaI?si=P2kNP6ASy2a2yksl"
   hover_video: "/assets/css/video/banner.mp4"  
   description: >
     Xander Budnick sets out on a high-altitude expedition to reach Everest Base Camp

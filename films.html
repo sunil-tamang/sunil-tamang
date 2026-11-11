@@ -6,7 +6,7 @@ permalink: /films/
 <section class="project-directory" aria-labelledby="projects-title" data-project-directory>
 <div class="project-directory-backdrops" aria-hidden="true">
 {% for pair in site.data.films %}{% assign film = pair[1] %}
-<img class="project-directory-image{% if forloop.first %} is-active{% endif %}" data-project-image="{{ pair[0] }}" {% if forloop.first %}src="{{ film.poster | relative_url }}" fetchpriority="high"{% else %}data-src="{{ film.poster | relative_url }}"{% endif %} alt="" decoding="async">
+<img {% if forloop.first %}{% include responsive-image-attributes.html src=film.poster sizes='100vw' %}{% else %}{% include responsive-image-attributes.html src=film.poster sizes='100vw' deferred=true %}{% endif %} class="project-directory-image{% if forloop.first %} is-active{% endif %}" data-project-image="{{ pair[0] }}" {% if forloop.first %}src="{{ film.poster | relative_url }}" fetchpriority="high"{% else %}data-src="{{ film.poster | relative_url }}"{% endif %} alt="" decoding="async">
 {% endfor %}
 </div>
 {% assign documentary_count = 0 %}{% assign short_film_count = 0 %}

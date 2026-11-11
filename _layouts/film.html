@@ -45,7 +45,7 @@ layout: default
     id="openVideo"
     data-video="{{ film.youtube }}">
 
-    <img decoding="async" fetchpriority="high"
+    <img {% include responsive-image-attributes.html src=film.poster sizes='84vw' %} decoding="async" fetchpriority="high"
         src="{{ film.poster | relative_url }}"
         alt="{{ film.title }}">
 
@@ -105,7 +105,8 @@ layout: default
                     {% assign credit_fields = 'Title:title,Director:director,Year:year,Cinematography:cinematography,Production Company:producer,Editor:editor,Location:location,Duration:duration' | split: ',' %}
                     {% for field in credit_fields %}
                         {% assign credit = field | split: ':' %}
-                        {% assign value = film[credit[1]] %}
+                        {% assign credit_key = credit[1] %}
+                        {% assign value = film[credit_key] %}
                         {% if value %}
                         <div class="film-credit"><dt>{{ credit[0] }}</dt><dd>{{ value | escape }}</dd></div>
                         {% endif %}
@@ -118,34 +119,4 @@ layout: default
 
 
 
-{% if film.gallery %}
-
-<section class="film-gallery">
-
-    <div class="film-gallery-grid">
-
-        {% for image in film.gallery %}
-
-        <figure class="film-gallery-frame">
-            <img decoding="async" loading="lazy" src="{{ image | relative_url }}"
-                 alt="{{ film.title | escape }} — photograph {{ forloop.index }}">
-        </figure>
-
-        {% endfor %}
-
-    </div>
-
 </section>
-
-{% endif %}
-
-
-</section>
-
-{% assign next_pair = site.data.films | first %}
-{% assign take_next = false %}
-{% for pair in site.data.films %}
-{% if take_next %}{% assign next_pair = pair %}{% break %}{% endif %}
-{% if pair[0] == page.slug %}{% assign take_next = true %}{% endif %}
-{% endfor %}
-<section class="casey-next-project"><a href="{{ '/films/' | append: next_pair[0] | append: '/' | relative_url }}"><span>NEXT PROJECT ↗</span><h2>{{ next_pair[1].title | escape }}</h2></a></section>

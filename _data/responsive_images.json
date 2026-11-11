@@ -1,114 +1,416 @@
 {
   "/assets/css/images/stills/banner02.jpg": {
-    "small": "/assets/css/images/stills/banner02-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner02-f0b05651-640.jpg",
+    "medium": "/assets/media/banner02-f0b05651-1280.jpg"
   },
   "/assets/css/images/stills/banner01.jpg": {
-    "small": "/assets/css/images/stills/banner01-640.jpg",
-    "width": 1920
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/banner01-e316688b-640.jpg",
+    "medium": "/assets/media/banner01-e316688b-1280.jpg"
   },
   "/assets/css/images/stills/banner03.jpg": {
-    "small": "/assets/css/images/stills/banner03-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner03-a8531bc5-640.jpg",
+    "medium": "/assets/media/banner03-a8531bc5-1280.jpg"
   },
   "/assets/css/images/stills/banner04.jpg": {
-    "small": "/assets/css/images/stills/banner04-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner04-85ab4e30-640.jpg",
+    "medium": "/assets/media/banner04-85ab4e30-1280.jpg"
   },
   "/assets/css/images/stills/banner05.jpg": {
-    "small": "/assets/css/images/stills/banner05-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner05-9055b7ed-640.jpg",
+    "medium": "/assets/media/banner05-9055b7ed-1280.jpg"
   },
   "/assets/css/images/stills/banner06.jpg": {
-    "small": "/assets/css/images/stills/banner06-640.jpg",
-    "width": 1469
+    "width": 1469,
+    "height": 2200,
+    "small": "/assets/media/banner06-84f290b9-640.jpg",
+    "medium": "/assets/media/banner06-84f290b9-1280.jpg"
   },
   "/assets/css/images/stills/banner1.jpg": {
-    "small": "/assets/css/images/stills/banner1-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner1-da38e039-640.jpg",
+    "medium": "/assets/media/banner1-da38e039-1280.jpg"
   },
   "/assets/css/images/stills/banner2.jpg": {
-    "small": "/assets/css/images/stills/banner2-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner2-9e35bfe9-640.jpg",
+    "medium": "/assets/media/banner2-9e35bfe9-1280.jpg"
   },
   "/assets/css/images/stills/banner3.jpg": {
-    "small": "/assets/css/images/stills/banner3-640.jpg",
-    "width": 1469
+    "width": 1469,
+    "height": 2200,
+    "small": "/assets/media/banner3-4e5ed593-640.jpg",
+    "medium": "/assets/media/banner3-4e5ed593-1280.jpg"
   },
   "/assets/css/images/stills/banner4.jpg": {
-    "small": "/assets/css/images/stills/banner4-640.jpg",
-    "width": 1469
+    "width": 1469,
+    "height": 2200,
+    "small": "/assets/media/banner4-21619b4c-640.jpg",
+    "medium": "/assets/media/banner4-21619b4c-1280.jpg"
   },
   "/assets/css/images/stills/banner5.jpg": {
-    "small": "/assets/css/images/stills/banner5-640.jpg",
-    "width": 1469
+    "width": 1469,
+    "height": 2200,
+    "small": "/assets/media/banner5-7862e663-640.jpg",
+    "medium": "/assets/media/banner5-7862e663-1280.jpg"
   },
   "/assets/css/images/stills/banner6.jpg": {
-    "small": "/assets/css/images/stills/banner6-640.jpg",
-    "width": 1469
+    "width": 1469,
+    "height": 2200,
+    "small": "/assets/media/banner6-249769a6-640.jpg",
+    "medium": "/assets/media/banner6-249769a6-1280.jpg"
   },
   "/assets/css/images/stills/banner7.jpg": {
-    "small": "/assets/css/images/stills/banner7-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1623,
+    "small": "/assets/media/banner7-19144458-640.jpg",
+    "medium": "/assets/media/banner7-19144458-1280.jpg"
   },
   "/assets/css/images/stills/banner8.jpg": {
-    "small": "/assets/css/images/stills/banner8-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner8-82648505-640.jpg",
+    "medium": "/assets/media/banner8-82648505-1280.jpg"
   },
   "/assets/css/images/stills/banner9.jpg": {
-    "small": "/assets/css/images/stills/banner9-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner9-8fc08345-640.jpg",
+    "medium": "/assets/media/banner9-8fc08345-1280.jpg"
   },
   "/assets/css/images/stills/banner10.jpg": {
-    "small": "/assets/css/images/stills/banner10-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner10-4245bd8d-640.jpg",
+    "medium": "/assets/media/banner10-4245bd8d-1280.jpg"
   },
   "/assets/css/images/stills/banner11.jpg": {
-    "small": "/assets/css/images/stills/banner11-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner11-8e6810d9-640.jpg",
+    "medium": "/assets/media/banner11-8e6810d9-1280.jpg"
   },
   "/assets/css/images/stills/banner12.jpg": {
-    "small": "/assets/css/images/stills/banner12-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner12-e1f96894-640.jpg",
+    "medium": "/assets/media/banner12-e1f96894-1280.jpg"
   },
   "/assets/css/images/stills/banner13.jpg": {
-    "small": "/assets/css/images/stills/banner13-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/banner13-b4a27e00-640.jpg",
+    "medium": "/assets/media/banner13-b4a27e00-1280.jpg"
   },
   "/assets/css/images/stills/banner14.jpg": {
-    "small": "/assets/css/images/stills/banner14-640.jpg",
-    "width": 1920
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/banner14-599686db-640.jpg",
+    "medium": "/assets/media/banner14-599686db-1280.jpg"
   },
   "/assets/css/images/stills/banner15.jpg": {
-    "small": "/assets/css/images/stills/banner15-640.jpg",
-    "width": 1920
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/banner15-0b2a068b-640.jpg",
+    "medium": "/assets/media/banner15-0b2a068b-1280.jpg"
   },
   "/assets/css/images/stills/banner16.jpg": {
-    "small": "/assets/css/images/stills/banner16-640.jpg",
-    "width": 1920
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/banner16-96712a0b-640.jpg",
+    "medium": "/assets/media/banner16-96712a0b-1280.jpg"
   },
   "/assets/css/images/stills/banner17.jpg": {
-    "small": "/assets/css/images/stills/banner17-640.jpg",
-    "width": 2048
+    "width": 2048,
+    "height": 1367,
+    "small": "/assets/media/banner17-1c0f1e80-640.jpg",
+    "medium": "/assets/media/banner17-1c0f1e80-1280.jpg"
   },
   "/assets/css/images/stills/banner18.jpg": {
-    "small": "/assets/css/images/stills/banner18-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1925,
+    "small": "/assets/media/banner18-6471cb3b-640.jpg",
+    "medium": "/assets/media/banner18-6471cb3b-1280.jpg"
   },
   "/assets/css/images/stills/banner19.jpg": {
-    "small": "/assets/css/images/stills/banner19-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1925,
+    "small": "/assets/media/banner19-1a59d849-640.jpg",
+    "medium": "/assets/media/banner19-1a59d849-1280.jpg"
   },
   "/assets/css/images/stills/banner20.jpg": {
-    "small": "/assets/css/images/stills/banner20-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1925,
+    "small": "/assets/media/banner20-f7a9341c-640.jpg",
+    "medium": "/assets/media/banner20-f7a9341c-1280.jpg"
   },
   "/assets/css/images/stills/banner21.jpg": {
-    "small": "/assets/css/images/stills/banner21-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1925,
+    "small": "/assets/media/banner21-9caf0842-640.jpg",
+    "medium": "/assets/media/banner21-9caf0842-1280.jpg"
   },
   "/assets/css/images/stills/banner22.jpg": {
-    "small": "/assets/css/images/stills/banner22-640.jpg",
-    "width": 2200
+    "width": 2200,
+    "height": 1925,
+    "small": "/assets/media/banner22-eeae29c3-640.jpg",
+    "medium": "/assets/media/banner22-eeae29c3-1280.jpg"
+  },
+  "/assets/css/images/about-bg.jpg": {
+    "width": 3840,
+    "height": 1634,
+    "small": "/assets/media/about-bg-cdad4317-640.jpg",
+    "medium": "/assets/media/about-bg-cdad4317-1280.jpg"
+  },
+  "/assets/css/images/films/everest-xander.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/everest-xander-5f659b0f-640.jpg",
+    "medium": "/assets/media/everest-xander-5f659b0f-1280.jpg"
+  },
+  "/assets/css/images/films/everest.jpg": {
+    "width": 3600,
+    "height": 2024,
+    "small": "/assets/media/everest-58d39cc3-640.jpg",
+    "medium": "/assets/media/everest-58d39cc3-1280.jpg"
+  },
+  "/assets/css/images/films/xander.jpg": {
+    "width": 2200,
+    "height": 1237,
+    "small": "/assets/media/xander-ab55f966-640.jpg",
+    "medium": "/assets/media/xander-ab55f966-1280.jpg"
+  },
+  "/assets/css/images/services/alpine/hero.jpg": {
+    "width": 2200,
+    "height": 1467,
+    "small": "/assets/media/hero-42a32b06-640.jpg",
+    "medium": "/assets/media/hero-42a32b06-1280.jpg"
+  },
+  "/assets/css/images/services/ice/14.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "small": "/assets/media/14-6c4b0452-640.jpg",
+    "medium": "/assets/media/14-6c4b0452-1280.jpg"
+  },
+  "/assets/css/images/services/ice/hero.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "small": "/assets/media/hero-c21f294a-640.jpg",
+    "medium": "/assets/media/hero-c21f294a-1280.jpg"
+  },
+  "/assets/css/images/services/rock/hero2.jpg": {
+    "width": 1500,
+    "height": 891,
+    "small": "/assets/media/hero2-09427a5e-640.jpg",
+    "medium": "/assets/media/hero2-09427a5e-1280.jpg"
+  },
+  "/assets/css/images/stills/ama-dablam/01-banner02.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/01-banner02-10691e3a-640.jpg",
+    "medium": "/assets/media/01-banner02-10691e3a-1280.jpg"
+  },
+  "/assets/css/images/stills/ama-dablam/02-banner01.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/02-banner01-ac4c04e4-640.jpg",
+    "medium": "/assets/media/02-banner01-ac4c04e4-1280.jpg"
+  },
+  "/assets/css/images/stills/ama-dablam/03-banner03.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/03-banner03-b1c8e0f6-640.jpg",
+    "medium": "/assets/media/03-banner03-b1c8e0f6-1280.jpg"
+  },
+  "/assets/css/images/stills/ama-dablam/04-banner05.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/04-banner05-60f9df14-640.jpg",
+    "medium": "/assets/media/04-banner05-60f9df14-1280.jpg"
+  },
+  "/assets/css/images/stills/ama-dablam/05-banner06.jpg": {
+    "width": 1469,
+    "height": 2200,
+    "small": "/assets/media/05-banner06-95e887ae-640.jpg",
+    "medium": "/assets/media/05-banner06-95e887ae-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/01-banner16.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/01-banner16-fdef7ec1-640.jpg",
+    "medium": "/assets/media/01-banner16-fdef7ec1-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/02-banner17.jpg": {
+    "width": 2048,
+    "height": 1367,
+    "small": "/assets/media/02-banner17-7cf64361-640.jpg",
+    "medium": "/assets/media/02-banner17-7cf64361-1280.jpg"
+  },
+  "/assets/css/images/stills/baruntse/03-banner18.jpg": {
+    "width": 2200,
+    "height": 1925,
+    "small": "/assets/media/03-banner18-08ca5106-640.jpg",
+    "medium": "/assets/media/03-banner18-08ca5106-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/01-banner2.jpg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/01-banner2-6c8b01b7-640.jpg",
+    "medium": "/assets/media/01-banner2-6c8b01b7-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/02-banner04.jpg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/02-banner04-c0cfca5a-640.jpg",
+    "medium": "/assets/media/02-banner04-c0cfca5a-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/03-banner6.jpg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/03-banner6-a574cc95-640.jpg",
+    "medium": "/assets/media/03-banner6-a574cc95-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/04-banner7.jpg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/04-banner7-9c5f6171-640.jpg",
+    "medium": "/assets/media/04-banner7-9c5f6171-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/05-banner8.jpg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/05-banner8-6bac4091-640.jpg",
+    "medium": "/assets/media/05-banner8-6bac4091-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/DSC05982 1.jpg": {
+    "width": 2560,
+    "height": 1710,
+    "small": "/assets/media/DSC05982-1-59ecca25-640.jpg",
+    "medium": "/assets/media/DSC05982-1-59ecca25-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/Still 2026-10-29 113254_1.3.2.jpg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/Still-2026-10-29-113254_1.3.2-4d41184f-640.jpg",
+    "medium": "/assets/media/Still-2026-10-29-113254_1.3.2-4d41184f-1280.jpg"
+  },
+  "/assets/css/images/stills/everest/banner01.jpg": {
+    "width": 2560,
+    "height": 1440,
+    "small": "/assets/media/banner01-a2841779-640.jpg",
+    "medium": "/assets/media/banner01-a2841779-1280.jpg"
+  },
+  "/assets/css/images/stills/island-peak/01-banner13.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/01-banner13-1fcd64ee-640.jpg",
+    "medium": "/assets/media/01-banner13-1fcd64ee-1280.jpg"
+  },
+  "/assets/css/images/stills/island-peak/02-banner14.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/02-banner14-dd67ce1b-640.jpg",
+    "medium": "/assets/media/02-banner14-dd67ce1b-1280.jpg"
+  },
+  "/assets/css/images/stills/island-peak/03-banner15.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "small": "/assets/media/03-banner15-d5b3121e-640.jpg",
+    "medium": "/assets/media/03-banner15-d5b3121e-1280.jpg"
+  },
+  "/assets/css/images/stills/langtang/01-banner22.jpg": {
+    "width": 2200,
+    "height": 1925,
+    "small": "/assets/media/01-banner22-db70cb20-640.jpg",
+    "medium": "/assets/media/01-banner22-db70cb20-1280.jpg"
+  },
+  "/assets/css/images/stills/langtang/02-banner02.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/02-banner02-f7ef0f9a-640.jpg",
+    "medium": "/assets/media/02-banner02-f7ef0f9a-1280.jpg"
+  },
+  "/assets/css/images/stills/langtang/03-banner1.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/03-banner1-57c90e69-640.jpg",
+    "medium": "/assets/media/03-banner1-57c90e69-1280.jpg"
+  },
+  "/assets/css/images/stills/lobuche/01-banner1.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/01-banner1-21887e68-640.jpg",
+    "medium": "/assets/media/01-banner1-21887e68-1280.jpg"
+  },
+  "/assets/css/images/stills/lobuche/02-banner3.jpg": {
+    "width": 1469,
+    "height": 2200,
+    "small": "/assets/media/02-banner3-acdc8226-640.jpg",
+    "medium": "/assets/media/02-banner3-acdc8226-1280.jpg"
+  },
+  "/assets/css/images/stills/lobuche/03-banner4.jpg": {
+    "width": 1469,
+    "height": 2200,
+    "small": "/assets/media/03-banner4-feebe332-640.jpg",
+    "medium": "/assets/media/03-banner4-feebe332-1280.jpg"
+  },
+  "/assets/css/images/stills/lobuche/04-banner5.jpg": {
+    "width": 1469,
+    "height": 2200,
+    "small": "/assets/media/04-banner5-79ede247-640.jpg",
+    "medium": "/assets/media/04-banner5-79ede247-1280.jpg"
+  },
+  "/assets/css/images/stills/mera-peak/01-banner9.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/01-banner9-3d50c71c-640.jpg",
+    "medium": "/assets/media/01-banner9-3d50c71c-1280.jpg"
+  },
+  "/assets/css/images/stills/mera-peak/02-banner10.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/02-banner10-295ea9f9-640.jpg",
+    "medium": "/assets/media/02-banner10-295ea9f9-1280.jpg"
+  },
+  "/assets/css/images/stills/mera-peak/03-banner11.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/03-banner11-5a74855f-640.jpg",
+    "medium": "/assets/media/03-banner11-5a74855f-1280.jpg"
+  },
+  "/assets/css/images/stills/mera-peak/04-banner12.jpg": {
+    "width": 2200,
+    "height": 1469,
+    "small": "/assets/media/04-banner12-756982a4-640.jpg",
+    "medium": "/assets/media/04-banner12-756982a4-1280.jpg"
+  },
+  "/assets/css/images/stills/pisang-peak/01-banner19.jpg": {
+    "width": 2200,
+    "height": 1925,
+    "small": "/assets/media/01-banner19-a8b9fd57-640.jpg",
+    "medium": "/assets/media/01-banner19-a8b9fd57-1280.jpg"
+  },
+  "/assets/css/images/stills/pisang-peak/02-banner20.jpg": {
+    "width": 2200,
+    "height": 1925,
+    "small": "/assets/media/02-banner20-dde1bca6-640.jpg",
+    "medium": "/assets/media/02-banner20-dde1bca6-1280.jpg"
+  },
+  "/assets/css/images/stills/pisang-peak/03-banner21.jpg": {
+    "width": 2200,
+    "height": 1925,
+    "small": "/assets/media/03-banner21-c503b63e-640.jpg",
+    "medium": "/assets/media/03-banner21-c503b63e-1280.jpg"
   }
 }

@@ -5,8 +5,7 @@ description: Expedition films and photography by Sunil Tamang, Nepal.
 <div class="casey-films" aria-label="Selected films">
 {% for pair in site.data.films %}{% assign film = pair[1] %}
 <section class="casey-slide" id="film-{{ pair[0] }}" data-casey-slide>
-<img class="casey-slide-image" src="{{ film.poster | relative_url }}" alt="{{ film.title | escape }}" {% if forloop.first %}fetchpriority="high" loading="eager"{% else %}loading="lazy"{% endif %} decoding="async">
-{% assign preview = site.static_files | where: "path", film.hover_video | first %}{% if preview %}<video class="casey-slide-video" muted loop playsinline preload="none" poster="{{ film.poster | relative_url }}" aria-hidden="true"><source data-src="{{ film.hover_video | relative_url }}" type="video/mp4"></video>{% endif %}
+{% assign preview = site.static_files | where: "path", film.hover_video | first %}{% if preview %}<video class="casey-slide-video" muted playsinline preload="none" aria-hidden="true"><source data-src="{{ film.hover_video | relative_url }}" type="video/mp4"></video>{% endif %}
 <div class="casey-slide-shade"></div>
 <div class="casey-slide-top"><span>{{ forloop.index | prepend: '0' }} / {{ site.data.films.size | prepend: '0' }}</span><span>{{ film.year }}</span></div>
 <a class="casey-slide-title" href="{{ '/films/' | append: pair[0] | append: '/' | relative_url }}"><{% if forloop.first %}h1{% else %}h2{% endif %}>{{ film.title | escape }}</{% if forloop.first %}h1{% else %}h2{% endif %}></a>
@@ -14,4 +13,4 @@ description: Expedition films and photography by Sunil Tamang, Nepal.
 </section>
 {% endfor %}
 </div>
-<div class="casey-player-controls"><button type="button" data-casey-pause aria-pressed="false">PAUSE</button><span data-casey-current>01</span><span class="casey-control-line"></span><span>{{ site.data.films.size | prepend: '0' }}</span><button type="button" data-casey-next aria-label="Next film">↓</button></div>
+<div class="casey-player-controls" aria-label="Film playback"><span class="casey-slide-counter"><output data-casey-current aria-live="polite" aria-atomic="true">01</output><span aria-hidden="true">/</span><span>{{ site.data.films.size | prepend: '0' }}</span></span><div class="casey-control-line" data-casey-meter role="progressbar" aria-label="Video playback" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span data-casey-progress></span></div><button type="button" data-casey-next aria-label="Next film">↓</button></div>

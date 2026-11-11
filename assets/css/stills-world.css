@@ -2,7 +2,7 @@
 body:has([data-still-slideshow]) { background: #000; overflow: hidden; overscroll-behavior: none; }
 body:has([data-still-slideshow]) main { min-height: 0; }
 .still-slideshow { position: relative; height: 100svh; min-height: 0; overflow: hidden; background: #000; color: var(--casey-paper); }
-.still-photo-stage { position: absolute; inset: 100px 14px 90px; overflow: hidden; touch-action: pan-x pinch-zoom; background: #050505; }
+.still-photo-stage { position: absolute; inset: 0; overflow: hidden; touch-action: pan-x pinch-zoom; background: #050505; }
 .still-photo-stage::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(125deg,#0009 0%,#0003 23%,transparent 48%); }
 .still-photo { position: absolute; inset: 0; margin: 0; opacity: 0; visibility: hidden; transition: opacity .65s ease, visibility .65s; }
 .still-photo.is-active { opacity: 1; visibility: visible; }
@@ -11,14 +11,13 @@ body:has([data-still-slideshow]) main { min-height: 0; }
 .casey-theme .still-photo-caption p { font: 400 11px/1.65 'Roboto Mono',monospace; letter-spacing: .1em; color: inherit; margin: 0 0 22px; }
 .casey-theme .still-photo-caption h1 { font: 500 clamp(26px,2.1vw,40px)/1.1 Inter,sans-serif; letter-spacing: -.035em; text-transform: none; color: inherit; margin: 0 0 18px; }
 .still-photo-caption>span { font: 10px/1.4 'Roboto Mono',monospace; letter-spacing: .1em; }
-.still-photo-controls { position: absolute; bottom: 0; left: 0; right: 0; padding: 27px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; z-index: 5; background: #000; min-height: 90px; font: 11px/1.5 'Roboto Mono',monospace; letter-spacing: .1em; color: inherit; }
+.still-photo-controls { position: absolute; bottom: 0; left: 0; right: 0; padding: 27px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; z-index: 5; background: linear-gradient(transparent,rgba(0,0,0,.65)); min-height: 90px; font: 11px/1.5 'Roboto Mono',monospace; letter-spacing: .1em; color: inherit; }
 .casey-theme .still-photo-controls button { font: 11px/1.5 'Roboto Mono',monospace; letter-spacing: .1em; color: inherit; }
 .still-photo-counter { display: flex; align-items: center; justify-content: center; position: absolute; left: 50%; transform: translateX(-50%); gap: 18px; }
 .casey-theme .still-photo-counter button { min-width: 25px; min-height: 35px; font-size: 18px; }
 .still-project-links { display: flex; align-items: center; gap: 10px; }
 .still-photo-controls a:hover { opacity: .6; }
 @media(max-width:800px) {
- .still-photo-stage { inset: 90px 8px 115px; }
  .still-photo-caption { top: 112px; left: 25px; }
  .casey-theme .still-photo-caption p { font-size: 9px; margin-bottom: 16px; }
  .casey-theme .still-photo-caption h1 { font-size: 26px; margin-bottom: 16px; }
@@ -28,3 +27,7 @@ body:has([data-still-slideshow]) main { min-height: 0; }
  .still-project-links { margin-left: auto; gap: 7px; font-size: 8px; }
 }
 @media(prefers-reduced-motion:reduce) { .still-slideshow * { transition: none!important; animation: none!important; } }
+
+.still-photo { z-index: 0; }
+.still-photo.is-outgoing { opacity: 1; visibility: visible; pointer-events: none; z-index: 0; transition: none; }
+.still-photo.is-active { z-index: 1; }

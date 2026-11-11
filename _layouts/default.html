@@ -17,15 +17,21 @@ layout: compress
 <link rel="preload" href="{{ '/assets/fonts/roboto-mono-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" href="{{ '/favicon.png' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-<link rel="stylesheet" href="{{ '/assets/css/casey.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-{% if page.layout == 'film' or page.layout == 'service' %}
-<script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
+<link rel="stylesheet" href="{% include asset-url.html path='/assets/css/main.css' %}">
+<link rel="stylesheet" href="{% include asset-url.html path='/assets/css/casey.css' %}">
+{% if page.layout == 'film' or page.layout == 'service' or page.layout == 'summit' %}
+<script defer src="{% include asset-url.html path='/assets/js/main.js' %}"></script>
 {% endif %}
-<script defer src="{{ '/assets/js/casey.js' | relative_url }}"></script>
+<link rel="stylesheet" href="{% include asset-url.html path='/assets/css/motion.css' %}">
+<script defer src="{% include asset-url.html path='/assets/js/vendor/gsap.min.js' %}"></script>
+{% if page.layout == 'film' or page.layout == 'service' or page.url == '/about/' or page.url == '/contact/' or page.url contains '/summits/' %}
+<script defer src="{% include asset-url.html path='/assets/js/vendor/ScrollTrigger.min.js' %}"></script>
+{% endif %}
+<script defer src="{% include asset-url.html path='/assets/js/motion.js' %}"></script>
+<script defer src="{% include asset-url.html path='/assets/js/casey.js' %}"></script>
 {% if page.layout == 'still-project' %}
-<link rel="stylesheet" href="{{ '/assets/css/stills-world.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-<script defer src="{{ '/assets/js/stills-world.js' | relative_url }}"></script>
+<link rel="stylesheet" href="{% include asset-url.html path='/assets/css/stills-world.css' %}">
+<script defer src="{% include asset-url.html path='/assets/js/stills-world.js' %}"></script>
 {% endif %}
 {% if page.url contains '404' or page.url contains 'thanks' or page.url contains 'thankyou' or page.url contains 'thank-' %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -39,17 +45,17 @@ layout: compress
 </header>
 <div class="casey-menu" id="casey-menu" role="dialog" aria-modal="true" aria-label="Site navigation" inert hidden>
 <nav aria-label="Main navigation">
-{% assign links = 'Home:/,Projects:/films/,Photography:/stills/,About:/about/,Contact:/contact/' | split: ',' %}
+{% assign links = 'Home:/,Projects:/films/,Photography:/stills/,Summits:/summits/,About:/about/,Contact:/contact/' | split: ',' %}
 {% for item in links %}{% assign link = item | split: ':' %}<a href="{{ link[1] | relative_url }}"><small>{{ forloop.index | prepend: '0' }}</small><span>{{ link[0] }}</span></a>{% endfor %}
 </nav>
 <div class="casey-menu-bottom"><div class="casey-menu-bio"><p>I’m Sunil Tamang, an expedition cinematographer and mountaineer based in Nepal. I capture films, photographs, and human stories from the Himalayas.</p><div class="casey-menu-qualifications" aria-label="Mountain guide journey">
-<div class="casey-menu-qualification"><img src="{{ '/assets/css/images/logos/nnmga.png' | relative_url }}" alt="NNMGA" width="32" height="32" decoding="async"><div><strong>NNMGA</strong><span>Aspirant mountain guide</span></div></div>
-<div class="casey-menu-qualification"><img src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}" alt="IFMGA" width="32" height="32" decoding="async"><div><strong>IFMGA</strong><span>Future goal</span></div></div>
+<div class="casey-menu-qualification"><img src="{{ '/assets/css/images/logos/nnmga.png' | relative_url }}" srcset="{{ '/assets/media/nnmga-128.png' | relative_url }} 128w, {{ '/assets/css/images/logos/nnmga.png' | relative_url }} 300w" sizes="32px" alt="NNMGA" width="32" height="32" decoding="async"><div><strong>NNMGA</strong><span>Aspirant mountain guide</span></div></div>
+<div class="casey-menu-qualification"><img src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}" srcset="{{ '/assets/media/ifmga-128.png' | relative_url }} 128w, {{ '/assets/css/images/logos/ifmga.png' | relative_url }} 300w" sizes="32px" alt="IFMGA" width="32" height="32" decoding="async"><div><strong>IFMGA</strong><span>Future goal</span></div></div>
 </div></div><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
 </div>
 <main id="main-content">{{ content }}</main>
-{% assign footerless_pages = '/,/contact/,/about/,/stills/,/films/' | split: ',' %}
-{% unless footerless_pages contains page.url or page.layout == 'still-project' %}
+{% assign footerless_pages = '/,/contact/,/about/,/stills/,/films/,/mountaineering/,/summits/' | split: ',' %}
+{% unless footerless_pages contains page.url or page.layout == 'still-project' or page.layout == 'film' %}
 <footer class="casey-footer">
 <div class="casey-footer-top"><span>NEPAL · HIMALAYAS · WORLDWIDE</span><a href="{{ '/contact/' | relative_url }}">LET’S MAKE SOMETHING ↗</a></div>
 <a class="casey-footer-name" href="{{ '/' | relative_url }}">SUNIL TAMANG</a>

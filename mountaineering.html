@@ -1,0 +1,83 @@
+---
+layout: default
+title: Summits
+permalink: /summits/
+description: Sunil Tamang's mountain records, expeditions, and high-altitude film projects.
+---
+<link rel="stylesheet" href="{% include asset-url.html path='/assets/css/mountaineering.css' %}">
+<section class="mountaineering-archive" data-mountain-archive aria-labelledby="mountaineering-title">
+<div class="mountain-backgrounds" aria-hidden="true">
+{% for mountain in site.data.summit %}
+{% assign photo = site.static_files | where: 'path', mountain.image | first %}
+{% if photo %}<img data-mountain-image="{{ mountain.archive_id }}" class="{% if forloop.first %}is-active{% endif %}" {% if forloop.first %}{% include responsive-image-attributes.html src=mountain.image sizes='100vw' %} src="{{ mountain.image | relative_url }}" fetchpriority="high"{% else %}{% include responsive-image-attributes.html src=mountain.image sizes='100vw' deferred=true %} data-src="{{ mountain.image | relative_url }}"{% endif %} alt="" decoding="async">{% endif %}
+{% endfor %}
+</div>
+<!-- <header class="mountain-header"><h1 id="mountaineering-title">Summits.</h1></header> -->
+<div class="mountain-browse" data-mountain-browse>
+<div class="mountain-filters" role="group" aria-label="Filter mountain records">
+{% assign filters = 'all:All,8000m:8000m,7000m:7000m,6000m:6000m,first-ascents:First Ascents,film-projects:Film Projects,guiding:Guiding' | split: ',' %}
+{% for entry in filters %}{% assign filter = entry | split: ':' %}
+<button type="button" data-mountain-filter="{{ filter[0] }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ filter[1] }} <span data-filter-count></span></button>
+{% endfor %}
+</div>
+<div class="mountain-index" data-mountain-index>
+{% for mountain in site.data.summit %}
+{% assign is_first_ascent = mountain.first_ascent %}{% assign is_guiding = mountain.guiding %}{% assign is_film = false %}{% if mountain.film_projects.size > 0 %}{% assign is_film = true %}{% endif %}{% for event in mountain.expeditions %}{% if event.first_ascent == true %}{% assign is_first_ascent = true %}{% endif %}{% if event.guiding == true %}{% assign is_guiding = true %}{% endif %}{% if event.type == 'film_project' %}{% assign is_film = true %}{% endif %}{% endfor %}
+{% capture tags %}all {% if mountain.elevation_m >= 8000 %}8000m{% elsif mountain.elevation_m >= 7000 %}7000m{% elsif mountain.elevation_m >= 6000 %}6000m{% endif %} {% if is_first_ascent == true %}first-ascents{% endif %} {% if is_film %}film-projects{% endif %} {% if is_guiding == true %}guiding{% endif %}{% endcapture %}
+<button class="mountain-name" type="button" data-mountain="{{ mountain.archive_id }}" data-tags="{{ tags | strip }}" aria-controls="mountain-detail" aria-expanded="false">
+<h2>{{ mountain.name | escape }}</h2><p>{% if mountain.elevation %}{{ mountain.elevation }} m{% else %}EXPEDITION ARCHIVE{% endif %}{% if mountain.summit_count %} · ×{{ mountain.summit_count | prepend: '0' }}{% endif %}</p>
+</button>
+{% endfor %}
+</div>
+<p class="mountain-empty" data-mountain-empty hidden>No documented records for this filter.</p>
+<button class="mountain-more" type="button" data-mountain-more aria-expanded="false" hidden>Show More</button>
+<p class="mountain-status" data-mountain-status role="status" aria-live="polite"></p>
+</div>
+<dialog class="mountain-detail" id="mountain-detail" aria-labelledby="mountain-detail-title">
+<button class="mountain-detail-close" type="button" data-mountain-close aria-label="Close expedition details">CLOSE ( × )</button>
+<div data-mountain-detail-content></div>
+</dialog>
+{% for mountain in site.data.summit %}
+<template data-mountain-record="{{ mountain.archive_id }}">
+<h2 id="mountain-detail-title">{{ mountain.name | escape }}</h2>
+<dl class="mountain-facts">
+<div><dt><small>Elevation</small></dt><dd><p>{% if mountain.elevation %}{{ mountain.elevation }} m{% else %}Not documented{% endif %}</p></dd></div>
+<div><dt><small>Country</small></dt><dd><p>{{ mountain.country | default: 'Not documented' | escape }}</p></dd></div>
+<div><dt><small>Region</small></dt><dd><p>{{ mountain.region | default: 'Not documented' | escape }}</p></dd></div>
+<div><dt><small>Cumulative summits</small></dt><dd><p>{% if mountain.summit_count %}{{ mountain.summit_count }}{% else %}Not documented{% endif %}</p></dd></div>
+{% if mountain.year %}<div><dt><small>Existing archive year</small></dt><dd><p>{{ mountain.year }}</p></dd></div>{% endif %}
+<div><dt><small>Expedition dates</small></dt><dd><p>{{ mountain.dates | default: 'Not documented' | escape }}</p></dd></div>
+<div><dt><small>Expedition years</small></dt><dd><p>{% if mountain.expedition_years %}{{ mountain.expedition_years | join: ', ' }}{% else %}Not documented{% endif %}</p></dd></div>
+<div><dt><small>Climbing style</small></dt><dd><p>{{ mountain.climbing_style | default: 'Not documented' | escape }}</p></dd></div>
+<div><dt><small>Roles</small></dt><dd><p>{% if mountain.roles %}{{ mountain.roles | join: ', ' | escape }}{% else %}Not documented{% endif %}</p></dd></div>
+<div><dt><small>Partners</small></dt><dd><p>{% if mountain.partners %}{{ mountain.partners | join: ', ' | escape }}{% else %}Not documented{% endif %}</p></dd></div>
+{% if mountain.notable_achievements %}<div><dt><small>Notable achievements</small></dt><dd><p>{{ mountain.notable_achievements | join: '; ' | escape }}</p></dd></div>{% endif %}
+</dl>
+{% if mountain.expeditions %}<h3>Expedition &amp; Film Records</h3>
+{% for expedition in mountain.expeditions %}<article class="mountain-expedition">
+<h4>{{ expedition.title | escape }}</h4>
+<p>{{ expedition.description | escape }}</p>
+<dl class="mountain-facts">
+<div><dt><small>Record type</small></dt><dd><p>{{ expedition.type | replace: '_', ' ' | capitalize }}</p></dd></div>
+<div><dt><small>Expedition date</small></dt><dd><p>{{ expedition.dates | default: 'Not documented' | escape }}</p></dd></div>
+{% if expedition.film_year %}<div><dt><small>Film year</small></dt><dd><p>{{ expedition.film_year }}</p></dd></div>{% endif %}
+<div><dt><small>Outcome</small></dt><dd><p>{{ expedition.status | default: 'Not documented' | escape }}</p></dd></div>
+<div><dt><small>Highest camp</small></dt><dd><p>{{ expedition.highest_camp | default: 'Not documented' | escape }}</p></dd></div>
+<div><dt><small>Climbing style</small></dt><dd><p>{{ expedition.climbing_style | default: 'Not documented' | escape }}</p></dd></div>
+<div><dt><small>Partners</small></dt><dd><p>{% if expedition.partners %}{{ expedition.partners | join: ', ' | escape }}{% else %}Not documented{% endif %}</p></dd></div>
+{% if expedition.first_ascent == true %}<div><dt><small>First ascent</small></dt><dd><p>Yes</p></dd></div>{% endif %}
+{% if expedition.guiding == true %}<div><dt><small>Guiding</small></dt><dd><p>Yes</p></dd></div>{% endif %}
+{% if expedition.notable_achievements %}<div><dt><small>Notable achievements</small></dt><dd><p>{{ expedition.notable_achievements | join: '; ' | escape }}</p></dd></div>{% endif %}
+
+<div><dt><small>Roles</small></dt><dd><p>{{ expedition.roles | join: ', ' | escape }}</p></dd></div>
+{% if expedition.client %}<div><dt><small>Client</small></dt><dd><p>{{ expedition.client | escape }}</p></dd></div>{% endif %}
+{% if expedition.director %}<div><dt><small>Director</small></dt><dd><p>{{ expedition.director | escape }}</p></dd></div>{% endif %}
+{% if expedition.production_company %}<div><dt><small>Production</small></dt><dd><p>{{ expedition.production_company | escape }}</p></dd></div>{% endif %}
+</dl>
+{% if expedition.film_slug %}<a href="{{ '/films/' | append: expedition.film_slug | append: '/' | relative_url }}">VIEW FILM ( + )</a>{% endif %}
+</article>{% endfor %}
+{% else %}<p class="mountain-record-note">Individual expedition details are not documented in the current archive.</p>{% endif %}
+</template>
+{% endfor %}
+</section>
+<script defer src="{% include asset-url.html path='/assets/js/mountaineering.js' %}"></script>
