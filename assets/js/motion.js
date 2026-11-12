@@ -6,7 +6,7 @@
  const nativeTransitions='onpagereveal' in window&&'onpageswap' in window;
  const root=document.documentElement,main=document.getElementById('main-content');
  root.classList.add('motion-ready');
- let menuTimeline,leaving=false,navigationTimer,pendingNavigation;
+ let slideTextTween,menuTimeline,leaving=false,navigationTimer,pendingNavigation;
  const key='portfolio-motion-project';
  let incoming;
  try{const saved=JSON.parse(sessionStorage.getItem(key)||'null');if(saved&&saved.to===location.pathname&&Date.now()-saved.time<15000)incoming=saved}catch{}
@@ -45,18 +45,20 @@
  function reveal(nodes,{delay=0,stagger=.055}={}){
   const targets=[...nodes].filter(Boolean);
   if(!targets.length||reduced.matches)return;
-  gsap.fromTo(targets,{y:18,opacity:0,clipPath:'inset(100% 0 0 0)'},{y:0,opacity:1,clipPath:'inset(0)',duration:.75,delay,stagger,ease:'power3.out',clearProps:'transform,opacity,clipPath'});
+  return gsap.fromTo(targets,{y:18,opacity:0,clipPath:'inset(100% 0 0 0)'},{y:0,opacity:1,clipPath:'inset(0)',duration:.75,delay,stagger,ease:'power3.out',clearProps:'transform,opacity,clipPath'});
  }
  function slideReveal(event){
   const slide=event.detail.slide;
-  if(!slide||reduced.matches||sharedEntry&&performance.now()<1000)return;
+  if(!slide||reduced.matches)return;
   const title=slide.querySelector('.casey-slide-title'),meta=slide.querySelectorAll('.casey-slide-top,.casey-slide-bottom');
-  gsap.killTweensOf([title,...meta]);reveal([title,...meta],{delay:.08,stagger:.07});
+  slideTextTween?.kill();gsap.killTweensOf([title,...meta]);slideTextTween=reveal([title,...meta],{delay:0,stagger:0});
   const image=slide.querySelector('.casey-slide-image'),video=slide.querySelector('.casey-slide-video');
   gsap.killTweensOf([image,video].filter(Boolean));
   gsap.fromTo([image,video].filter(Boolean),{scale:1.035},{scale:1,duration:1.15,ease:'power2.out',clearProps:'transform'});
  }
  document.addEventListener('portfolio:slidechange',slideReveal);
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)slideTextTween?.progress(1)});
+ addEventListener('pagehide',()=>slideTextTween?.progress(1));
  document.addEventListener('portfolio:photochange',event=>{
   if(reduced.matches||sharedEntry&&performance.now()<1000)return;
   const image=event.detail.photo.querySelector('img');gsap.killTweensOf(image);

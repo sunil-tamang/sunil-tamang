@@ -24,9 +24,9 @@ permalink: /stills/
 </header>
 <div class="project-directory-names">
 {% for project in site.data.still_projects %}
-{% assign row_position = forloop.index0 | modulo: 3 %}{% if row_position == 0 %}<div class="project-directory-row">{% endif %}
+{% assign row_position = forloop.index0 | modulo: 2 %}{% if row_position == 0 %}<div class="project-directory-row">{% endif %}
 <a class="project-directory-link{% if forloop.first %} is-active{% endif %}" data-project-name="{{ project.slug }}" data-project-category="{{ project.category | slugify }}" href="{{ '/stills/' | append: project.slug | append: '/' | relative_url }}"><h2>{{ project.title | escape }}</h2><span>{{ project.category }}</span></a>
-{% if row_position == 2 or forloop.last %}</div>{% endif %}
+{% if row_position == 1 or forloop.last %}</div>{% endif %}
 {% endfor %}
 </div>
 <p class="project-directory-empty" hidden role="status">No projects in this category yet.</p>

@@ -1155,3 +1155,29 @@ html:has(.casey-home.is-slideshow) { scroll-snap-type: none; overflow-y: auto; }
  .casey-menu-bottom>.casey-menu-qualifications { flex-wrap: wrap; row-gap: 16px; }
  .casey-menu-bottom>a { justify-self: start; }
 }
+
+/* Paired, staggered text groups from the supplied directory reference. */
+.project-directory .project-directory-names { width:100%; max-width:1900px; align-items:stretch; gap:clamp(18px,1.4vw,32px); }
+.project-directory .project-directory-row:nth-child(n) { display:flex; flex-direction:row; align-items:baseline; justify-content:center; flex-wrap:nowrap; column-gap:clamp(24px,4vw,110px); row-gap:0; }
+.project-directory .project-directory-row:nth-child(odd) { padding-inline:12% 0; }
+.project-directory .project-directory-row:nth-child(even) { padding-inline:0 8%; }
+.project-directory:not(.stills-directory) .project-directory-row:nth-child(odd) { padding-inline:3% 0; }
+.project-directory:not(.stills-directory) .project-directory-row:nth-child(even) { padding-inline:0 3%; }
+.project-directory .project-directory-link { flex:0 1 auto; min-width:0; width:fit-content; max-width:100%; text-align:left; }
+.casey-theme .project-directory .project-directory-link h2 { text-align:left; font-size:clamp(30px,3.35vw,96px); line-height:1.08; white-space:normal; }
+.casey-theme .project-directory:not(.stills-directory) .project-directory-link h2 { font-size:clamp(26px,2.8vw,80px); }
+.project-directory .project-directory-link>span { margin-inline-start:6px; vertical-align:baseline; }
+@media(max-width:700px) {
+ .project-directory .project-directory-row:nth-child(n) { flex-direction:column; align-items:flex-start; justify-content:flex-start; padding-inline:0; gap:22px; }
+ .casey-theme .project-directory .project-directory-link h2,
+ .casey-theme .project-directory:not(.stills-directory) .project-directory-link h2 { font-size:clamp(28px,5.8vw,40px); }
+}
+/* Text reveals alongside the video, including a CSS fallback when GSAP is unavailable. */
+.casey-home.is-slideshow .casey-slide { transition:opacity .6s ease,visibility .6s; }
+.casey-home.is-slideshow .casey-slide.is-outgoing { transition:none; }
+html:not(.motion-ready) .casey-home .casey-slide.is-active :is(.casey-slide-title,.casey-slide-top,.casey-slide-bottom) { animation:home-copy-reveal .75s cubic-bezier(.2,.7,.2,1) 0s backwards; }
+@keyframes home-copy-reveal { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+@media(prefers-reduced-motion:reduce) {
+ html:not(.motion-ready) .casey-home .casey-slide.is-active :is(.casey-slide-title,.casey-slide-top,.casey-slide-bottom) { animation:none; }
+ .casey-home.is-slideshow .casey-slide { transition:none; }
+}

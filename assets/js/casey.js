@@ -68,7 +68,7 @@
    video.classList.add('is-playing');
    if(counter)counter.textContent=String(next+1).padStart(2,'0');
    if(progress)progress.style.transform='scaleX(0)';if(meter)meter.setAttribute('aria-valuenow','0');
-   fadeTimer=setTimeout(()=>slides.forEach(slide=>slide.classList.remove('is-outgoing')),reduce.matches?0:360);
+   fadeTimer=setTimeout(()=>slides.forEach(slide=>slide.classList.remove('is-outgoing')),reduce.matches?0:650);
    document.dispatchEvent(new CustomEvent('portfolio:slidechange',{detail:{slide:slides[next],index:next}}));sync();
   }
   slides.forEach((slide,i)=>{

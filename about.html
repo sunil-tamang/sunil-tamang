@@ -7,35 +7,25 @@ description: Expedition cinematographer, mountaineer, and aspirant mountain guid
 <link rel="stylesheet" href="{% include asset-url.html path='/assets/css/about-summits.css' %}">
 <section class="about-editorial about-video-page" aria-labelledby="about-title">
 <div class="about-video-backdrop" aria-hidden="true">
-<video data-about-video muted loop playsinline preload="none" poster="{{ '/assets/media/about-video-poster.jpg' | relative_url }}" aria-hidden="true"><source data-src="{{ '/assets/css/video/about.mp4' | relative_url }}" type="video/mp4"></video>
+<video data-about-video muted loop playsinline preload="none" aria-hidden="true"><source data-src="{{ '/assets/css/video/about.mp4' | relative_url }}" type="video/mp4"></video>
 </div>
 <div class="about-editorial-content">
-<p class="about-editorial-label">NEPAL / FILM / MOUNTAINS</p>
-<h1 id="about-title">About.</h1>
-<h2 class="about-lead">Expedition cinematographer, Mountain Guide from Nepal.</h2>
-<div class="about-editorial-bio">
-<p>I'm <strong>Sunil Tamang</strong>, an expedition cinematographer and mountaineer based in Nepal. I spend much of my time in the mountains, both climbing and documenting the people, places, and stories that unfold along the way.</p>
-
-<p>My experience in high-altitude expeditions and technical climbing shapes how I approach filmmaking. Being part of the journey allows me to capture moments as they happen — the challenges, the quiet moments, and everything in between.</p>
-
-<p>Alongside filmmaking, I'm an <strong>aspirant mountain guide with NNMGA</strong>, working toward <strong>IFMGA certification</strong>. Whether behind the camera or on the mountain, I'm driven by a love for exploration, meaningful storytelling, and the places that have shaped my life.</p>
+<p class="about-editorial-label about-rule-label">SUNIL TAMANG</p>
+<h1 id="about-title"><span>Expedition</span><span>Cinematographer</span></h1>
+<p class="about-role about-rule-label" data-about-reveal>FILMMAKER <span aria-hidden="true">/</span> MOUNTAIN GUIDE</p>
+<div class="about-editorial-bio"><p>Documenting expeditions, people,<br class="about-wide-break"> and life in the high mountains of<br class="about-wide-break"> Nepal and beyond.</p></div>
 </div>
+<aside class="about-journey" aria-label="Mountain guide journey">
+<p class="about-journey-label about-rule-label" data-about-reveal>MOUNTAIN GUIDE JOURNEY</p>
+<div class="about-journey-entry" data-about-reveal>
+<img src="{{ '/assets/css/images/logos/nnmga.png' | relative_url }}" srcset="{{ '/assets/media/nnmga-128.png' | relative_url }} 128w, {{ '/assets/css/images/logos/nnmga.png' | relative_url }} 300w" sizes="(max-width: 800px) 68px, 96px" alt="NNMGA" width="96" height="96" decoding="async">
+<div><h2>NNMGA</h2><p>ASPIRANT<br>MOUNTAIN GUIDE</p></div>
 </div>
-<aside class="about-profile" aria-label="Roles, focus, certifications and memberships">
-<div class="about-profile-group"><p class="about-profile-label">ROLES</p><p>Cinematographer / Mountain Guide</p></div>
-<div class="about-profile-group"><p class="about-profile-label">FOCUS</p><p>Expedition Film / Alpine Climbing / <span class="about-focus-phrase">Ice Climbing / Rock Climbing</span></p></div>
-<div class="about-profile-group"><p class="about-profile-label">CERTIFICATIONS &amp; TRAINING</p><ul>
-<li><p>Aspirant Mountain Guide Course (NNMGA)</p></li>
-</ul></div>
-<div class="about-profile-group"><p class="about-profile-label">MEMBERSHIPS</p><ul>
-<li><p>Nepal National Mountain Guide Association (NNMGA)</p></li>
-<li><p>Nepal Mountaineering Association (NMA)</p></li>
-<li><p>Everest Summiteers Association (ESA)</p></li>
-</ul></div>
+<div class="about-journey-entry" data-about-reveal>
+<img src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}" srcset="{{ '/assets/media/ifmga-128.png' | relative_url }} 128w, {{ '/assets/css/images/logos/ifmga.png' | relative_url }} 300w" sizes="(max-width: 800px) 68px, 96px" alt="IFMGA" width="96" height="96" decoding="async">
+<div><h2>IFMGA</h2><p>INTERNATIONAL<br>MOUNTAIN GUIDE</p><p class="about-future">(FUTURE GOAL)</p></div>
+</div>
 </aside>
-<div class="about-qualifications" aria-label="Mountain guide qualifications">
-<div class="about-qualification"><img src="{{ '/assets/css/images/logos/nnmga.png' | relative_url }}" srcset="{{ '/assets/media/nnmga-128.png' | relative_url }} 128w, {{ '/assets/css/images/logos/nnmga.png' | relative_url }} 300w" sizes="44px" alt="NNMGA" width="44" height="44" decoding="async"><p><strong>NNMGA</strong><span>Current Mountain Guide Candidate</span></p></div>
-<div class="about-qualification"><img src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}" srcset="{{ '/assets/media/ifmga-128.png' | relative_url }} 128w, {{ '/assets/css/images/logos/ifmga.png' | relative_url }} 300w" sizes="44px" alt="IFMGA" width="44" height="44" decoding="async"><p><strong>IFMGA</strong><span>Future Certification Goal</span></p></div>
-</div>
+<p class="about-coordinates" data-about-reveal><span>NEPAL</span><span aria-hidden="true">|</span><span>27.9881° N&nbsp;&nbsp; 86.9250° E</span></p>
 </section>
 <script defer src="{% include asset-url.html path='/assets/js/about-summits.js' %}"></script>
